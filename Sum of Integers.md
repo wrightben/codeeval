@@ -19,7 +19,7 @@ e.g.
 
 > 8<br />12
 
-### Code
+## Code
 
 ```php
 #!/usr/bin/php
