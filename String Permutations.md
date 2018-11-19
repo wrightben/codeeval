@@ -21,7 +21,7 @@ The function below solves the test as it’s presented on CodeEval. I believe th
 
 However, the basic algorithm is the same for longer words. In the case of the word *help*, the function below will produce 8 of the permutations: *help, elph, lphe, phel*, and the inverse of each: *pleh, hple, ehpl, lehp*. 
 
-We know that there are 24 permutations when we use all four letters according to N!, or (4\*3\*2\*1). So where are the other 16 permutations? We need to shift a letter and perform the same inverse function. If we take *help*, and make it *ehlp*, and then run the inverse funcation again, we’ll produce another 8 of the permutations. To get the missing 8, we’ll need to shift again and make *ehlp* into *elhp*.
+We know that there are 24 permutations when we use all four letters according to N!, or (4\*3\*2\*1). So where are the other 16 permutations? We need to shift a letter and perform the same inverse function. If we take *help*, and make it *ehlp*, and then run the inverse funcation again, we’ll produce another 8 of the permutations. To get the remaining 8, we’ll need to shift again and make *ehlp* into *elhp*.
 
 But how do we know how many times we have to shift? The answer is ((n)!/(2n))-1. So, for a 3-letter word like *hat*, we don’t need to shift at all. For a 4-letter word like *help*, we shift (24/8) – 1 = 2 times.
 
