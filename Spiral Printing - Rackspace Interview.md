@@ -13,7 +13,7 @@ Write a function to print a 2-D array (n x m) in spiral order (clockwise).
 
 or
 
->a b c d e<br />n o p q f<br />m t s r g<br />l k j i h
+>abcde<br/>nopqf<br/>mtsrg<br/>lkjih
 
 **Output sample:**
 
