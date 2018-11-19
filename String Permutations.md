@@ -17,9 +17,7 @@ Write a program to print out all the permutations of a string in alphabetical or
 
 ### My Solution:
 
-The function below solves the test as it’s presented on CodeEval. I believe the input file consists of a single line, and the word is hat, exactly as it appears in the example. 
-
-*This function will fail for words longer than three letters.* 
+The function below solves the test as it’s presented on CodeEval. I believe the input file consists of a single line, and the word is hat, exactly as it appears in the example. *This function will fail for words longer than three letters.* 
 
 However, the basic algorithm is the same for longer words. In the case of the word *help*, the function below will produce 8 of the permutations: *help, elph, lphe, phel*, and the inverse of each: *pleh, hple, ehpl, lehp*. 
 
