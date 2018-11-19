@@ -1,7 +1,7 @@
 
-# String Permutations
-www.CodeEval.com
-Posted on October 10, 2011 by **omitted**	
+# String Permutations<br />
+www.CodeEval.com<br />
+Posted on October 10, 2011 by **omitted**
 
 ### Description:
 
