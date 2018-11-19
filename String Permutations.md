@@ -3,7 +3,7 @@
 www.CodeEval.com <br />
 Posted on October 10, 2011 by **omitted**
 
-### Description: 
+## Description: 
 
 Write a program to print out all the permutations of a string in alphabetical order.
 
