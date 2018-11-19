@@ -21,7 +21,9 @@ The function below solves the test as it’s presented on CodeEval. (I believe t
 
 We know that there are 24 permutations when we use all four letters according to N!, or (4\*3\*2\*1). So where are the other 16? We need to shift a letter and perform the same function. If we take help, and make it ehlp, and then run the function below, we’ll produce another 8 of the permutations. So, to get the last 8, we’ll need to shift again and make ehlp into hlep.
 
-But how do we know how many times we have to shift? The answer is ((n)!/(2n))-1. So, for a 3-letter word, we don’t need to shift at all. For a 4-letter word, we shift (24/8) – 1 = 2 times. And for a 5-letter word, we’ll be shifting 120/10 – 1 = 11 times. (In the 5-letter word example, we’ll end up with 12 sets of 10 permutations. We only shift 11 times, since we can create permutations with the word as we find it.)
+But how do we know how many times we have to shift? The answer is ((n)!/(2n))-1. So, for a 3-letter word, we don’t need to shift at all. For a 4-letter word, we shift (24/8) – 1 = 2 times. And for a 5-letter word, we’ll be shifting 120/10 – 1 = 11 times.
+
+In the 5-letter word example, we’ll end up with 12 sets of 10 permutations. We only shift 11 times, since we can create permutations with the word as we find it.
 
 ```php
 #!/usr/bin/php
