@@ -17,11 +17,11 @@ Write a program to print out all the permutations of a string in alphabetical or
 
 ### My Solution:
 
-The function below solves the test as it’s presented on CodeEval. (I believe the input file consists of a single line, and the word is hat, exactly as it appears in the example.) 
+The function below solves the test as it’s presented on CodeEval. I believe the input file consists of a single line, and the word is hat, exactly as it appears in the example. 
 
-*This function will fail for words longer than three letters.* However ... 
+*This function will fail for words longer than three letters.* 
 
-The basic algorithm is the same for longer words, but there are n-number of letter shifts required. In the case of the word help, the function below will produce 8 of the permutations (help, elph, lphe, phel, and the inverse of each, pleh, hple, etc.).
+However, the basic algorithm is the same for longer words, but there are (n-number of) letter shifts required. In the case of the word help, the function below will produce 8 of the permutations: help, elph, lphe, phel, and the inverse of each: pleh, hple, ehpl, lehp.
 
 We know that there are 24 permutations when we use all four letters according to N!, or (4\*3\*2\*1). So where are the other 16? We need to shift a letter and perform the same function. If we take help, and make it ehlp, and then run the function below, we’ll produce another 8 of the permutations. So, to get the last 8, we’ll need to shift again and make ehlp into hlep.
 
