@@ -81,7 +81,7 @@ class SequenceHandler {
         
         $letters = $this->letters;
         foreach ($letters as $letter) { //Cheat Loop Length!
-            array_push($this->permutations,$this->letters);
+            array_push($this->permutations,$this->letters);    
             array_push($this->permutationsAsStrings,join("",$this->letters));
             array_push($this->letters,array_shift($this->letters));
         }
@@ -98,6 +98,8 @@ class SequenceHandler {
     
     
 }
+
+
 
 $contents = FileHandler::readByLine($file,true);
 $subs = array();
