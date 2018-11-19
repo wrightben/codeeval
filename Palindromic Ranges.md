@@ -20,8 +20,6 @@ For each line of input, print out the number of interesting subranges of [L,R] e
 
 > 1<br />12
 
-### My Solution:
-
 ## Code
 
 ```php
