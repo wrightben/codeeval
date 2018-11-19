@@ -3,9 +3,7 @@
 www.CodeEval.com <br />
 Posted on October 10, 2011 by **omitted**
 
-### Description:
-
-Write a program to print out all the permutations of a string in alphabetical order.
+### Description: Write a program to print out all the permutations of a string in alphabetical order.
 
 **Input sample:** The first argument will be a text file containing an input string, one per line. e.g.
 
@@ -26,6 +24,8 @@ But how do we know how many times we have to shift? The answer is ((n)!/(2n))-1.
 In the 5-letter word example, we’ll end up with 12 sets of 10 permutations. We only shift 11 times, since we can create permutations with the word as we find it.
 
 The best algorithms originate from pencil and paper: You don’t need to model the whole world in math, if you can see what’s right in front of you.
+
+-------
 
 ```php
 #!/usr/bin/php
