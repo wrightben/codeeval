@@ -7,18 +7,13 @@ Posted on October 10, 2011 by **omitted**
 
 Write a program to print out all the permutations of a string in alphabetical order.
 
-Input sample:
+**Input sample:** The first argument will be a text file containing an input string, one per line. e.g.
 
-The first argument will be a text file containing an input string, one per line. e.g.
+> hat
 
-hat
+**Output sample:** Print to stdout, permutations of the string, comma separated, in alphabetical order. e.g.
 
-Output sample:
-
-Print to stdout, permutations of the string, comma separated, in alphabetical order.
-e.g.
-
-aht,ath,hat,hta,tah,tha
+> aht,ath,hat,hta,tah,tha
 
 ### My Solution:
 
