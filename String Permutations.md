@@ -27,7 +27,7 @@ In the 5-letter word example, we’ll end up with 12 sets of 10 permutations. We
 
 The best algorithms originate from pencil and paper: You don’t need to model the whole world in math, if you can see what’s right in front of you.
 
-___
+## Code
 
 ```php
 #!/usr/bin/php
