@@ -99,10 +99,6 @@ class SequenceHandler {
     
 }
 
-/* I'm actually proud of this solution; I don't work with these challenges
-often, and I've never seen this algorithm before. */
-
-
 $contents = FileHandler::readByLine($file,true);
 $subs = array();
 foreach ($contents as $line) {
