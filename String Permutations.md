@@ -36,15 +36,9 @@ The best algorithms originate from pencil and paper: You don’t need to model t
 $file;
 (isset($argv[1])) ? $file = $argv[1]:exit("Must provide a file");
 
-
-/*  FileHandler:
-    Wrap some common read operations.
-*/
+// File Reading
 class FileHandler { 
 
-    /*  readByLine
-        Use: FileHandler::readByLine('filePath',true);
-    */
     public static function readByLine($file /*Full file path*/,$rtrim /*Boolean*/) { // Return an array of lines
         $lines = array();
         (ISSET($rtrim) && ($rtrim == true)) ? $rtrim = true: $rtrim = false;
@@ -59,10 +53,7 @@ class FileHandler {
     }
 }
 
-
-/*  SequenceHandler:
-    Wrap some simple helper methods
-*/
+// Permutations
 class SequenceHandler {
     
     private $word;
@@ -98,8 +89,6 @@ class SequenceHandler {
     
     
 }
-
-
 
 $contents = FileHandler::readByLine($file,true);
 $subs = array();
