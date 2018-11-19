@@ -12,7 +12,7 @@ Print out the unique number of ways the robot can reach its destination. (The nu
 
 ### My Solution:
 
-The following chunk of code will print out the total successful variations for walking a grid one square at a time, when it has been declared that we begin in the upper-left square, that we are trying to reach the lower-right square, that we cannot move diagonally, and that we cannot revisit a square. The GridHelper object accepts an x bound (positive int), a y bound (positive int), a “force” attribute (positive int), and an option to print the paths as they’re found (true|false).
+The GridHelper object accepts an x bound (positive int), a y bound (positive int), a “force” attribute (positive int), and an option to print the paths as they’re found (true|false). The force attribute is a guess for a maximum number of times the robot will need to fail before concluding it has already attempted every successful path.
 
 ## Code
 
