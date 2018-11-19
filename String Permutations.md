@@ -25,7 +25,7 @@ We know that there are 24 permutations when we use all four letters according to
 
 But how do we know how many times we have to shift? The answer is ((n)!/(2n))-1. So, for a 3-letter word like *hat*, we don’t need to shift at all. For a 4-letter word like *help*, we shift (24/8) – 1 = 2 times.
 
-The best algorithms originate from pencil and paper: You don’t need to model the whole world in math, if you can see what’s right in front of you.
+The best algorithms originate from pencil and paper. You don’t need to model the whole world in math, if you can see what’s right in front of you.
 
 ## Code
 
