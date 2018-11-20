@@ -31,7 +31,7 @@ The best algorithms originate from pencil and paper: You don’t need to model t
 ## Code
 
 ```javascript
-var fs = require('fs'),
+var	fs = require('fs'),
 	file = process.argv[2];
 
 var permutationIndexes = [
