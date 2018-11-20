@@ -95,12 +95,22 @@ var getPermutationString = function( length ) {
 }
 
 var line = function( word ) {
-	
+
 	var	l = word.length,
 		letters = word.split("").sort(),
 		ps = getPermutationString( l ).split(""),
-		psArray = [];
-		
+		psArray = [],
+		dupes = false;
+
+	// Determine if duplicate letters (in order to avoid post sort)
+	for (var i = 1; i <= l; i++) {
+		console.log(i);
+		if (letters[i] == letters[i-1]) {
+			dupes = true;
+			break;
+		}
+	}
+
 	// Substituting letters in the permutationString
 	ps.forEach(function(e,i) {
 		ps[i] = letters[e - 1];
@@ -110,8 +120,12 @@ var line = function( word ) {
 	for (var n = l; n <= ps.length ; n += l) {
 		psArray.push( ps.slice( n-l , n ).join("") );
 	}
+
+	// Post-sort?
+	if (dupes) { psArray.sort(); } 
 	
-	return psArray.sort().join(",");
+	
+	return psArray.join(",");
 }
 
 
@@ -121,5 +135,4 @@ require('fs')
 	.forEach(function(word){
 		console.log( line( word ) );
 	})
-
 ```
