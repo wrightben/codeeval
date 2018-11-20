@@ -28,7 +28,7 @@ Print to stdout, permutations of the string, comma separated, in alphabetical or
 
 The final array sort is only necessary when there are duplicate letters. To improve real-time speed, it's possible to create a modified starting index: "abc" = "123" while "aac" == "112" (reducing the ending index for this 3-letter word from 321 to 211).
 
-The best algorithms originate from pencil and paper: You don’t need to model the whole world in math if you can see what’s right in front of you.
+Performance and clarity, I hope.
 
 ## Code
 
