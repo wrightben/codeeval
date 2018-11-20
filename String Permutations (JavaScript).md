@@ -106,7 +106,6 @@ var line = function( word ) {
 
 	// Determine if duplicate letters (in order to avoid post sort)
 	for (var i = 1; i <= l; i++) {
-		console.log(i);
 		if (letters[i] == letters[i-1]) {
 			dupes = true;
 			break;
