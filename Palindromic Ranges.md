@@ -1,4 +1,4 @@
-# String Permutations <br />
+# String Permutations (PHP) <br />
 www.CodeEval.com <br />
 Posted on October 10, 2011 by **omitted**
 
@@ -14,9 +14,7 @@ The range [L1,R1] is a subrange of [L,R] if L <= L1 <= R1 <= R. Your job is to d
 
 > 1 2<br />1 7
 
-**Output sample:** Print to stdout, permutations of the string, comma separated, in alphabetical order. e.g.
-
-For each line of input, print out the number of interesting subranges of [L,R] eg.
+**Output sample:** For each line of input, print out the number of interesting subranges of [L,R] eg.
 
 > 1<br />12
 
