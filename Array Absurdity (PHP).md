@@ -1,6 +1,6 @@
 # Array Absurdity <br />
 www.CodeEval.com (Rapleaf)<br />
-Posted on October 9, 2011 by **omitted**
+Posted on October 9, 2011
 
 ## Description:
 
