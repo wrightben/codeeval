@@ -101,11 +101,12 @@ var line = function( word ) {
 		ps = getPermutationString( l ).split(""),
 		psArray = [];
 		
-	// Substituting letters in the permutationIndex
+	// Substituting letters in the permutationString
 	ps.forEach(function(e,i) {
 		ps[i] = letters[e - 1];
 	});
 
+	// Splitting permutationString into array of substrings
 	for (var n = l; n <= ps.length ; n += l) {
 		psArray.push( ps.slice( n-l , n ).join("") );
 	}
