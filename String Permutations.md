@@ -70,7 +70,7 @@ var getPermutationString = function( length ) {
 	
 	
 	// REAL-TIME Permutation Strings
-	// Performance: Good: 1-4, Pretty Good: 5-7, Tolerable: 8, Bad: 9
+	// Performance: Very Good: 1-4, Good: 5-7, Fair: 8, Bad: 9
 	
 	var index = length - 1,
 		_s = permutationIndexes[index][0],
