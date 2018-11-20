@@ -31,6 +31,9 @@ The best algorithms originate from pencil and paper: You don’t need to model t
 ## Code
 
 ```javascript
+var fs = require('fs'),
+	file = process.argv[2];
+
 var permutationIndexes = [
 	[1],
 	[12,21],
@@ -91,15 +94,6 @@ var getPermutationString = function( length ) {
 	*/
 }
 
-
-
-
-
-
-
-var word = "iac";
-
-
 var line = function( word ) {
 	
 	var	l = word.length,
@@ -120,9 +114,12 @@ var line = function( word ) {
 }
 
 
-var psArray = line( word );
-
-console.log( psArray );
-
+require('fs')
+	.readFileSync( file , 'utf-8')
+	.split(/\r?\n/)
+	.forEach(function(word){
+  		var psArray = line( word );
+		console.log( psArray );
+	})
 
 ```
