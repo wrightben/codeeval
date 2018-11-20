@@ -102,7 +102,7 @@ var word = "iac";
 
 var line = function( word ) {
 	
-	var l = word.length,
+	var	l = word.length,
 		letters = word.split("").sort(),
 		ps = getPermutationString( l ).split(""),
 		psArray = [];
