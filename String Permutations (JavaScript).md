@@ -1,6 +1,7 @@
 # String Permutations<br />
 www.CodeEval.com<br />
-Posted on October 10, 2011 by **omitted**	
+Posted on Oct 10, 2011<br />
+Revised on Nov 20, 2018
 
 ## Description:
 
