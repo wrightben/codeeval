@@ -1,5 +1,5 @@
 # Sum of Integers <br />
-www.CodeEval.com <br />
+[www.CodeEval.com](https://web.archive.org/web/20120709092623/http://www.codeeval.com:80/public_sc/17) <br />
 Posted on October 10, 2011 by **omitted**
 
 ## Description:
