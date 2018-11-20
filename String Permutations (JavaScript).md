@@ -26,7 +26,7 @@ Print to stdout, permutations of the string, comma separated, in alphabetical or
 
 **Insight 2:** Because the numerical permutations are always the same, it isn't necessary to calculate them for every word. A function can serve a cached version of the numerical permutations and swap the numbers with the respective letters.
 
-**Final Notes** The final array sort is only necessary when there are duplicate letters. To improve real-time speed, it's possible to create a modified starting index: "abc" = "123" while "aac" == "112" (reducing the ending index for this 3-letter word from 321 to 211).
+The final array sort is only necessary when there are duplicate letters. To improve real-time speed, it's possible to create a modified starting index: "abc" = "123" while "aac" == "112" (reducing the ending index for this 3-letter word from 321 to 211).
 
 Performance and clarity, I hope.
 
