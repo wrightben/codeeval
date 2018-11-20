@@ -66,6 +66,7 @@ var cachedPermutationStrings = [
 var getPermutationString = function( length ) {
 
 	// CACHED Permutation Strings
+	// Performance: Very Good
 	return cachedPermutationStrings[ length - 1 ];
 	
 	
