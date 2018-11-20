@@ -24,7 +24,7 @@ Print to stdout, permutations of the string, comma separated, in alphabetical or
 
 The ordered permutations of the string "123" begin with a min equal to "123" and conclude with a max equal to "321". It's possible to generate the full list of permutations by counting up from the min to the max and selecting the interim numbers with the same digits (e.g. "213" and "231").
 
-The numerical permutations for any numerical string are always the same. And because each respective letter of a string, as in "abc", has an array index equivalent to this natural sequence, it isn't necessary to calculate permutations for every word. A function can serve a cached version of the numerical permutations and swap the numbers with the respective letters.
+The permutations for any numerical string are always the same. And because each respective letter of a string, as in "abc", has an array index equivalent to this natural sequence, it isn't necessary to calculate permutations for every word. A function can serve a cached version of the numerical permutations and swap the numbers with the respective letters.
 
 Extras: The final array sort is only necessary when there are duplicate letters; To improve real-time speed, it's possible to create a modified starting index: "abc" = "123" while "aac" == "112" (reducing the ending index for this 3-letter word from 321 to 211).
 
