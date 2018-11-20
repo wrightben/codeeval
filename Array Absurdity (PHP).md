@@ -1,5 +1,5 @@
 # Array Absurdity <br />
-www.CodeEval.com (Rapleaf)<br />
+www.CodeEval.com (RapLeaf)<br />
 Posted on October 9, 2011
 
 ## Description:
