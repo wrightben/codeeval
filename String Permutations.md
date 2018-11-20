@@ -118,8 +118,7 @@ require('fs')
 	.readFileSync( file , 'utf-8')
 	.split(/\r?\n/)
 	.forEach(function(word){
-  		var psArray = line( word );
-		console.log( psArray );
+		console.log( line( word ) );
 	})
 
 ```
