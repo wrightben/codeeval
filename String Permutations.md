@@ -23,7 +23,7 @@ However, the basic algorithm is the same for longer words. In the case of the wo
 
 We know that there are 24 permutations when we use all four letters according to *N!*. So where are the other 16 permutations? We need to shift a letter and perform the same inverse function. If we take *help*, and make it *ehlp*, and then run the inverse funcation again, we’ll produce another 8 of the permutations. To get the remaining 8, we’ll need to shift again and make *ehlp* into *elhp*.
 
-But how do we know how many times we have to shift? The answer is ((n)!/(2n))-1. So, for a 3-letter word like *hat*, we don’t need to shift at all. For a 4-letter word like *help*, we shift (24/8) – 1 = 2 times.
+But how do we know how many times we have to shift? The answer is (n!/2n)-1. So, for a 3-letter word like *hat*, we don’t need to shift at all. For a 4-letter word like *help*, we shift (24/8) – 1 = 2 times.
 
 ## Code
 
