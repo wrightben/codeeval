@@ -1,4 +1,4 @@
-# String Permutations (PHP) <br />
+# Palindromic Ranges (PHP) <br />
 www.CodeEval.com <br />
 Posted on October 10, 2011 by **omitted**
 
