@@ -25,8 +25,6 @@ The range [L1,R1] is a subrange of [L,R] if L <= L1 <= R1 <= R. Your job is to d
 For the curious: In the third example, the subranges are: [87](0 palindromes), [87,88](1 palindrome),[88](1 palindrome). Hence the number of interesting palindromic ranges is 1
 
 
-### My Solution:
-
 ## Code
 
 ```php
