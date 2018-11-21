@@ -1,14 +1,14 @@
 # Robot Movements <br />
-www.CodeEval.com <br />
-Posted on October 16, 2011 by **omitted**
+[www.CodeEval.com](https://web.archive.org/web/20150721085940/https://www.codeeval.com/public_sc/57/)<br />
+Posted on October 16, 2011
 
 ## Description: 
 
-A robot is located at the top-left corner of a 4×4 grid. The robot can move either up, down, left, or right, but can not visit the same spot twice. The robot is trying to reach the bottom-right corner of the grid.
+A robot is located in the upper-left corner of a 4×4 grid. The robot can move either up, down, left, or right, but cannot go to the same location twice. The robot is trying to reach the lower-right corner of the grid. Your task is to find out the number of unique ways to reach the destination.
 
 **Output sample:**
 
-Print out the unique number of ways the robot can reach its destination. (The number should be printed as an integer whole number eg. if the answer is 10 (its not !!), print out 10, not 10.0 or 10.00 etc)
+Print out the number of unique ways for the robot to reach its destination. The number should be printed out as an int >= 0. 
 
 ### My Solution:
 
