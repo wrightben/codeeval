@@ -1,4 +1,4 @@
-# String Permutations<br />
+# String Permutations (JavaScript)<br />
 [www.CodeEval.com](https://web.archive.org/web/20120123110915/http://www.codeeval.com:80/public_sc/14)<br />
 Revised Nov 20, 2018<br />
 Posted Oct 10, 2011
