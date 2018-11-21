@@ -20,7 +20,8 @@ Print to stdout, permutations of the string, comma separated, in alphabetical or
 
 >aht,ath,hat,hta,tah,tha
 
-### My Solution:
+### My Solution:<br/>
+*Aiming for Performance and clarity.*
 
 An sorted list of the permutations of the numerical sequence *123* begins with a min equal to *123* and concludes with a max equal to *321*. It's possible to generate the complete list of permutations by counting up from the min to the max and selecting the interim numbers having the same digits (e.g. *213* and *231*).
 
@@ -29,8 +30,6 @@ The sorted list of permutations for a particular numerical sequence is always th
 **Notes on Performance**
 * It's possible to create a modified starting index: "abc" = "123" but "aac" == "112". "112" reduces the ending index for this 3-letter word from 321 to 211.
 * The final array sort is only necessary when there are duplicate letters. 
-
-Performance and clarity, I hope.
 
 ## Code
 
