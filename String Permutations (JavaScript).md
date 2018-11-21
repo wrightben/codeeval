@@ -26,7 +26,7 @@ The ordered permutations of the string "123" begin with a min equal to "123" and
 
 The ordered permutations for any numerical string are always the same. And because each respective *letter* of a string, as in "abc", has an array index equivalent to this natural sequence, it isn't necessary to calculate permutations for every word. A function can return a previously-created version of the ordered numerical permutations and swap the numbers with the respective letters.
 
-Extras: The final array sort is only necessary when there are duplicate letters; To improve real-time speed, it's possible to create a modified starting index: "abc" = "123" while "aac" == "112" (reducing the ending index for this 3-letter word from 321 to 211).
+The final array sort is only necessary when there are duplicate letters. Also, it's possible to create a modified starting index: "abc" = "123" while "aac" == "112" (reducing the ending index for this 3-letter word from 321 to 211).
 
 Performance and clarity, I hope.
 
