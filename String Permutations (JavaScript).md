@@ -31,8 +31,8 @@ The sorted list of permutations for a particular numerical sequence is always th
 * Words with duplicate letters could benefit by using modified starting and ending indexes:<br/>"abc" = [123,321]; "aac" = [112,211]
 
 
-
-## Code
+---
+### Code
 
 [cachedPermutationStrings.js](https://github.com/wrightben/codeeval/blob/master/code/cachedPermutationStrings.js) (Optional)<br />
 [stringPermutations.js](https://github.com/wrightben/codeeval/blob/master/code/StringPermutations.js)
