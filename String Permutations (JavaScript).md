@@ -22,7 +22,7 @@ Print to stdout, permutations of the string, comma separated, in alphabetical or
 
 ---
 
-### My Solution:<br/>
+## My Solution:<br/>
 
 A sorted list of the permutations of the numerical sequence *"123"* begins with a min equal to *123* and concludes with a max equal to *321*. It's possible to generate the complete list of permutations by counting up from the min to the max and selecting the interim numbers having the same digits (e.g. *213* and *231*).
 
@@ -34,7 +34,7 @@ The sorted list of permutations for a particular numerical sequence is always th
 
 ---
 
-## Code
+## Code:
 
 [cachedPermutationStrings.js](https://github.com/wrightben/codeeval/blob/master/code/cachedPermutationStrings.js) (Optional)<br />
 [stringPermutations.js](https://github.com/wrightben/codeeval/blob/master/code/StringPermutations.js)
