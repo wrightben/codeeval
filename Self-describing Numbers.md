@@ -1,6 +1,6 @@
 # Self Describing Numbers<br />
 www.CodeEval.com<br />
-New: Thanksgiving 2018
+Thanksgiving 2018
 
 ## Description:
 
