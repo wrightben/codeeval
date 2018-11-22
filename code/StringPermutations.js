@@ -42,7 +42,7 @@ var getPermutationString = function( length ) {
 		
 	}
 	
-	return permutationString; // e.g. 123: 123132213231312321
+	return permutationString; // e.g. 123: 123,132,213,231,312,321
 	
 }
 
