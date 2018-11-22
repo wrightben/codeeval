@@ -34,7 +34,7 @@ For the curious: In the third example, the subranges are: [87](0 palindromes), [
 <br />
 
 ---
-### Commands
+### Run the Code
 ```sh
 time php palindromicRanges.php input_sample_3.txt
 ```

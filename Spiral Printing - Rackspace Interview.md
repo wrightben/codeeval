@@ -36,7 +36,7 @@ I received this test when applying for a JavaScript engineer position with Racks
 <br />
 
 ---
-### Commands
+### Run the Code
 ```sh
 time php spiralPrinting.php input_sample_5.txt
 ```
