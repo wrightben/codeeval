@@ -1,4 +1,4 @@
-# Self Describing Numbers<br />
+# Self-Describing Numbers<br />
 www.CodeEval.com<br />
 Thanksgiving 2018
 
