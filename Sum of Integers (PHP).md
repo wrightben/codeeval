@@ -26,6 +26,7 @@ e.g.
 
 [sumOfIntegers.php](https://github.com/wrightben/codeeval/blob/master/code/sumOfIntegers.php)
 
+<br />
 ---
 ### Run the Code
 ```sh
