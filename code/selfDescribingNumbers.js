@@ -34,6 +34,6 @@ var isSelfDescribing = function( number ) {
 require('fs')
 	.readFileSync( file , 'utf-8')
 	.split(/\r?\n/)
-	.forEach(function( word ) {
-		console.log( isSelfDescribing( word ) );
+	.forEach(function( number ) {
+		console.log( isSelfDescribing( number ) );
 	})
