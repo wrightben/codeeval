@@ -40,7 +40,7 @@ The value of the index is a count of how many times the index is a value.
 <br />
 
 ---
-### Run the script
+### Run It!
 ```sh
 time node selfDescribingNumbers.js input_sample_4.txt
 ```
