@@ -29,7 +29,7 @@ l k j i h
 
 [spiralPrinting.php](https://github.com/wrightben/codeeval/blob/master/code/spiralPrinting.php)
 
-#### About My Solution:
+#### About My Solution
 
 I received this test when applying for a JavaScript engineer position with Rackspace. I wanted to try something other than multiple iterators.
 
