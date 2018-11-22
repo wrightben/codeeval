@@ -2,7 +2,7 @@
 [www.CodeEval.com](https://web.archive.org/web/20120413153241/http://www.codeeval.com:80/public_sc/47/) <br />
 Posted on October 10, 2011
 
-## Challenge Description
+## Description
 
 A positive integer is a palindrome if its decimal representation (without leading zeros) is a palindromic string (a string that reads the same forwards and backwards). For example, the numbers 5, 77, 363, 4884, 11111, 12121 and 349943 are palindromes.
 

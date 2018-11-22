@@ -2,7 +2,7 @@
 [www.CodeEval.com](https://web.archive.org/web/20120510131553/http://www.codeeval.com/public_sc/41/) (RapLeaf)<br />
 Posted on October 9, 2011
 
-## Description:
+## Description
 
 Imagine we have an immutable array of size N which we know to be filled with integers ranging from 0 to N-2, inclusive. Suppose we know that the array contains exactly one duplicated entry and that duplicate appears exactly twice. Find the duplicated entry. (For bonus points, ensure your solution has constant space and time proportional to N)
 
