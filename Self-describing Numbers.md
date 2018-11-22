@@ -19,7 +19,9 @@ If the number is a self-describing number, print out a 1. If not, print out a 0 
 > 1<br/>0<br/>1
 
 ### My Solution
-Self-describing number: The value of each index is a count of how many times the index is a value.<br />
+**Self-describing number:**
+	* The value of each index is a count of how many times the index is a value.
+
 > **orderedHash**[ 0:2, 1:0, 2:2, 3:0 ]
 
 **Index:**
