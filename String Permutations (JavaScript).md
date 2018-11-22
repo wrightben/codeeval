@@ -20,7 +20,7 @@ Print to stdout, permutations of the string, comma separated, in alphabetical or
 
 >aht,ath,hat,hta,tah,tha
 
-### My Solution:<br/>
+<br /><br /><br />
 
 
 
