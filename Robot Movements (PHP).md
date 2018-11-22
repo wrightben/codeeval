@@ -11,8 +11,14 @@ A robot is located in the upper-left corner of a 4×4 grid. The robot can move e
 Print out the number of unique ways for the robot to reach its destination. The number should be printed out as an int >= 0. 
 
 ### My Solution:
+	
+**GridHelper Arguments**
 
-The following chunk of code will print out the total successful variations for walking a grid one square at a time, when it has been declared that we begin in the upper-left square, that we are trying to reach the lower-right square, that we cannot move diagonally, and that we cannot revisit a square. The GridHelper object accepts an x bound (positive int), a y bound (positive int), a “force” attribute (positive int), and an option to print the paths as they’re found (true|false).
+new GridHelper(4,4,1500,true)
+		
+* 4,4: arbitrarily large square
+* 1500: # of failures to allow
+* true: debug - print the paths as they’re found (true|false)
 
 ## Code
 
