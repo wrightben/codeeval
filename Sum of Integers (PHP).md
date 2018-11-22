@@ -19,11 +19,15 @@ e.g.
 
 > 8<br />12
 
-## Code
+<br />
+
+---
+### Code
 
 [sumOfIntegers.php](https://github.com/wrightben/codeeval/blob/master/code/sumOfIntegers.php)
 
-#### Run the script
+---
+### Run the Code
 ```sh
 time php sumOfIntegers.php input_sample_6.txt
 ```
