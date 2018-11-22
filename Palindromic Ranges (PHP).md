@@ -10,14 +10,16 @@ A range of integers is interesting if it contains an even number of palindromes.
 
 The range [L1,R1] is a subrange of [L,R] if L <= L1 <= R1 <= R. Your job is to determine how many interesting subranges of [L,R] there are.
 
-**Input Sample:**<br/>
+**Input Sample:**
+
 Your program should accept as its first argument a path to a filename. Each line in this file is one test case. Each test case will contain two positive integers, L and R (in that order), separated by a space. eg. 
 
 > 1 2<br />
 1 7<br />
 87 88
 
-**Output Sample:**<br/>
+**Output Sample:**
+
 For each line of input, print out the number of interesting subranges of [L,R] eg. 
 
 > 1<br/>
