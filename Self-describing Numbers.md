@@ -21,7 +21,6 @@ If the number is a self-describing number, print out a 1. If not, print out a 0 
 ### My Solution
 Self-describing number: A unique frequency distribution.<br />
 > **orderedHash**[ 0:2, 1:0, 2:2, 3:0 ]<br />
-<br />
 The index:<br />
 0 is a value twice: 1:0, 3:0<br />
 1 is a value zero times<br />
