@@ -22,9 +22,6 @@ Print to stdout, permutations of the string, comma separated, in alphabetical or
 
 <br />
 
-
-
-
 ---
 ### Code
 
@@ -40,15 +37,14 @@ The sorted list of permutations for a particular numerical sequence is always th
 * The final array sort is only necessary when there are duplicate letters. 
 * Words with duplicate letters could benefit by using modified starting and ending indexes:<br/>"abc" = [123,321]; "aac" = [112,211]
 
+<br/>
 
 ---
-#### Run the script
+### Run the script
 ```sh
 time node stringPermutations.js input_sample_1.txt
-```
 
-#### Run the script (cachedPermutationStrings.js stringPermutations.js) on ~Desktop
-```sh
 # cd codeeval/code
+# Concatenate files to use cachedPermutationStrings.js
 cat cachedPermutationStrings.js stringPermutations.js > ~/Desktop/runnable.js && echo -n "123456789" > ~/Desktop/input.txt && cd ~/Desktop && node runnable.js input.txt
 ```
