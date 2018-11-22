@@ -21,7 +21,7 @@ Print to stdout, permutations of the string, comma separated, in alphabetical or
 >aht,ath,hat,hta,tah,tha
 
 ### My Solution:<br/>
-*Aiming for *performance* and *clarity*.*
+*Aiming for performance and clarity.*
 
 A sorted list of the permutations of the numerical sequence *123* begins with a min equal to *123* and concludes with a max equal to *321*. It's possible to generate the complete list of permutations by counting up from the min to the max and selecting the interim numbers having the same digits (e.g. *213* and *231*).
 
