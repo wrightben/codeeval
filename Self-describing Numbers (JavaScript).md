@@ -25,10 +25,10 @@ The value of the index is a count of how many times the index is a value.
 > **orderedHash**[ 0:2, 1:0, 2:2, 3:0 ]
 
 **Index:**
-* 0 is a value twice: 1:0, 3:0<br />
-* 1 is a value zero times<br />
-* 2 is a value twice: 0:2, 2:2<br />
-* 3 is a value zero times<br />
+* 0 is a value 2 times: 1:0, 3:0<br />
+* 1 is a value 0 times<br />
+* 2 is a value 2 times: 0:2, 2:2<br />
+* 3 is a value 0 times<br />
 
 ## Code
 
