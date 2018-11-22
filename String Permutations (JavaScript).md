@@ -27,7 +27,7 @@ A sorted list of the permutations of the numerical sequence *123* begins with a 
 
 The sorted list of permutations for a particular numerical sequence is always the same. And because each respective *letter* of a string, as in "abc", has an array index equivalent to the numerical sequence ("abc" is equivalent to "123"), it isn't necessary to calculate the permutations for any *non-numeric* string. A function can return a previously-generated sorted list of permutations for a numerical sequence and swap the numbers with the respective letters.
 
-**Notes*
+**Notes**
 * The final array sort is only necessary when there are duplicate letters. 
 * Words with duplicate letters could benefit by using modified starting and ending indexes: "abc" = [123,321]; "aac" = [112,211].
 
