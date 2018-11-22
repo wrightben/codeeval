@@ -37,4 +37,3 @@ require('fs')
 	.forEach(function( word ) {
 		console.log( isSelfDescribing( word ) );
 	})
-
