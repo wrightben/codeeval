@@ -22,15 +22,13 @@ If the number is a self-describing number, print out a 1. If not, print out a 0 
 **Self-describing number:**<br />
 The value of the index is a count of how many times the index is a value.
 
+> **orderedHash**[ 0:2, 1:0, 2:2, 3:0 ]
+
 **Index:**
 * 0 has value 2: 1:0, 3:0<br />
 * 1 has value 0:
 * 2 has value 2: 0:2, 2:2<br />
 * 3 has value 0:
-
-> **orderedHash**[ 0:2, 1:0, 2:2, 3:0 ]
-
-
 
 ## Code
 
