@@ -1,17 +1,7 @@
 var	fs = require('fs'),
 	file = process.argv[2];
 
-var permutationIndexes = [
-	[1],
-	[12,21],
-	[123,321],
-	[1234,4321],
-	[12345,54321],	
-	[123456,654321],	
-	[1234567,7654321],
-	[12345678,87654321], 
-	[123456789,987654321]
-];
+
 
 
 var getPermutationString = function( length ) {
@@ -19,6 +9,19 @@ var getPermutationString = function( length ) {
 	// CACHED Permutation Strings
 	// Performance: Very Good: 7 (real 0m0.137s), 8 (real 0m0.260s), 9 (real 0m1.378s); 9-dupes (real 0m1.616s)
 	if ( typeof cachedPermutationStrings != "undefined" ) { return cachedPermutationStrings[ length - 1 ]; }
+	
+	
+	var permutationIndexes = [
+		[1],
+		[12,21],
+		[123,321],
+		[1234,4321],
+		[12345,54321],	
+		[123456,654321],	
+		[1234567,7654321],
+		[12345678,87654321], 
+		[123456789,987654321]
+	];
 
 	
 	// REAL-TIME Permutation Strings
