@@ -83,5 +83,5 @@ require('fs')
 	.readFileSync( file , 'utf-8')
 	.split(/\r?\n/)
 	.forEach(function(word){
-		console.log( line( word ) );
+		console.log( line( word ), "\n" );
 	})

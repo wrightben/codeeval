@@ -35,3 +35,8 @@ The sorted list of permutations for a particular numerical sequence is always th
 
 [cachedPermutationStrings.js](https://github.com/wrightben/codeeval/blob/master/code/cachedPermutationStrings.js) (Optional)<br />
 [stringPermutations.js](https://github.com/wrightben/codeeval/blob/master/code/StringPermutations.js)
+
+
+`
+time node stringPermutations.js input_sample_1.txt
+`
