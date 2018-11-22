@@ -31,7 +31,7 @@ Print to stdout, permutations of the string, comma separated, in alphabetical or
 #### About My Solution
 A sorted list of the permutations of the numerical sequence *"123"* begins with a min equal to *123* and concludes with a max equal to *321*. It's possible to generate the complete list of permutations by counting up from the min to the max and selecting the interim numbers having the same digits (e.g. *213* and *231*).
 
-The sorted list of permutations for a particular numerical sequence is always the same. And because each respective *letter* of a string, as in "abc", has an array index equivalent to the numerical sequence ("abc" is equivalent to "123"), it isn't necessary to calculate the permutations for any *non-numeric* string. A function can return the saved numerical sequence and substitute the numbers with the respective letters.
+The sorted list of permutations for a particular numerical sequence is always the same. And because each respective *letter* of a string, as in "abc", has an array index equivalent to the numerical sequence ("abc" is equivalent to "123"), it isn't necessary to calculate the permutations for any *non-numeric* string. A function can return the saved numerical sequence and substitute letters for numbers.
 
 **Notes**
 * The final array sort is only necessary when there are duplicate letters. 
