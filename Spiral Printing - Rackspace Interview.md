@@ -22,9 +22,6 @@ l k j i h
 
 > 1 2 3 6 9 8 7 4 5
 
-### My Solution
-
-I received this test when applying for a JavaScript engineer position with Rackspace. I wanted to try something other than a multiple-iterator solution.
 
 ## Code
 
@@ -34,3 +31,8 @@ I received this test when applying for a JavaScript engineer position with Racks
 ```sh
 time php spiralPrinting.php input_sample_5.txt
 ```
+
+
+### My Solution
+
+I received this test when applying for a JavaScript engineer position with Rackspace. I wanted to try something other than a multiple-iterator solution.

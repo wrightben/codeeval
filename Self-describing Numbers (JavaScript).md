@@ -18,7 +18,20 @@ If the number is a self-describing number, print out a 1. If not, print out a 0 
 
 > 1<br/>0<br/>1
 
-### My Solution
+
+
+## Code
+
+[selfDescribingNumbers.js](https://github.com/wrightben/codeeval/blob/master/code/selfDescribingNumbers.js)
+
+#### Run the script
+```sh
+time node selfDescribingNumbers.js input_sample_4.txt
+```
+
+
+
+### About My Solution
 **Self-describing number:**<br />
 The value of the index is a count of how many times the index is a value.
 
@@ -29,12 +42,3 @@ The value of the index is a count of how many times the index is a value.
 * 1 has value 0:
 * 2 has value 2: 0:2, 2:2<br />
 * 3 has value 0:
-
-## Code
-
-[selfDescribingNumbers.js](https://github.com/wrightben/codeeval/blob/master/code/selfDescribingNumbers.js)
-
-#### Run the script
-```sh
-time node selfDescribingNumbers.js input_sample_4.txt
-```
