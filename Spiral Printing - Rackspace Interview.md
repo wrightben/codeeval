@@ -1,6 +1,6 @@
 # Spiral Printing<br />
 RackSpace Interview<br />
-Posted on October 8, 2011 by **omitted**
+Posted on October 8, 2011
 
 ## Description:
 
