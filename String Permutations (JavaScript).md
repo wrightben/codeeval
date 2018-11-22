@@ -29,7 +29,7 @@ The sorted list of permutations for a particular numerical sequence is always th
 
 **Notes**
 * The final array sort is only necessary when there are duplicate letters. 
-* Words with duplicate letters could benefit by using modified starting and ending indexes:<br/>"abc" = [123,321]; "aac" = [112,211].
+* Words with duplicate letters could benefit by using modified starting and ending indexes:<br/>"abc" = [123,321]; "aac" = [112,211]
 
 
 
