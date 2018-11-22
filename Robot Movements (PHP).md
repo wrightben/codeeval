@@ -17,7 +17,7 @@ Print out the number of unique ways for the robot to reach its destination. The 
 
 [robotMovements.php](https://github.com/wrightben/codeeval/blob/master/code/robotMovements.php)
 
-### About My Solution
+#### About My Solution
 
 new GridHelper(**4,4,1500,true**)
 		
