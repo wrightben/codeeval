@@ -22,15 +22,21 @@ l k j i h
 
 > 1 2 3 6 9 8 7 4 5
 
-### My Solution
+<br />
 
-I received this test when applying for a JavaScript engineer position with Rackspace. I wanted to try something other than a multiple-iterator solution.
-
-## Code
+---
+### Code
 
 [spiralPrinting.php](https://github.com/wrightben/codeeval/blob/master/code/spiralPrinting.php)
 
-#### Run the script
+#### About My Solution:
+
+I received this test when applying for a JavaScript engineer position with Rackspace. I wanted to try something other than a multiple-iterator solution.
+
+<br />
+
+---
+### Run the script
 ```sh
 time php spiralPrinting.php input_sample_5.txt
 ```
