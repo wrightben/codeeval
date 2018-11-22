@@ -20,7 +20,7 @@ Print out the duplicated entry, each one on a new line eg
 
 ## Code
 
-[stringPermutations.js](https://github.com/wrightben/codeeval/blob/master/code/arrayAbsurdity.php)
+[arrayAbsurdity.php](https://github.com/wrightben/codeeval/blob/master/code/arrayAbsurdity.php)
 
 #### Run the script
 ```sh
