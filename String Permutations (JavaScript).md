@@ -22,6 +22,16 @@ Print to stdout, permutations of the string, comma separated, in alphabetical or
 
 ### My Solution:<br/>
 
+
+
+
+---
+### Code
+
+[cachedPermutationStrings.js](https://github.com/wrightben/codeeval/blob/master/code/cachedPermutationStrings.js) (Optional)<br />
+[stringPermutations.js](https://github.com/wrightben/codeeval/blob/master/code/StringPermutations.js)
+
+### About My Solution
 A sorted list of the permutations of the numerical sequence *"123"* begins with a min equal to *123* and concludes with a max equal to *321*. It's possible to generate the complete list of permutations by counting up from the min to the max and selecting the interim numbers having the same digits (e.g. *213* and *231*).
 
 The sorted list of permutations for a particular numerical sequence is always the same. And because each respective *letter* of a string, as in "abc", has an array index equivalent to the numerical sequence ("abc" is equivalent to "123"), it isn't necessary to calculate the permutations for any *non-numeric* string. A function can return a previously-generated sorted list of permutations for a numerical sequence and swap the numbers with the respective letters.
@@ -32,11 +42,6 @@ The sorted list of permutations for a particular numerical sequence is always th
 
 
 ---
-### Code
-
-[cachedPermutationStrings.js](https://github.com/wrightben/codeeval/blob/master/code/cachedPermutationStrings.js) (Optional)<br />
-[stringPermutations.js](https://github.com/wrightben/codeeval/blob/master/code/StringPermutations.js)
-
 #### Run the script
 ```sh
 time node stringPermutations.js input_sample_1.txt
