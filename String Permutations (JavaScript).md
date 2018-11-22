@@ -47,6 +47,7 @@ time node stringPermutations.js input_sample_1.txt
 # Or ...
 
 # Concatenate files to use cachedPermutationStrings.js
+# This command is multiple lines:
 cat cachedPermutationStrings.js stringPermutations.js > ~/Desktop/runnable.js \
 && echo -n "123456789" > ~/Desktop/input.txt && cd ~/Desktop && node runnable.js input.txt
 ```
