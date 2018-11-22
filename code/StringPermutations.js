@@ -2,8 +2,6 @@ var	fs = require('fs'),
 	file = process.argv[2];
 
 
-
-
 var getPermutationString = function( length ) {
 
 	// CACHED Permutation Strings
