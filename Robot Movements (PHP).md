@@ -10,7 +10,13 @@ A robot is located in the upper-left corner of a 4×4 grid. The robot can move e
 
 Print out the number of unique ways for the robot to reach its destination. The number should be printed out as an int >= 0. 
 
+### My Solution:
 
+new GridHelper(**4,4,1500,true**)
+		
+* 4,4: arbitrarily large square
+* 1500: # of failures to allow
+* true: debug - print the paths as they’re found (true|false)
 
 ## Code
 
@@ -20,12 +26,3 @@ Print out the number of unique ways for the robot to reach its destination. The 
 ```sh
 time php robotMovements.php
 ```
-
-
-### About My Solution:
-
-new GridHelper(**4,4,1500,true**)
-		
-* 4,4: arbitrarily large square
-* 1500: # of failures to allow
-* true: debug - print the paths as they’re found (true|false)
