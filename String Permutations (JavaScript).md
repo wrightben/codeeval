@@ -42,3 +42,7 @@ The sorted list of permutations for a particular numerical sequence is always th
 ```sh
 time node stringPermutations.js input_sample_1.txt
 ```
+
+```sh
+cat cachedPermutationStrings.js stringPermutations.js > ~/Desktop/runnable.js && echo -n "123456789" > ~/Desktop/input.txt && cd ~/Desktop && node runnable.js input.txt
+```
