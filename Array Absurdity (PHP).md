@@ -18,11 +18,18 @@ Print out the duplicated entry, each one on a new line eg
 
 > 0<br />4
 
-## Code
+<br />
+
+---
+### Code
 
 [arrayAbsurdity.php](https://github.com/wrightben/codeeval/blob/master/code/arrayAbsurdity.php)
 
-#### Run the script
+
+<br />
+
+---
+### Run the script
 ```sh
 time php arrayAbsurdity.php input_sample_2.txt
 ```

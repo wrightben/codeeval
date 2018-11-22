@@ -4,7 +4,7 @@ Revised Nov 20, 2018<br />
 Posted Oct 10, 2011
 
 
-## Description:
+## Description
 
 Write a program to print out all the permutations of a string in alphabetical order.
 

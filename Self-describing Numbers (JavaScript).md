@@ -2,7 +2,7 @@
 www.CodeEval.com<br />
 Thanksgiving 2018
 
-## Description:
+## Description
 
 A number is a self-describing number when (assuming digit positions are labeled 0 to N-1), the digit in each position is equal to the number of times that that digit appears in the number.
 
@@ -18,7 +18,14 @@ If the number is a self-describing number, print out a 1. If not, print out a 0 
 
 > 1<br/>0<br/>1
 
-### My Solution
+<br />
+
+---
+### Code
+
+[selfDescribingNumbers.js](https://github.com/wrightben/codeeval/blob/master/code/selfDescribingNumbers.js)
+
+#### About My Solution
 **Self-describing number:**<br />
 The value of the index is a count of how many times the index is a value.
 
@@ -30,11 +37,10 @@ The value of the index is a count of how many times the index is a value.
 * 2 has value 2: 0:2, 2:2<br />
 * 3 has value 0:
 
-## Code
+<br />
 
-[selfDescribingNumbers.js](https://github.com/wrightben/codeeval/blob/master/code/selfDescribingNumbers.js)
-
-#### Run the script
+---
+### Run the script
 ```sh
 time node selfDescribingNumbers.js input_sample_4.txt
 ```

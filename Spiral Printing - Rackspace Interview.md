@@ -2,7 +2,7 @@
 RackSpace Interview<br />
 Posted on October 8, 2011
 
-## Description:
+## Description
 
 Write a function to print a 2-D array (n x m) in spiral order (clockwise).
 
