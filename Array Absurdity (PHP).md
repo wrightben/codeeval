@@ -29,7 +29,7 @@ Print out the duplicated entry, each one on a new line eg
 <br />
 
 ---
-### Run It!
+### Commands
 ```sh
 time php arrayAbsurdity.php input_sample_2.txt
 ```

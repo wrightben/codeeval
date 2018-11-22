@@ -26,7 +26,7 @@ new GridHelper(**4,4,1500,true**)
 * true: debug - print the paths as they’re found (true|false)
 
 ---
-### Run It!
+### Commands
 ```sh
 time php robotMovements.php
 ```
