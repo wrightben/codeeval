@@ -37,8 +37,6 @@ The sorted list of permutations for a particular numerical sequence is always th
 [stringPermutations.js](https://github.com/wrightben/codeeval/blob/master/code/StringPermutations.js)
 
 
-`
-
+```sh
 time node stringPermutations.js input_sample_1.txt
-
 `
