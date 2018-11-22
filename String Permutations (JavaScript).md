@@ -20,9 +20,7 @@ Print to stdout, permutations of the string, comma separated, in alphabetical or
 
 >aht,ath,hat,hta,tah,tha
 
----
-
-## My Solution:<br/>
+### My Solution:<br/>
 
 A sorted list of the permutations of the numerical sequence *"123"* begins with a min equal to *123* and concludes with a max equal to *321*. It's possible to generate the complete list of permutations by counting up from the min to the max and selecting the interim numbers having the same digits (e.g. *213* and *231*).
 
@@ -32,9 +30,9 @@ The sorted list of permutations for a particular numerical sequence is always th
 * The final array sort is only necessary when there are duplicate letters. 
 * Words with duplicate letters could benefit by using modified starting and ending indexes:<br/>"abc" = [123,321]; "aac" = [112,211]
 
----
 
-## Code:
+
+## Code
 
 [cachedPermutationStrings.js](https://github.com/wrightben/codeeval/blob/master/code/cachedPermutationStrings.js) (Optional)<br />
 [stringPermutations.js](https://github.com/wrightben/codeeval/blob/master/code/StringPermutations.js)
