@@ -33,5 +33,5 @@ The sorted list of permutations for a particular numerical sequence is always th
 
 ## Code
 
-[StringPermutations.js](https://github.com/wrightben/codeeval/blob/master/code/StringPermutations.js)
+[StringPermutations.js](https://github.com/wrightben/codeeval/blob/master/code/StringPermutations.js)<br />
 [cachedPermutationStrings.js](https://github.com/wrightben/codeeval/blob/master/code/cachedPermutationStrings.js)
