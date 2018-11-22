@@ -20,7 +20,7 @@ If the number is a self-describing number, print out a 1. If not, print out a 0 
 
 ### My Solution
 **Self-describing number:**<br />
-- The value of each index is a count of how many times the index is a value.
+The value of each index is a count of how many times the index is a value.
 
 > **orderedHash**[ 0:2, 1:0, 2:2, 3:0 ]
 
