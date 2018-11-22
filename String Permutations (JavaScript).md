@@ -124,7 +124,7 @@ var line = function( word ) {
 	}
 
 	// Post-sort?
-	if (dupes) { psArray.sort(); } 
+	if (dupes == true) { psArray.sort(); } 
 	
 	
 	return psArray.join(",");
