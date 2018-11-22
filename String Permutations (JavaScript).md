@@ -33,7 +33,7 @@ A sorted list of the permutations of the numerical sequence *"123"* begins with 
 
 The sorted list of permutations for a particular numerical sequence is always the same. And because each respective *letter* of a word has a numerical position, it isn't necessary to calculate the permutations for any *non-numeric* string. A function can return the saved numerical sequence and substitute letters for numbers.
 
-<br />e.g. Both "abc" and "cat" are equivalent to "123".
+e.g. Both "abc" and "cat" are equivalent to "123".
 
 **Notes**
 * The final array sort is only necessary when there are duplicate letters. 
