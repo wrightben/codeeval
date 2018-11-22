@@ -38,11 +38,13 @@ The sorted list of permutations for a particular numerical sequence is always th
 [cachedPermutationStrings.js](https://github.com/wrightben/codeeval/blob/master/code/cachedPermutationStrings.js) (Optional)<br />
 [stringPermutations.js](https://github.com/wrightben/codeeval/blob/master/code/StringPermutations.js)
 
-
+#### Run the script
 ```sh
 time node stringPermutations.js input_sample_1.txt
 ```
 
+#### Run the script (cachedPermutationStrings.js stringPermutations.js) on ~Desktop
 ```sh
+# cd codeeval/code
 cat cachedPermutationStrings.js stringPermutations.js > ~/Desktop/runnable.js && echo -n "123456789" > ~/Desktop/input.txt && cd ~/Desktop && node runnable.js input.txt
 ```
