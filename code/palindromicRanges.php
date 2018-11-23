@@ -6,7 +6,8 @@ class SequenceHelper {
     
 	private $rcount = 0;
 	private $cache = array();
-
+	
+	// getPalindromicSubRanges
 	public function getPalindromicSubRanges($range) {
 
 		$this->cache[ join("",$range) ] = true;
@@ -35,20 +36,22 @@ class SequenceHelper {
 		return $this->rcount;
 	}
     
+	// getPalindromeCount
 	public function getPalindromeCount( $range ) {
 
-	$pcount = 0;
+		$pcount = 0;
 
-	foreach($range as $item) {
-		if ( $this->isElementPalindrome( $item ) ) {
-			$pcount += 1;
+		foreach($range as $item) {
+			if ( $this->isElementPalindrome( $item ) ) {
+				$pcount += 1;
+			}
 		}
-	}
 
 		return $pcount;
 
 	}
 
+	// isElementPalindrome
 	public function isElementPalindrome( $item ) {
 
 		$letters = str_split( $item );
