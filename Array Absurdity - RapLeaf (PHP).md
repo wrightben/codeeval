@@ -53,8 +53,6 @@ But notice that *( 3 x (3 + 1) ) / 2* is equal to *( (5 - 2) x (5 - 1) ) / 2*. T
 
  which is very similar to **( (n - 2) x (n - 1) ) / 2** when n = 5!
 
-And all of the equations in the previous line turn  
-
 
 
 
