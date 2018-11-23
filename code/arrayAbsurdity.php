@@ -6,7 +6,6 @@
 	$lines =  explode( "\n", file_get_contents( $argv[1] ) ) : 
 	exit( "Must provide a file" );
 
-
 foreach ($lines as $line) {
 	
 	if (strlen($line) < 3) { continue; }
