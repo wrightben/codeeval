@@ -13,7 +13,7 @@ var isSelfDescribing = function( number ) {
 		h[1(e)] = _ (++ 1)
 	*/
 
-	var n = number.split(""),
+	var	n = number.split(""),
 		h = new Array(n.length);
 
 	n.forEach(function(e,i) { // element, iterator (0,1,...)
