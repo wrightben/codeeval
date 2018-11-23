@@ -44,7 +44,7 @@ Some Algebra:
 
 If **0,1,2,3,0** is 5-digits long, the length is 5, or **n = 5**. The expected sum will then be equal to: 
 
-**( (n - 2) x (n - 1) ) / 2** &nbsp;&nbsp;which is the same as&nbsp;&nbsp; *( 3 x (3 + 1) ) / 2* = **6**
+0 + 1 + 2 + 3 = **( (n - 2) x (n - 1) ) / 2** &nbsp;&nbsp;which is the same as&nbsp;&nbsp; *( 3 x (3 + 1) ) / 2* = **6**
 
 
 
