@@ -39,8 +39,8 @@ The *expected* sum of the conforming sequence is the sum of the digits in the se
 
 More examples:
 
-0, 1, 2, 3, 4 = 10 = *( 4 x (4 + 1) ) / 2*
-0, 1, 2, 3, 4, 5 = 15 = *( 5 x (5 + 1) ) / 2*
+1. 0, 1, 2, 3, 4 = 10 = *( 4 x (4 + 1) ) / 2*
+2. 0, 1, 2, 3, 4, 5 = 15 = *( 5 x (5 + 1) ) / 2*
 
 
 |  | 0  Repeats | 1 Repeats | 2 Repeats | 3 Repeats|
