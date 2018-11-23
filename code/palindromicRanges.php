@@ -62,13 +62,13 @@ class SequenceHelper {
     
 }
 
-// LINES
+// Lines
 ( isset( $argv[1] ) ) ? 
 	$lines =  explode("\n", file_get_contents( $argv[1] ) ) : 
 	exit( "Must provide a file" );
 
 
-// LOOP
+
 foreach ($lines as $line) {
 
 	if (strlen($line) == 0) { continue; }
