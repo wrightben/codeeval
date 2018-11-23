@@ -25,7 +25,7 @@ getPaths( gridSize, limit, debug )
 * limit(int): Num of failures to allow. Try 1500 for 4x4.
 * debug(true|false): Print the paths as they’re found.
 
-**Board Constraints**
+<br />
 
 Movements:
 
