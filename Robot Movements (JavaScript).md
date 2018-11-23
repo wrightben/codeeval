@@ -8,7 +8,8 @@ A robot is located in the upper-left corner of a 4×4 grid. The robot can move e
 
 **Output sample:**
 
-Print out the number of unique ways for the robot to reach its destination. The number should be printed out as an int >= 0. 
+Print out the number of unique ways for the robot to reach its destination. For a 4 x 4 grid:
+`$ 184`
 
 <br />
 
