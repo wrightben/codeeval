@@ -25,12 +25,12 @@ Print out the duplicated entry, each one on a new line eg
 ---
 ### Code
 
-[arrayAbsurdity.php](https://github.com/wrightben/codeeval/blob/master/code/arrayAbsurdity.js)
+[arrayAbsurdity.php](https://github.com/wrightben/codeeval/blob/master/code/arrayAbsurdity.php)
 
 <br/>
 
 ---
 ### Run the Code
 ```sh
-time php arrayAbsurdity.js input_sample_2.txt
+time php arrayAbsurdity.php input_sample_2.txt
 ```
