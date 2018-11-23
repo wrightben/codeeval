@@ -44,12 +44,6 @@ Some Algebra:
 
 If **0,1,2,3,0** is 5-digits long, the length is 5. **Length = 5**. To get the expected sum for this sequence, use:
 
-*( 3 x (3 + 1) ) / 2*
-
-But notice that *( 3 x (3 + 1) ) / 2* is equal to *( (5 - 2) x (5 - 1) ) / 2*. They both turn out to be:
-
-*( 3 x 4 ) / 2*
-
 When n = 5, the following is also the same: **( (n - 2) x (n - 1) ) / 2**
 
 
