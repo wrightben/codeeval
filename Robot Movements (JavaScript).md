@@ -32,6 +32,9 @@ getPaths( gridSize, limit, debug )
 
 <br />
 
+In 2010, I created {Text}, a website for sharing regular expressions. The sharable urls contained both data and expressions. In December of 2012, I created BookmarkChess, a fully accessible (desktop, mobile), real-time chessboard that inspired the UX now delivered by sites like lichess.org and chess.com. BookmarkChess allowed for sharable chess experiences with the game state embedded in the url. I'm leveraging my experience with those sites when I shift from a grid metaphor (an array of arrays) into a linear metaphor (a single array).
+
+
 
 ---
 ### Run the Code
