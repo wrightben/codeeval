@@ -8,6 +8,8 @@ $contents = readfile($file);
 $contents = explode("\n", $contents);
 
 
+print "Jesus Fuck.";
+
 foreach ($contents as $line) {
 	
 	if (strlen($line) < 3) { continue; }
