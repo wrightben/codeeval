@@ -1,12 +1,10 @@
 #!/usr/bin/php
 <?php
 
-$file;
-( isset( $argv[1] ) ) ? $file = $argv[1] : exit( "Must provide a file" );
-
-$contents = file_get_contents($file);
-$lines = explode("\n", $contents);
-
+// Lines
+( isset( $argv[1] ) ) ? 
+	$lines =  explode("\n", file_get_contents( $argv[1] ) ) : 
+	exit( "Must provide a file" );
 
 
 foreach ($lines as $line) {
