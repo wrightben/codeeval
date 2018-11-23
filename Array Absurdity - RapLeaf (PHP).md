@@ -35,8 +35,7 @@ Print out the duplicated entry, each one on a new line eg
 [The Art of the Infinite: The Pleasures of Mathematics](https://www.amazon.com/Art-Infinite-Pleasures-Mathematics/dp/1608198693):<br />
 > There is a touch of the showman in mathematical presentations,<br />where the deductions are made to look effortless.
 
-The *expected* sum of the conforming sequence is the sum of the digits in the sequence if none were repeated. The book above shows that the sum of an ordered sequence beginning with 0 (like 0,1,2,3) is:
-> (3 * 4) / 2
+The *expected* sum of the conforming sequence is the sum of the digits in the sequence if none were repeated. The book above shows that the sum of an ordered sequence beginning with 0 (like 0,1,2,3) is: *( 3 x (3 + 1) ) / 2*.
 
 
 |  | 0  Repeats | 1 Repeats | 2 Repeats | 3 Repeats|
