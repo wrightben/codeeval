@@ -4,61 +4,61 @@
 
 class SequenceHelper {
     
-    private $rcount = 0;
-    private $cache = array();
-    
-    public function getPalindromicSubRanges($range) {
+	private $rcount = 0;
+	private $cache = array();
 
-        $this->cache[ join("",$range) ] = true;
-        
-        $pc = $this->getPalindromeCount($range);
+	public function getPalindromicSubRanges($range) {
 
-        if ( ($pc % 2) == 0 ) { $this->rcount += 1; }
+		$this->cache[ join("",$range) ] = true;
 
-        $l = count($range);     
-      
-        if ($l > 1) {
-            
-            $sr1 = array_slice($range,0,-1); //First Chunk
-            $sr2 = array_slice($range,1); //Second Chunk   
+		$pc = $this->getPalindromeCount($range);
 
-            if(!(isset($this->cache[join("",$sr1)]))) {
-                $this->getPalindromicSubRanges($sr1);
-            }
+		if ( ($pc % 2) == 0 ) { $this->rcount += 1; }
 
-            if(!(isset($this->cache[join("",$sr2)]))) {
-                $this->getPalindromicSubRanges($sr2);
-            }
-            
-        }
+		$l = count($range);     
 
-        return $this->rcount;
-    }
-    
-		public function getPalindromeCount( $range ) {
+		if ($l > 1) {
+	
+			$sr1 = array_slice($range,0,-1); //First Chunk
+			$sr2 = array_slice($range,1); //Second Chunk   
 
-		$pcount = 0;
-
-		foreach($range as $item) {
-			if ( $this->isElementPalindrome( $item ) ) {
-				$pcount += 1;
+			if(!(isset($this->cache[join("",$sr1)]))) {
+				$this->getPalindromicSubRanges($sr1);
 			}
+
+			if(!(isset($this->cache[join("",$sr2)]))) {
+				$this->getPalindromicSubRanges($sr2);
+			}
+	
 		}
 
-			return $pcount;
-
-		}
+		return $this->rcount;
+	}
     
-		public function isElementPalindrome( $item ) {
+	public function getPalindromeCount( $range ) {
 
-			$letters = str_split( $item );
-			$meti = join( "", array_reverse( $letters ) );
+	$pcount = 0;
 
-			if ( "".$meti == "".$item ) { return true; }
-			
-			return false;
-
+	foreach($range as $item) {
+		if ( $this->isElementPalindrome( $item ) ) {
+			$pcount += 1;
 		}
+	}
+
+		return $pcount;
+
+	}
+
+	public function isElementPalindrome( $item ) {
+
+		$letters = str_split( $item );
+		$meti = join( "", array_reverse( $letters ) );
+
+		if ( "".$meti == "".$item ) { return true; }
+		
+		return false;
+
+	}
     
 }
 
