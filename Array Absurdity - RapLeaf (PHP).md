@@ -35,7 +35,9 @@ Print out the duplicated entry, each one on a new line eg
 [The Art of the Infinite: The Pleasures of Mathematics](https://www.amazon.com/Art-Infinite-Pleasures-Mathematics/dp/1608198693):<br />
 > There is a touch of the showman in mathematical presentations,<br />where the deductions are made to look effortless.
 
-| Index | 0  Repeats | 1 Repeats | 2 Repeats | 3 Repeats|
+The expected sum of a conforming sequence is the sum of the digits in the sequence if none were repeated. In a conforming 5-digit sequence, the digits would be: 0,1,2,3. The length (n) is 5, but 0 takes up a spot, and the duplicate number takes up a spot.
+
+|  | 0  Repeats | 1 Repeats | 2 Repeats | 3 Repeats|
 |---:|---:|---:|---:|---:|
 |0 | 0 | 0 | 0 | 0|
 |1 | 1 | 1 | 1 | 1|
@@ -46,6 +48,7 @@ Print out the duplicated entry, each one on a new line eg
 |Expected Sum | 6 | 6 | 6 | 6|
 |Difference | 0 | 1 | 2 | 3|
 
+<br />
 
 ---
 ### Run the Code
