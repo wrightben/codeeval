@@ -99,4 +99,4 @@ var getPaths = function( gridSize, limit, debug ) {
 };
 
 
-console.log( getPaths( 4, 3500, true ) );
+console.log( getPaths( 3, 2000, true ) );
