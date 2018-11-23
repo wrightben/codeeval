@@ -15,7 +15,7 @@ Print out the number of unique ways for the robot to reach its destination. The 
 ---
 ### Code
 
-[robotMovements.php](https://github.com/wrightben/codeeval/blob/master/code/robotMovements.php)
+[robotMovements.js](https://github.com/wrightben/codeeval/blob/master/code/robotMovements.js)
 
 #### About My Solution
 
