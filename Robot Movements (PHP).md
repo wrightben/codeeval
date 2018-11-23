@@ -1,4 +1,4 @@
-# Robot Movements (PHP)<br />
+# Robot Movements (JavaScript)<br />
 [www.CodeEval.com](https://web.archive.org/web/20150721085940/https://www.codeeval.com/public_sc/57/)<br />
 Posted on October 16, 2011
 
@@ -19,14 +19,14 @@ Print out the number of unique ways for the robot to reach its destination. The 
 
 #### About My Solution
 
-new GridHelper(**4,4,1500,true**)
+getPaths( gridSize, limit, debug )
 		
-* 4,4: arbitrarily large square
-* 1500: # of failures to allow
-* true: debug - print the paths as they’re found (true|false)
+* gridSize(int): Arbitrarily large square
+* limit(int): Num of failures to allow. Try 1500 for 4x4.
+* debug(true|false): Print the paths as they’re found.
 
 ---
 ### Run the Code
 ```sh
-time php robotMovements.php
+time node robotMovements.js
 ```
