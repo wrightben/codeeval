@@ -43,7 +43,7 @@ More examples:
 
 Some Algebra:
 
-If *"0,1,2,3,0"* is 5-digits long, the length is 5. Length = 5. To get the expected sum (the sum with no repeats) for this sequence, use:
+If **0,1,2,3,0** is 5-digits long, the length is 5. Length = 5. To get the expected sum (the sum with no repeats) for this sequence, use:
 
 *( 3 x (3 + 1) ) / 2*
 
