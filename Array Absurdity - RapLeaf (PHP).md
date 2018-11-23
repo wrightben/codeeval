@@ -51,7 +51,7 @@ But notice that *( 3 x (3 + 1) ) / 2* is equal to *( (5 - 2) x (5 - 1) ) / 2*. T
 
 *( 3 x 4 ) / 2*
 
- which is very similar to **( (n - 2) x (n - 1) ) / 2** when n = 5!
+When n = 5, the following is also the same: **( (n - 2) x (n - 1) ) / 2**
 
 
 
