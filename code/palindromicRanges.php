@@ -35,19 +35,19 @@ class SequenceHelper {
         return $this->rcount;
     }
     
-    public function getPalindromeCount( $range ) {
-        
-        $pcount = 0;
-        
-        foreach($range as $item) {
-            if ( $this->isElementPalindrome( $item ) ) {
-                $pcount += 1;
-            }
-        }
-        
-        return $pcount;
-        
-    }
+		public function getPalindromeCount( $range ) {
+
+		$pcount = 0;
+
+		foreach($range as $item) {
+			if ( $this->isElementPalindrome( $item ) ) {
+				$pcount += 1;
+			}
+		}
+
+			return $pcount;
+
+		}
     
     public function isElementPalindrome( $item ) {
        
