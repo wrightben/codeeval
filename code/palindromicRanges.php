@@ -49,16 +49,16 @@ class SequenceHelper {
 
 		}
     
-    public function isElementPalindrome( $item ) {
-       
-		$letters = str_split( $item );
-		$meti = join( "", array_reverse( $letters ) );
-		if ( "".$meti == "".$item ) {
-			return true;
-        }
-		return false;
-		
-    }
+		public function isElementPalindrome( $item ) {
+
+			$letters = str_split( $item );
+			$meti = join( "", array_reverse( $letters ) );
+
+			if ( "".$meti == "".$item ) { return true; }
+			
+			return false;
+
+		}
     
 }
 
