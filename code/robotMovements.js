@@ -88,7 +88,7 @@ var getPaths = function( gridSize, limit, debug ) {
 		
 		board = new Array( board_length );
 		currentPath = walkPath( 1, gridSize, board );
-		if ( debug == true ) { console.log(currentPath); }
+		if ( debug == true ) { console.log(currentPath.length, currentPath); }
 		( board[ board_length - 1 ] == 1 ) ? paths[ currentPath.join(",") ] = 1 : paths.blocked += 1;
 
 	}
@@ -99,4 +99,4 @@ var getPaths = function( gridSize, limit, debug ) {
 };
 
 
-console.log( getPaths( 5, 100500, false ) );
+console.log( getPaths( 4, 3500, true ) );
