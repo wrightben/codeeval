@@ -28,7 +28,6 @@ Print out the duplicated entry, each one on a new line eg
 
 [arrayAbsurdity.php](https://github.com/wrightben/codeeval/blob/master/code/arrayAbsurdity.php)
 
-<br/>
 
 #### About My Solution
 
