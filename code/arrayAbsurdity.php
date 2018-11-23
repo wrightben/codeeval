@@ -22,7 +22,6 @@ foreach ($lines as $line) {
 	
 	print ( $sum - $expected ) . "\n";
 
-
 }
 
 exit;
