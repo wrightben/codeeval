@@ -14,15 +14,14 @@ foreach ($lines as $line) {
 	$segments = preg_split( "/;/", $line ); // Or explode( ";", $line )
 	$length = $segments[0];
 	$list = preg_split("/,/",$segments[1]);
-	$expected = 0;
-	$actual = 0;
 
-	for ($i = 0; $i < $length; $i++) {
-		$expected = $expected + $i;
-		$actual += $list[$i];
-	}
+	$sum = array_sum( $list ); // Or foreach
+
+	/* ( (n^2 -3n +2)/2 ) */	
+	$expected = ( ( $length * $length ) - (3 * $length ) + 2 ) / 2;
 	
-	print $length - ( abs( $actual - $expected ) + 1 )."\n";
+	print ( $sum - $expected ) . "\n";
+
 
 }
 
