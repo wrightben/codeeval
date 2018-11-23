@@ -32,7 +32,7 @@ Movements:
 * Up/Down: 	-/+ gridSize
 * Left/Right:	-/+ 1
 
-Boundaries: (pos: current position; 1-based)
+Boundaries: (pos = current position; 1-based)
 
 * Top:		(pos - gridSize) < 1
 * Bottom:	(pos + gridSize) > Math.pow(gridSize, 2) // Or board.length
