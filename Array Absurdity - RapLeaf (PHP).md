@@ -34,7 +34,7 @@ Print out the duplicated entry, each one on a new line eg
 [The Art of the Infinite: The Pleasures of Mathematics](https://www.amazon.com/Art-Infinite-Pleasures-Mathematics/dp/1608198693):<br />
 > There is a touch of the showman in mathematical presentations,<br />where the deductions are made to look effortless.
 
-The book above shows that the sum of a sequence beginning with 0 (like 0,1,2,3) is: *( 3 x (3 + 1) ) / 2*. This is the **expected sum**–the sum expected when no digits are repeated.
+The book above shows that the sum of a sequence beginning with 0 (like 0,1,2,3) is: *( 3 x (3 + 1) ) / 2*. This is the the sum expected when no digits are repeated, or the **expected sum**.
 
 More examples:
 
