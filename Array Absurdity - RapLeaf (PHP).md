@@ -47,9 +47,13 @@ If **0,1,2,3,0** is 5-digits long, the length is 5. **Length = 5**. To get the e
 
 *( 3 x (3 + 1) ) / 2*
 
-But notice that *( 3 x (3 + 1) ) / 2* is equal to *( (5 - 2) x (5 - 1) ) / 2*, which is very similar to **( (n - 2) x (n - 1) ) / 2** when n = 5!
+But notice that *( 3 x (3 + 1) ) / 2* is equal to *( (5 - 2) x (5 - 1) ) / 2*. They both turn out to be:
 
-And all of the equations in the previous line turn out to be: *( 3 x 4 ) / 2*. 
+*( 3 x 4 ) / 2*
+
+ which is very similar to **( (n - 2) x (n - 1) ) / 2** when n = 5!
+
+And all of the equations in the previous line turn  
 
 
 
