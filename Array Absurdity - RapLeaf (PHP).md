@@ -44,7 +44,7 @@ The book above shows an easy way to sum a sequence beginning with 0 when no digi
 
 If **0,1,2,3,0** is 5-digits long, the length is 5, or **n = 5**. And the expected sum is equal to: 
 
-0 + 1 + 2 + 3 = **6** &nbsp;&nbsp;which is the same as&nbsp;&nbsp; **( (n - 2) x (n - 1) ) / 2** = **6** (when **n = 5**)
+0 + 1 + 2 + 3 = **6** &nbsp;&nbsp;which is the same as&nbsp;&nbsp; **( (n - 2) x (n - 1) ) / 2** = **6** (because **n = 5**)
 
 If 0 + 1 + 2 + 3 + 3 = **9** and **( (n - 2) x (n - 1) ) / 2** = **6**, we know the **3** must be repeated when we subtract the 6 from the 9 as shown below. See the "3 Repeats" column below.
 
