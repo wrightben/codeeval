@@ -35,7 +35,7 @@ var isValidMove = function( move, pos, gridSize, board ) {
 	
 	if ( "r" == move ) {
 		next = pos + 1;
-		if (pos % gridSize == 0) { return false; } // Bound
+		if (pos % gridSize == 0) { return false; } // Bound (Note: Based on current position, not next!)
 	}	
 
 	if ( board[ next - 1 ] == 1 ) { return false; } // Already Visited
