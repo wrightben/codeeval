@@ -4,9 +4,9 @@ Posted on October 10, 2011
 
 ## Description
 
-A positive integer is a palindrome if its decimal representation (without leading zeros) is a palindromic string (a string that reads the same forwards and backwards). For example, the numbers 5, 77, 363, 4884, 11111, 12121 and 349943 are palindromes.
+A positive integer is a palindrome if its decimal representation (without leading zeros) is a palindromic string (a string that reads the same forwards and backwards). For example, the numbers **5**, 77, 363, 4884, 11111, 12121 and 349943 are palindromes.
 
-A range of integers is interesting if it contains an even number of palindromes. The range [L, R], with L <= R, is defined as the sequence of integers from L to R (inclusive): (L, L+1, L+2, \..., R-1, R). L and R are the range's first and last numbers.
+A range of integers is interesting if it contains an **even number** of palindromes. The range [L, R], with L <= R, is defined as the sequence of integers from L to R (inclusive): (L, L+1, L+2, \..., R-1, R). L and R are the range's first and last numbers.
 
 The range [L1,R1] is a subrange of [L,R] if L <= L1 <= R1 <= R. Your job is to determine how many interesting subranges of [L,R] there are.
 
@@ -34,6 +34,12 @@ For the curious: In the third example, the subranges are: [87](0 palindromes), [
 ### Code
 
 [palindromicRanges.php](https://github.com/wrightben/codeeval/blob/master/code/palindromicRanges.php)
+
+#### About My Solution
+
+> Range: 87,88<br />
+Range + Subranges: [87](0 palindromes), [87,88](1 palindrome),[88](1 palindrome)<br />
+1 *interesting* subrange: [87](0 palindromes)
 
 <br />
 
