@@ -32,7 +32,7 @@ Print out the duplicated entry, each one on a new line eg
 
 #### About My solution
 
-> There is a touch of the showman in mathematical presentations, where the deductions are made to look effortless.
+> There is a touch of the showman in mathematical presentations,<br />where the deductions are made to look effortless.
 
 – [The Art of the Infinite: The Pleasures of Mathematics](https://www.amazon.com/Art-Infinite-Pleasures-Mathematics/dp/1608198693)
 
