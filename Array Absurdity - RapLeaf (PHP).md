@@ -41,6 +41,10 @@ More examples:
 0, 1, 2, 3, 4 = **10** = *( 4 x (4 + 1) ) / 2*<br />
 0, 1, 2, 3, 4, 5 = **15** = *( 5 x (5 + 1) ) / 2*
 
+Some Algebra:
+
+if (0,0,1,2,3) is 5-digits long, the length is 5. We'll say n = 5. To get the expected sum for the sequence with no repeats (0,1,2,3), use: *( 3 x (3 + 1) ) / 2*. But notice that *( 3 x (3 + 1) ) / 2* is equal to *( (5 - 2) x (5 - 1) ) / 2*.
+
 
 |  | 0  Repeats | 1 Repeats | 2 Repeats | 3 Repeats|
 |---:|---:|---:|---:|---:|
