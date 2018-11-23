@@ -36,8 +36,6 @@ Print out the duplicated entry, each one on a new line eg
 
 The book above shows that the sum of a sequence beginning with 0 (like 0,1,2,3) is: *( 3 x (3 + 1) ) / 2*. This is the the sum expected when no digits are repeated, or the **expected sum**.
 
-More examples:
-
 0, 1, 2, 3, 4 = **10** = *( 4 x (4 + 1) ) / 2*<br />
 0, 1, 2, 3, 4, 5 = **15** = *( 5 x (5 + 1) ) / 2*
 
