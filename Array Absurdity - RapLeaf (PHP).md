@@ -43,7 +43,7 @@ More examples:
 
 Some Algebra:
 
-If *"0,0,1,2,3"* is 5-digits long, the length is 5. We'll say n = 5. To get the expected sum for the sequence with no repeats (0,1,2,3), use:<br/>
+If *"00123"* is 5-digits long, the length is 5. We'll say n = 5. To get the expected sum for the sequence with no repeats (0,1,2,3), use:<br/>
 *( 3 x (3 + 1) ) / 2*<br />
 But notice that *( 3 x (3 + 1) ) / 2* is equal to *( (5 - 2) x (5 - 1) ) / 2*, which is very similar to **( (n - 2) x (n - 1) ) / 2** when n = 5!
 
