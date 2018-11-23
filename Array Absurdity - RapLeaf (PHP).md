@@ -50,9 +50,9 @@ More examples:
 |2 | 2 | 1 | 2 | 2|
 |3 | 3 | 2 | 2 | 3|
 |4 | 0 | 3 | 3 | 3|
-| Actual Sum | 6 | 7 | 8 | 9|
+| Actual Sum | **6** | **7** | **8** | **9**|
 |Expected Sum | 6 | 6 | 6 | 6|
-|Difference | 0 | 1 | 2 | 3|
+|Difference | **0** | **1** | **2** | **3**|
 
 <br />
 
