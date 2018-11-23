@@ -34,7 +34,7 @@ getPaths( gridSize, limit, debug )
 
 In 2010, I created {Text}, a website for sharing regular expressions. The sharable urls contained both data and expressions. In 2012-13, I created BookmarkChess, a fully accessible (desktop, mobile), real-time chessboard that inspired the UX now delivered by sites like lichess.org and chess.com. BookmarkChess allowed for sharable chess experiences with the game state embedded in the url. I'm leveraging that previous experience when I shift from a grid metaphor (an array of arrays) into a linear metaphor (a single array) to create a space for my robot.
 
-Another innovation is the consideration for blocked paths. Robot can choose paths randomly, but it can also recognize when it's about to repeat a mistake. If it has an option to make a different choice, it does so.
+Robot considers blocked paths. Robot can choose paths randomly, but it can also recognize when it's about to repeat a mistake. If it has an option to make a different choice, it does so.
 
 ---
 ### Run the Code
