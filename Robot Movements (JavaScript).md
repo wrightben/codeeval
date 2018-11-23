@@ -11,8 +11,7 @@ A robot is located in the upper-left corner of a 4×4 grid. The robot can move e
 Print out the number of unique ways for the robot to reach its destination.
 
 ```sh
-# 4 x 4
-$ 184
+$ 184 # 4 x 4
 ```
 
 <br />
