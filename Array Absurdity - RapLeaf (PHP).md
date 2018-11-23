@@ -1,5 +1,6 @@
 # Array Absurdity - RapLeaf (JavaScript)<br />
 www.CodeEval.com<br />
+Revised Black Friday 2018
 Posted Oct 9, 2011
 
 
@@ -28,6 +29,14 @@ Print out the duplicated entry, each one on a new line eg
 [arrayAbsurdity.php](https://github.com/wrightben/codeeval/blob/master/code/arrayAbsurdity.php)
 
 <br/>
+
+#### About My solution
+
+> There is a touch of the showman in mathematical presentations, where the deductions are made to look effortless.
+
+– [The Art of the Infinite: The Pleasures of Mathematics](https://www.amazon.com/Art-Infinite-Pleasures-Mathematics/dp/1608198693)
+
+
 
 ---
 ### Run the Code
