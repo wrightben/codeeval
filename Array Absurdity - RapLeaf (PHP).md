@@ -32,16 +32,16 @@ Print out the duplicated entry, each one on a new line eg
 
 #### About My solution
 
-Index	|0  Repeats	|1 Repeats	|2 Repeats	|3 Repeats
+Index | 0  Repeats | 1 Repeats | 2 Repeats | 3 Repeats
 ---:|---:|---:|---:
-0	|0	|0	|0	|0
-1	|1	|1	|1	|1
-2	|2	|1	|2	|2
-3	|3	|2	|2	|3
-4	|0	|3	|3	|3
-Sum	|6	|7	|8	|9
-Expected Sum	|6	|6	|6	|6
-Difference	|0	|1	|2	|3
+0 | 0 | 0 | 0 | 0
+1 | 1 | 1 | 1 | 1
+2 | 2 | 1 | 2 | 2
+3 | 3 | 2 | 2 | 3
+4 | 0 | 3 | 3 | 3
+Sum | 6 | 7 | 8 | 9
+Expected Sum | 6 | 6 | 6 | 6
+Difference | 0 | 1 | 2 | 3
 
 [The Art of the Infinite: The Pleasures of Mathematics](https://www.amazon.com/Art-Infinite-Pleasures-Mathematics/dp/1608198693):<br />
 > There is a touch of the showman in mathematical presentations,<br />where the deductions are made to look effortless.
