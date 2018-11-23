@@ -13,7 +13,7 @@ foreach ($lines as $line) {
     
 	$segments = preg_split( "/;/", $line ); // Or explode( ";", $line )
 	$length = $segments[0];
-	$list = preg_split( "/,/", $segments[1]);
+	$list = preg_split( "/,/", $segments[1] );
 
 	$sum = array_sum( $list ); // Or foreach
 
