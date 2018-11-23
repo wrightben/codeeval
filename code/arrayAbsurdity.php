@@ -4,19 +4,18 @@
 $file;
 ( isset( $argv[1] ) ) ? $file = $argv[1] : exit( "Must provide a file" );
 
-$contents = readfile($file);
+$contents = file_get_contents($file);
 $contents = explode("\n", $contents);
 
 
-print "Jesus Fuck.";
 
 foreach ($contents as $line) {
 	
 	if (strlen($line) < 3) { continue; }
     
-	$segments = explode("/;/",$line);
+	$segments = preg_split( "/;/", $line ); // Or explode( ";", $line )
 	$length = $segments[0];
-	$list = explode("/,/",$segments[1]);
+	$list = preg_split("/,/",$segments[1]);
 	$expected = 0;
 	$actual = 0;
 
