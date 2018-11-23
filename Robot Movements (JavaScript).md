@@ -1,6 +1,6 @@
 # Robot Movements (JavaScript)<br />
 [www.CodeEval.com](https://web.archive.org/web/20150721085940/https://www.codeeval.com/public_sc/57/)<br />
-Posted on October 16, 2011
+Thanksgiving 2018
 
 ## Description
 
@@ -38,11 +38,6 @@ Boundaries: (pos = current position; 1-based)
 * Bottom:	(pos + gridSize) > Math.pow(gridSize, 2) // Or board.length
 * Left:		pos - 1 % gridSize = 0
 * Right:	pos % gridSize = 0
-
-Invalid Moves:
-
-* Off grid
-* Visited
 
 
 ---
