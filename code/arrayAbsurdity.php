@@ -24,7 +24,7 @@ foreach ($lines as $line) {
 		$actual += $list[$i];
 	}
 	
-	print $length - (abs($actual - $expected)+1)."\n";
+	print $length - ( abs( $actual - $expected ) + 1 )."\n";
 
 }
 
