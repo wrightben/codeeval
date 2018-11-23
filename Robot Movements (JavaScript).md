@@ -10,7 +10,7 @@ A robot is located in the upper-left corner of a 4×4 grid. The robot can move e
 
 Print out the number of unique ways for the robot to reach its destination.
 
-For a 4x4:<br/>
+CodeEval's answer for a four-by-four grid:<br/>
 ```sh
 184
 ```
