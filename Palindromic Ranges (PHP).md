@@ -26,7 +26,7 @@ For each line of input, print out the number of interesting subranges of [L,R] e
 12<br/>
 1
 
-For the curious: In the third example, the subranges are: [87](0 palindromes), [87,88](1 palindrome),[88](1 palindrome). Hence the number of interesting palindromic ranges is 1
+For the curious: In the third example, the subranges are: [87](0 palindromes), [87,88](1 palindrome), [88](1 palindrome). Hence the number of interesting palindromic ranges is 1
 
 <br />
 
