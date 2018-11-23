@@ -100,27 +100,3 @@ var getPaths = function( gridSize, limit, debug ) {
 
 
 console.log( getPaths( 5, 100500, false ) );
-
-
-
-
-/*
-
-	Movements:
-	
-		Up/Down: 	-/+ gridSize
-		Left/Right:	-/+ 1
-	
-	Boundaries: (pos: current position; 1-based)
-	
-		Top:	(pos - gridSize) < 1
-		Bottom: (pos + gridSize) > Math.pow(gridSize, 2) // Or board.length
-		Left:	pos - 1 % gridSize = 0
-		Right:	pos % gridSize = 0
-		
-	Invalid Moves:
-		
-		* Off grid
-		* Visited
-
-*/

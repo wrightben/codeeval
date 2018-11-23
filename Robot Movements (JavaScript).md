@@ -25,6 +25,26 @@ getPaths( gridSize, limit, debug )
 * limit(int): Num of failures to allow. Try 1500 for 4x4.
 * debug(true|false): Print the paths as they’re found.
 
+**Board Constraints**
+
+Movements:
+
+	* Up/Down: 	-/+ gridSize
+	* Left/Right:	-/+ 1
+
+Boundaries: (pos: current position; 1-based)
+
+	* Top:	(pos - gridSize) < 1
+	* Bottom: (pos + gridSize) > Math.pow(gridSize, 2) // Or board.length
+	* Left:	pos - 1 % gridSize = 0
+	* Right:	pos % gridSize = 0
+	
+Invalid Moves:
+	
+	* Off grid
+	* Visited
+
+
 ---
 ### Run the Code
 ```sh
