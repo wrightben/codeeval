@@ -32,5 +32,5 @@ Print out the duplicated entry, each one on a new line eg
 ---
 ### Run the Code
 ```sh
-time node arrayAbsurdity.js input_sample_2.txt
+time php arrayAbsurdity.js input_sample_2.txt
 ```
