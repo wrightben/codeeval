@@ -42,9 +42,9 @@ The book above shows an easy way to sum a sequence beginning with 0 when no digi
 
 Some Algebra:
 
-If **0,1,2,3,0** is 5-digits long, the length is 5. **Length = 5**. To get the expected sum for this sequence, use:
+If **0,1,2,3,0** is 5-digits long, the length is 5: **n = 5**. The expected sum will then be equal to: 
 
-When n = 5, the following is also the same: **( (n - 2) x (n - 1) ) / 2**
+**( (n - 2) x (n - 1) ) / 2** &nbsp;&nbsp;which is the same as&nbsp;&nbsp; *( 3 x (3 + 1) ) / 2* = **6**
 
 
 
