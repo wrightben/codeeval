@@ -5,11 +5,11 @@ $file;
 ( isset( $argv[1] ) ) ? $file = $argv[1] : exit( "Must provide a file" );
 
 $contents = file_get_contents($file);
-$contents = explode("\n", $contents);
+$lines = explode("\n", $contents);
 
 
 
-foreach ($contents as $line) {
+foreach ($lines as $line) {
 	
 	if (strlen($line) < 3) { continue; }
     
