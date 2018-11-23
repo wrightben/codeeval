@@ -30,7 +30,7 @@ Print out the duplicated entry, each one on a new line eg
 
 <br/>
 
-#### About My solution
+#### About My solutions
 
 | Index | 0  Repeats | 1 Repeats | 2 Repeats | 3 Repeats|
 |---:|---:|---:|---:|
