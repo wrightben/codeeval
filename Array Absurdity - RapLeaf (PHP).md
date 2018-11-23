@@ -31,8 +31,8 @@ Print out the duplicated entry, each one on a new line eg
 
 #### About My Solution
 
-[The Art of the Infinite: The Pleasures of Mathematics](https://www.amazon.com/Art-Infinite-Pleasures-Mathematics/dp/1608198693):<br />
-> There is a touch of the showman in mathematical presentations,<br />where the deductions are made to look effortless.
+> There is a touch of the showman in mathematical presentations,<br />where the deductions are made to look effortless.<br />
+– [The Art of the Infinite: The Pleasures of Mathematics](https://www.amazon.com/Art-Infinite-Pleasures-Mathematics/dp/1608198693)
 
 The *expected* sum of a conforming sequence is the sum of the digits when none are repeated. The book above shows that the sum of a sequential sequence beginning with 0 (like 0,1,2,3) is: *( 3 x (3 + 1) ) / 2*.
 
