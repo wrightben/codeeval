@@ -44,7 +44,7 @@ The book above shows an easy way to sum a sequence beginning with 0 when no digi
 
 If **0,1,2,3,0** is 5-digits long, the length is 5, or **n = 5**. And the expected sum is equal to: 
 
-0 + 1 + 2 + 3 = **6**<br />which is the same as&nbsp;&nbsp; **( (n - 2) x (n - 1) ) / 2** &nbsp;&nbsp;which is the same as&nbsp;&nbsp; *( 3 x (3 + 1) ) / 2* = **6**
+0 + 1 + 2 + 3 = **6** which is the same as&nbsp;&nbsp;<br/>**( (n - 2) x (n - 1) ) / 2** &nbsp;&nbsp;which is the same as&nbsp;&nbsp; *( 3 x (3 + 1) ) / 2* = **6**
 
 
 
