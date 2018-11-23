@@ -62,23 +62,26 @@ class SequenceHelper {
     
 }
 
+// LINES
 ( isset( $argv[1] ) ) ? 
 	$lines =  explode("\n", file_get_contents( $argv[1] ) ) : 
 	exit( "Must provide a file" );
 
+
+// LOOP
 foreach ($lines as $line) {
 
 	if (strlen($line) == 0) { continue; }
 
-    $range = preg_split("/\s/",$line);
+	$range = preg_split("/\s/",$line);
 
-    $range = range($range[0],$range[1]);
+	$range = range($range[0],$range[1]);
 
-    $s = new SequenceHelper;
+	$s = new SequenceHelper;
 
-    $c = $s->getPalindromicSubRanges($range);
+	$c = $s->getPalindromicSubRanges($range);
 
-    ($c == 0) ? print " \n" : print $c."\n";
+	($c == 0) ? print " \n" : print $c."\n";
 
 }
 
