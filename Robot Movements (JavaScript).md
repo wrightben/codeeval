@@ -17,8 +17,8 @@ CodeEval's answer for a four-by-four grid:<br/>
 
 <br />
 
-
-## Run the Code
+---
+### Run the Code
 
 [robotMovements.js](https://github.com/wrightben/codeeval/blob/master/code/robotMovements.js)
 
@@ -28,8 +28,8 @@ time node robotMovements.js
 
 <br />
 
---
-## About My Solution
+---
+### About My Solution
 
 getPaths( gridSize, limit, debug )
 		
