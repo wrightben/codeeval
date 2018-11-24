@@ -1,4 +1,4 @@
-#!/usr/local/bin/nodegitp
+#!/usr/local/bin/node
 
 var	fs = require('fs'),
 	file = process.argv[2];
@@ -62,8 +62,6 @@ var walkPath = function( pos, gridSize, board, paths ) {
 			if ( Boolean(next) == true ) { dir.next.push( next ); }
 		});
 		
-		// If
-		
 		// Path Blocked (No valid moves available)
 		if ( dir.next.length == 0 ) { return currentPath; }
 		
@@ -93,17 +91,8 @@ var getPaths = function( gridSize, limit, debug ) {
 		board = new Array( board_length );
 		currentPath = walkPath( 1, gridSize, board, paths );
 		if ( debug == true ) { console.log(currentPath.length, currentPath); }
-		if ( board[ board_length - 1 ] == 1 ) {
-			paths[ currentPath.join(",") ] = 1;
-		} else {
-			paths[ currentPath.join(",") ] = 0; // Tracking Blocked Paths
-			paths.blocked += 1;
-		}
+		( board[ board_length - 1 ] == 1 ) ? paths[ currentPath.join(",") ] = 1 : paths.blocked += 1;
 
-	}
-	
-	for (var path in paths) {
-		console.log(path);
 	}
 	
 	paths.length = Object.keys( paths ).length - 2;
@@ -112,4 +101,4 @@ var getPaths = function( gridSize, limit, debug ) {
 };
 
 
-console.log( getPaths( 4, 5000, false ) );
+console.log( getPaths( 4, 5000, true ) );
