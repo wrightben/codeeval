@@ -5,7 +5,9 @@ var	fs = require('fs'),
 	
 	
 var selectMove = function( moves ) {
+	
 	return moves[ Math.floor( Math.random() * moves.length ) ];
+	
 }
 
 
@@ -131,8 +133,4 @@ var getPaths = function( gridSize, prune, debug ) {
 
 };
 
-// console.log( getPaths( 2, false ) ); // 2
-// console.log( getPaths( 3, false ) ); // 12
 console.log( getPaths( 4, 3, true ) ); // 184 (1200 ≈ 1087)
-// console.log( getPaths( 5, 4, false ) ); // 8512
-// console.log( getPaths( 6, 10, false ) ); // ?
