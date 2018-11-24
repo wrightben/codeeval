@@ -1,7 +1,6 @@
-# Palindromic Ranges (PHP) <br />
-[www.CodeEval.com](https://web.archive.org/web/20120413153241/http://www.codeeval.com:80/public_sc/47/) <br />
+# Palindromic Ranges (PHP)
 
-## Description
+### Description
 
 A positive integer is a palindrome if its decimal representation (without leading zeros) is a palindromic string (a string that reads the same forwards and backwards). For example, the numbers **5**, 77, 363, 4884, 11111, 12121 and 349943 are palindromes.
 
@@ -26,6 +25,8 @@ For each line of input, print out the number of interesting subranges of [L,R] e
 1
 
 For the curious: In the third example, the subranges are: [87](0 palindromes), [87,88](1 palindrome), [88](1 palindrome). Hence the number of interesting palindromic ranges is 1
+
+[www.CodeEval.com](https://web.archive.org/web/20120413153241/http://www.codeeval.com:80/public_sc/47/)
 
 <br />
 
