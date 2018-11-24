@@ -1,8 +1,8 @@
-# String Permutations (JavaScript)<br />
-[www.CodeEval.com](https://web.archive.org/web/20120123110915/http://www.codeeval.com:80/public_sc/14)<br />
+# String Permutations (JavaScript)
 
+[http://www.codeeval.com:80/public_sc/14](https://web.archive.org/web/20120123110915/http://www.codeeval.com:80/public_sc/14)
 
-## Description
+### Description
 
 Write a program to print out all the permutations of a string in alphabetical order.
 
