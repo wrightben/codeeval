@@ -73,7 +73,7 @@ var walkPath = function( pos, gridSize, board, paths ) {
 		
 	}
 
-	// void
+	// undefined
 }
 
 
@@ -94,8 +94,8 @@ var prunePaths = function( currentPath, debug ) {
 		if ( (prc > ppc) && ( debug[1] == true) ) {
 			console.log("Pruned: "+( prc - ppc )+"| "+ppc+' stored paths and ' + paths.valid + ' valid');
 		}
-		
-		return paths;
+	
+	// undefined
 }
 
 
@@ -127,7 +127,7 @@ var getPaths = function( gridSize, prune, debug ) {
 			( currentPath.length <= prune ) && 
 			( completedPath != 1 ) 
 		) {
-			paths = prunePaths( currentPath, debug );
+			prunePaths( currentPath, debug );
 		}
 		
 		paths[ currentPath.join(",") ] = 1;
@@ -142,4 +142,4 @@ var getPaths = function( gridSize, prune, debug ) {
 
 };
 
-console.log( getPaths( 4, 0, [false, false] ) ); // 184 (1200 ≈ 1087)
+console.log( getPaths( 4, 0, [false, false] ) ); // 4:184, 5:8512
