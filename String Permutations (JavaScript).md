@@ -37,7 +37,7 @@ e.g. Both "abc" and "cat" are equivalent to "123".
 
 **Notes**
 * The final array sort is only necessary when there are duplicate letters. 
-* Words with duplicate letters could use modified starting and ending indexes:<br/>"abc" = [123,321]; "aac" = [112,211]
+* Words with duplicate letters could use modified starting and ending indexes: "abc" = [123,321]; "aac" = [112,211]
 
 <br/>
 
