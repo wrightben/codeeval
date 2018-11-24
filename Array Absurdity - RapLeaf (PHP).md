@@ -36,7 +36,7 @@ time php arrayAbsurdity.php input_sample_2.txt
 ### About My Solution
 
 [The Art of the Infinite: The Pleasures of Mathematics](https://www.amazon.com/Art-Infinite-Pleasures-Mathematics/dp/1608198693):<br />
-> There is a touch of the showman in mathematical presentations,<br />where the deductions are made to look effortless.
+> There is a touch of the showman in mathematical presentations, where the deductions are made to look effortless.
 
 <br />
 
