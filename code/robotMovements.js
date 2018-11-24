@@ -112,5 +112,5 @@ var getPaths = function( gridSize, limit, debug ) {
 
 // console.log( getPaths( 2, 2, false ) ); // 2
 // console.log( getPaths( 3, 100, false ) ); // 12
-console.log( getPaths( 4, 1087, true ) ); // 184
+console.log( getPaths( 4, 1200, true ) ); // 184 (1200 ≈ 1087)
 // console.log( getPaths( 5, 90000, false ) ); // 8512
