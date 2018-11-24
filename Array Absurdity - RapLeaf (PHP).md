@@ -55,6 +55,7 @@ Expected sum shortcut:
 0 + 1 + 2 + 3 = **6** &nbsp;&nbsp;is the same as&nbsp;&nbsp; ( (n - 2) x (n - 1) ) / 2 = **6** &nbsp;&nbsp;&nbsp; when n = 5
 
 <br />
+<br />
 
 |  | 0  Repeats | 1 Repeats | 2 Repeats | 3 Repeats|
 |---:|---:|---:|---:|---:|
