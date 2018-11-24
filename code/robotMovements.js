@@ -83,8 +83,9 @@ var getPaths = function( gridSize, limit, debug ) {
 
 	var	board_length = Math.pow( gridSize, 2 ),
 		board,
-		paths = { "blocked":0 },
-		currentPath;
+		paths = { "blocked":0, "valid": 0 },
+		currentPath,
+		valid = 0;
 
 
 	while( Boolean( paths.blocked < limit ) ) {
@@ -94,6 +95,7 @@ var getPaths = function( gridSize, limit, debug ) {
 		if ( debug == true ) { console.log(currentPath.length, currentPath); }
 		if ( board[ board_length - 1 ] == 1 ) {
 			paths[ currentPath.join(",") ] = 1;
+			paths.valid += 1;
 		} else {
 			paths[ currentPath.join(",") ] = 0;
 			paths.blocked += 1;
@@ -101,19 +103,15 @@ var getPaths = function( gridSize, limit, debug ) {
 
 	}
 	
-	for (var i in paths) {
-		if (paths[i] == 0) {
-			delete paths[i];
-		}
-	}
-	
+	valid = paths.valid;
+	paths = {};
 	
 	// # of Paths ( exclude paths = { "blocked":0 } )
-	return Object.keys( paths ).length - 1;
+	return valid;
 
 };
 
-console.log( getPaths( 2, 2, false ) );
-console.log( getPaths( 3, 100, false ) );
-console.log( getPaths( 4, 1500, false ) );
-console.log( getPaths( 5, 90000, false ) );
+// console.log( getPaths( 2, 2, false ) ); // 2
+// console.log( getPaths( 3, 100, false ) ); // 12
+console.log( getPaths( 4, 1500, false ) ); // 184
+// console.log( getPaths( 5, 90000, false ) ); // 8512
