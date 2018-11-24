@@ -49,7 +49,7 @@ The challenge 5:**0,1,2,3,3** has a length of 5, or **n = 5**. If the **actual s
 
 **Expected Sum Shortcut**
 
-0 + 1 + 2 + 3 = **6** &nbsp;&nbsp;which is the same as&nbsp;&nbsp; ( (n - 2) x (n - 1) ) / 2 = **6** &nbsp;&nbsp;&nbsp; when n = 5
+0 + 1 + 2 + 3 = **6** &nbsp;&nbsp;is the same as&nbsp;&nbsp; ( (n - 2) x (n - 1) ) / 2 = **6** &nbsp;&nbsp;&nbsp; when n = 5
 
 <br />
 
