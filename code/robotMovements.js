@@ -110,8 +110,7 @@ var getPaths = function( gridSize, prune, debug ) {
 	var	board_length = Math.pow( gridSize, 2 ),
 		board,
 		currentPath = [],
-		completedPath,
-		valid = 0;
+		completedPath;
 
 	while( currentPath.join(",") != "1" ) { // If currentPath.join(",") = 1, there are no valid paths.
 		
@@ -137,11 +136,10 @@ var getPaths = function( gridSize, prune, debug ) {
 		if ( debug[0] == true ) { console.log(currentPath.length, currentPath); }
 
 	}
-	
-	valid = paths.valid;
+
 	
 	// # of Paths ( exclude paths = { "blocked":0 } )
-	return valid;
+	return paths.valid;
 
 };
 
