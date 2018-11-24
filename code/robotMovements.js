@@ -42,7 +42,7 @@ var isValidMove = function( move, pos, gridSize, board, currentPath, paths ) {
 
 	if ( board[ next - 1 ] == 1 ) { return false; } // currentPath: Visited
 	
-	if ( paths[ currentPath.join(",") + "," + next ] != "undefined" ) { return false; } // Paths: Visited (Completion or Invalid)
+	if ( typeof paths[ currentPath.join(",") + "," + next ] != "undefined" ) { return false; } // Paths: Visited (Completion or Invalid)
 
 	return next;
 }
@@ -92,14 +92,28 @@ var getPaths = function( gridSize, limit, debug ) {
 		board = new Array( board_length );
 		currentPath = walkPath( 1, gridSize, board, paths );
 		if ( debug == true ) { console.log(currentPath.length, currentPath); }
-		( board[ board_length - 1 ] == 1 ) ? paths[ currentPath.join(",") ] = 1 : paths.blocked += 1;
+		if ( board[ board_length - 1 ] == 1 ) {
+			paths[ currentPath.join(",") ] = 1;
+		} else {
+			paths[ currentPath.join(",") ] = 0;
+			paths.blocked += 1;
+		}
 
 	}
+	
+	for (var i in paths) {
+		if (paths[i] == 0) {
+			delete paths[i];
+		}
+	}
+	
 	
 	// # of Paths ( exclude paths = { "blocked":0 } )
 	return Object.keys( paths ).length - 1;
 
 };
 
-
-console.log( getPaths( 4, 5000, true ) );
+console.log( getPaths( 2, 2, false ) );
+console.log( getPaths( 3, 100, false ) );
+console.log( getPaths( 4, 1500, false ) );
+console.log( getPaths( 5, 90000, false ) );
