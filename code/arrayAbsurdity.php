@@ -17,7 +17,7 @@ foreach ($lines as $line) {
 	$sum = array_sum( $list ); // Or foreach
 
 	/* $expected = ( (n^2 -3n +2) / 2 ) */	
-	$expected = ( ( $length * $length ) - (3 * $length ) + 2 ) / 2;
+	$expected = ( ( $length - 2 ) * ( $length - 1 ) ) / 2;
 	
 	print ( $sum - $expected ) . "\n";
 
