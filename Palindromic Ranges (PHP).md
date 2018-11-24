@@ -8,7 +8,7 @@ A range of integers is interesting if it contains an **even number** of palindro
 
 The range [L1,R1] is a subrange of [L,R] if L <= L1 <= R1 <= R. Your job is to determine how many interesting subranges of [L,R] there are.
 
-https://web.archive.org/web/20120413153241/http://www.codeeval.com:80/public_sc/47/
+[http://www.codeeval.com:80/public_sc/47/](https://web.archive.org/web/20120413153241/http://www.codeeval.com:80/public_sc/47/)
 
 **Input Sample:**
 
