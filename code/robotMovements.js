@@ -112,8 +112,8 @@ var getPaths = function( gridSize, prune, debug ) {
 			}
 			
 			var ppc = Object.keys(paths).length;
-			if (prc > ppc) {
-				console.log("PRUNED: "+( prc - ppc )+" | "+ppc);
+			if ( (prc > ppc) && ( debug == true) ) {
+				console.log("Pruned: "+( prc - ppc )+"| "+ppc+' stored paths and ' + paths.valid + ' valid');
 			}
 
 		}
@@ -125,7 +125,6 @@ var getPaths = function( gridSize, prune, debug ) {
 	}
 	
 	valid = paths.valid;
-	console.log(paths);
 	
 	// # of Paths ( exclude paths = { "blocked":0 } )
 	return valid;
@@ -134,6 +133,6 @@ var getPaths = function( gridSize, prune, debug ) {
 
 // console.log( getPaths( 2, false ) ); // 2
 // console.log( getPaths( 3, false ) ); // 12
-// console.log( getPaths( 4, 3, false ) ); // 184 (1200 ≈ 1087)
+console.log( getPaths( 4, 3, true ) ); // 184 (1200 ≈ 1087)
 // console.log( getPaths( 5, 4, false ) ); // 8512
-console.log( getPaths( 6, 10, false ) ); // ??
+// console.log( getPaths( 6, 10, false ) ); // ?
