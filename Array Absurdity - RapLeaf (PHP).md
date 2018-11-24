@@ -6,7 +6,7 @@ Posted Oct 9, 2011
 
 ## Description
 
-Imagine we have an immutable array of size *n* which we know to be filled with integers ranging from 0 to (n - 2). The array contains exactly one duplicate number. Find it. (For bonus points, ensure your solution has constant space and time proportional to n.)
+Imagine we have an immutable array of size *n* which we know to be filled with numbers ranging from 0 to (n - 2). The array contains exactly one duplicate number. Find it. (For bonus points, ensure your solution has constant space and time proportional to n.)
 
 **Input sample:**
 
