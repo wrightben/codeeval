@@ -82,7 +82,7 @@ foreach ($lines as $line) {
 
 	$s = new SequenceHelper;
 
-	$c = $s->getPalindromicSubRanges( range($range[0],$range[1]) ); // range(0,3) = 0,1,2,3
+	$c = $s->getPalindromicSubRanges( range( $range[0], $range[1] ) ); // range(0,3) = 0,1,2,3
 
 	($c == 0) ? print " \n" : print $c."\n";
 
