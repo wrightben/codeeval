@@ -1,4 +1,4 @@
-## Array Absurdity - RapLeaf (JavaScript)
+# Array Absurdity - RapLeaf (JavaScript)
 
 Imagine we have an immutable array of size *n* which we know to be filled with digits ranging from 0 to (n - 2). The array contains exactly one duplicate digit. Find it. 
 
