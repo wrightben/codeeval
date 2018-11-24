@@ -16,7 +16,7 @@ var setPos = function( pos, board ) {
 	return pos;
 }
 
-var isValidMove = function( move, pos, gridSize, board ) {
+var isValidMove = function( move, pos, gridSize, board, currentPath, paths ) {
 	
 	var	next = pos; // Destination
 
@@ -40,7 +40,9 @@ var isValidMove = function( move, pos, gridSize, board ) {
 		if (pos % gridSize == 0) { return false; } // Bound (Note: Based on current position, not next!)
 	}	
 
-	if ( board[ next - 1 ] == 1 ) { return false; } // Already Visited
+	if ( board[ next - 1 ] == 1 ) { return false; } // currentPath: Visited
+	
+	if ( paths[ currentPath.join(",") + "," + next ] != "undefined" ) { return false; } // Paths: Visited (Completion or Invalid)
 
 	return next;
 }
@@ -57,7 +59,7 @@ var walkPath = function( pos, gridSize, board, paths ) {
 		// Seek Moves
 		dir.next = [];
 		dir.forEach(function(e,i) {
-			var option = isValidMove( e, pos, gridSize, board );
+			var option = isValidMove( e, pos, gridSize, board, currentPath, paths );
 			if ( Boolean(option) == true ) { dir.next.push( option ); }
 		});
 		
