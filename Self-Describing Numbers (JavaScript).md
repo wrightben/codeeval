@@ -1,6 +1,6 @@
-# Self-Describing Numbers<br />
+# Self-Describing Numbers
 
-## Description
+### Description
 
 A number is a self-describing number when (assuming digit positions are labeled 0 to N-1), the digit in each position is equal to the number of times that that digit appears in the number.
 
