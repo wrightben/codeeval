@@ -4,15 +4,6 @@ var	fs = require('fs'),
 
 var isSelfDescribing = function( number ) {
 
-	/* 	number = 1210
-		n = [1,2,1,0]
-		h = [_,_,_,_]
-		
-		Iteration 1: var i = 0, e = 1;
-		h[0(i)] = "_" (= 0)
-		h[1(e)] = _ (++ 1)
-	*/
-
 	var	n = number.split(""),
 		h = new Array(n.length);
 
