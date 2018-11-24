@@ -113,8 +113,7 @@ var getPaths = function( gridSize, prune, debug ) {
 		completedPath,
 		valid = 0;
 
-	// walkPath: If currentPath.join(",") = 1, there are no valid paths.
-	while( currentPath.join(",") != "1" ) { 
+	while( currentPath.join(",") != "1" ) { // If currentPath.join(",") = 1, there are no valid paths.
 		
 		board = new Array( board_length );
 		
@@ -124,7 +123,7 @@ var getPaths = function( gridSize, prune, debug ) {
 		
 		( completedPath == 1 ) ? paths.valid += 1 : paths.blocked += 1;
 		
-		// Prune Paths
+		// Prune
 		if ( 
 			( prune > 0 ) &&
 			( currentPath.length <= prune ) && 
