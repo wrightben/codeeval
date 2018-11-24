@@ -30,13 +30,15 @@ time node robotMovements.js
 ---
 ### About My Solution
 
-getPaths( gridSize, limit, debug )
+getPaths( gridSize, debug )
 		
 * gridSize(int): Arbitrarily large square
-* limit(int): Num of failures to allow. Try 1500 for 4x4.
 * debug(true|false): Print the paths as they’re found.
 
 <br />
 
 [ Linear ]<br />
 In 2010, I created {Text}, a website for sharing regular expressions. The sharable urls contained both data and expressions. In 2012-13, I created BookmarkChess, a fully accessible (desktop, mobile), real-time chessboard that inspired the UX now delivered by sites like lichess.org and chess.com. BookmarkChess allowed for sharable chess experiences with the game state embedded in the url. I'm leveraging that previous experience when I shift from a grid metaphor (an array of arrays) into a linear metaphor (a single array) to create a space for my robot.
+
+[ Approximating ]
+My first solution let the robot generate an arbitrary number of random paths up to some limit. I chose 1500 for a 4x4 grid, which was a good approximation for the sum of valid + invalid paths ≈ 1087.
