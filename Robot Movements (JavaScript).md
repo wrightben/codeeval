@@ -18,11 +18,18 @@ CodeEval's answer for a four-by-four grid:<br/>
 <br />
 
 ---
-### Code
+## Run the Code
 
 [robotMovements.js](https://github.com/wrightben/codeeval/blob/master/code/robotMovements.js)
 
-#### About My Solution
+```sh
+time node robotMovements.js
+```
+
+<br />
+
+---
+### About My Solution
 
 getPaths( gridSize, limit, debug )
 		
@@ -37,9 +44,3 @@ In 2010, I created {Text}, a website for sharing regular expressions. The sharab
 
 [ Simple AI ]<br/>
 Robot considers blocked paths. Robot chooses paths randomly, but can recognize when he's about to repeat a mistake. If Robot encounters a recognizable do-over scenario, it attempts to make a better choice.
-
----
-### Run the Code
-```sh
-time node robotMovements.js
-```
