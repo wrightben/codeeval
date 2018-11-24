@@ -26,12 +26,18 @@ Print out the duplicate digit for each line:
 <br />
 
 ---
-### Code
+### Run the Code
 
 [arrayAbsurdity.php](https://github.com/wrightben/codeeval/blob/master/code/arrayAbsurdity.php)
 
+```sh
+time php arrayAbsurdity.php input_sample_2.txt
+```
 
-#### About My Solution
+<br />
+
+---
+### About My Solution
 
 [The Art of the Infinite: The Pleasures of Mathematics](https://www.amazon.com/Art-Infinite-Pleasures-Mathematics/dp/1608198693):<br />
 > There is a touch of the showman in mathematical presentations,<br />where the deductions are made to look effortless.
@@ -63,11 +69,3 @@ Expected sum shortcut:
 | Actual Sum | **6** | **7** | **8** | **9**|
 |Expected Sum | 6 | 6 | 6 | 6|
 |Difference | **0** | **1** | **2** | **3**|
-
-<br />
-
----
-### Run the Code
-```sh
-time php arrayAbsurdity.php input_sample_2.txt
-```
