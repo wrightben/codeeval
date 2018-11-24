@@ -19,7 +19,7 @@ Your program should accept as its first argument a path to a filename. Each line
 
 **Output sample:**
 
-Print out the duplicated entry, each one on a new line eg
+Print out the duplicate number, each one on a new line eg
 
 > 0<br />4
 
