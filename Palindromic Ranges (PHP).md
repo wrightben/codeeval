@@ -45,5 +45,5 @@ time php palindromicRanges.php input_sample_3.txt
 ### About My Solution
 
 > Range: 87 88<br />
-Range + Subranges: [87](0 palindromes), [87,88](1 palindrome), [88](1 palindrome)<br />
+Range + Subranges: [87,88](1 palindrome), [87](0 palindromes), [88](1 palindrome)<br />
 1 *interesting* subrange: [87](0 palindromes)
