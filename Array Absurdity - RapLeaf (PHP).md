@@ -40,10 +40,6 @@ The book above shows an easy way to sum a sequence beginning with 0 when no digi
 0 + 1 + 2 + 3 + 4 = **10** &nbsp;&nbsp;is the same as&nbsp;&nbsp; *( 4 x (4 + 1) ) / 2* = **10**<br />
 0 + 1 + 2 + 3 + 4 + 5 = **15** &nbsp;&nbsp;is the same as&nbsp;&nbsp; *( 5 x (5 + 1) ) / 2* = **15**
 
-Each of these is the same as:
-
-( (n - 2) x (n - 1) ) / 2 = **6**
-
 
 **5:0,1,2,3,3:** Algebra Shortcut for 3 Repeats
 
