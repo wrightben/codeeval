@@ -6,7 +6,7 @@ A number is a self-describing number when (assuming digit positions are labeled 
 
 **Input sample:**
 
-The first argument is the pathname to a file which contains test data, one test case per line. Each line contains a positive integer.
+The first argument is the pathname to a file which contains one test case per line. Each line contains a positive integer.
 
 > 2020<br />22<br />1210<br >
 
