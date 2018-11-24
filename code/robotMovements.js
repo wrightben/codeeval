@@ -91,15 +91,14 @@ var getPaths = function( gridSize, limit, debug ) {
 	while( Boolean( paths.blocked < limit ) ) {
 		
 		board = new Array( board_length );
-		currentPath = walkPath( 1, gridSize, board, paths );
+		
+		currentPath = walkPath( 1, gridSize, board, paths );		
+		
+		( board[ board_length - 1 ] == 1 ) ? paths.valid += 1 : paths.blocked += 1;
+		
+		paths[ currentPath.join(",") ] = 1;
+		
 		if ( debug == true ) { console.log(currentPath.length, currentPath); }
-		if ( board[ board_length - 1 ] == 1 ) {
-			paths[ currentPath.join(",") ] = 1;
-			paths.valid += 1;
-		} else {
-			paths[ currentPath.join(",") ] = 0;
-			paths.blocked += 1;
-		}
 
 	}
 	
