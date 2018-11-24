@@ -20,9 +20,11 @@ class SequenceHelper {
 
 		if ($l > 1) {
 	
-			$sr1 = array_slice($range,0,-1); //First Chunk
-			$sr2 = array_slice($range,1); //Second Chunk   
-
+			// Split Range
+			$sr1 = array_slice($range,0,-1);
+			$sr2 = array_slice($range,1);   
+			
+			// Recurse
 			if ( ! isset( $this->cache[ join("",$sr1) ] ) ) {
 				$this->getPalindromicSubRanges($sr1);
 			}
