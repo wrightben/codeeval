@@ -1,7 +1,4 @@
 # Array Absurdity - RapLeaf (JavaScript)<br />
-www.CodeEval.com<br />
-Revised Black Friday 2018<br/>
-Posted Oct 9, 2011
 
 
 ## Description

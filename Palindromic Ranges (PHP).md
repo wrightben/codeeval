@@ -1,6 +1,5 @@
 # Palindromic Ranges (PHP) <br />
 [www.CodeEval.com](https://web.archive.org/web/20120413153241/http://www.codeeval.com:80/public_sc/47/) <br />
-Posted on October 10, 2011
 
 ## Description
 
