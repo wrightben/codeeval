@@ -1,6 +1,5 @@
 # Robot Movements (JavaScript)<br />
 [www.CodeEval.com](https://web.archive.org/web/20150721085940/https://www.codeeval.com/public_sc/57/)<br />
-Thanksgiving 2018
 
 ## Description
 
