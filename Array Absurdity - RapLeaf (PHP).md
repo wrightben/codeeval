@@ -35,12 +35,7 @@ time php arrayAbsurdity.php input_sample_2.txt
 ---
 ### About My Solution
 
-[The Art of the Infinite: The Pleasures of Mathematics](https://www.amazon.com/Art-Infinite-Pleasures-Mathematics/dp/1608198693):<br />
-> There is a touch of the showman in mathematical presentations, where the deductions are made to look effortless.
-
-<br />
-
-The book above shows an easy way to sum a sequence beginning with 0 when no digits are repeated. Here are some examples:
+The [The Art of the Infinite: The Pleasures of Mathematics](https://www.amazon.com/Art-Infinite-Pleasures-Mathematics/dp/1608198693) shows an easy way to sum a sequence beginning with 0 when no digits are repeated. Here are some examples:
 
 0 + 1 + 2 + 3 = **6** &nbsp;&nbsp;is the same as&nbsp;&nbsp; *( 3 x (3 + 1) ) / 2* = **6**<br />
 0 + 1 + 2 + 3 + 4 = **10** &nbsp;&nbsp;is the same as&nbsp;&nbsp; *( 4 x (4 + 1) ) / 2* = **10**<br />
