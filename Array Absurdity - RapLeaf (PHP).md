@@ -6,7 +6,7 @@ Posted Oct 9, 2011
 
 ## Description
 
-Imagine we have an immutable array of size N which we know to be filled with integers ranging from 0 to N-2, inclusive. Suppose we know that the array contains exactly one duplicated entry and that duplicate appears exactly twice. Find the duplicated entry. (For bonus points, ensure your solution has constant space and time proportional to N)
+Imagine we have an immutable array of size N which we know to be filled with integers ranging from 0 to (n - 2), inclusive. Suppose we know that the array contains exactly one duplicated entry and that duplicate appears exactly twice. Find the duplicated entry. (For bonus points, ensure your solution has constant space and time proportional to N)
 
 **Input sample:**
 
