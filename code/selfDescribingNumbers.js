@@ -7,7 +7,7 @@ var isSelfDescribing = function( number ) {
 	var	n = number.split(""),
 		h = new Array(n.length);
 
-	n.forEach(function(e,i) { // element, iterator (0,1,...)
+	n.forEach(function(e,i) { // element, iterator (zero-based)
 
 		if ( typeof h[i] == "undefined" ) { h[i] = 0; } // Use iterator to create zeros in h array.
 
