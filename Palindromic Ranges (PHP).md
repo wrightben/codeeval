@@ -2,13 +2,13 @@
 
 ### Description
 
+[http://www.codeeval.com:80/public_sc/47/](https://web.archive.org/web/20120413153241/http://www.codeeval.com:80/public_sc/47/)
+
 A positive integer is a palindrome if its decimal representation (without leading zeros) is a palindromic string (a string that reads the same forwards and backwards). For example, the numbers **5**, 77, 363, 4884, 11111, 12121 and 349943 are palindromes.
 
 A range of integers is interesting if it contains an **even number** of palindromes. The range [L, R], with L <= R, is defined as the sequence of integers from L to R (inclusive): (L, L+1, L+2, \..., R-1, R). L and R are the range's first and last numbers.
 
 The range [L1,R1] is a subrange of [L,R] if L <= L1 <= R1 <= R. Your job is to determine how many interesting subranges of [L,R] there are.
-
-[http://www.codeeval.com:80/public_sc/47/](https://web.archive.org/web/20120413153241/http://www.codeeval.com:80/public_sc/47/)
 
 **Input Sample:**
 
