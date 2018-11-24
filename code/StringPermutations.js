@@ -46,6 +46,7 @@ var getPermutationString = function( length ) {
 	
 }
 
+
 var line = function( word ) {
 
 	var	l = word.length,
@@ -76,6 +77,7 @@ var line = function( word ) {
 	if (dupes == true) { psArray.sort(); } 
 
 	return psArray.join(",");
+	
 }
 
 
