@@ -23,11 +23,11 @@ class SequenceHelper {
 			$sr1 = array_slice($range,0,-1); //First Chunk
 			$sr2 = array_slice($range,1); //Second Chunk   
 
-			if ( ! ( isset( $this->cache[ join("",$sr1) ] ) ) ) {
+			if ( ! isset( $this->cache[ join("",$sr1) ] ) ) {
 				$this->getPalindromicSubRanges($sr1);
 			}
 
-			if ( ! ( isset( $this->cache[ join("",$sr2) ] ) ) ) {
+			if ( ! isset( $this->cache[ join("",$sr2) ] ) ) {
 				$this->getPalindromicSubRanges($sr2);
 			}
 	
