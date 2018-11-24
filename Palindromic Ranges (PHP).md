@@ -8,6 +8,8 @@ A range of integers is interesting if it contains an **even number** of palindro
 
 The range [L1,R1] is a subrange of [L,R] if L <= L1 <= R1 <= R. Your job is to determine how many interesting subranges of [L,R] there are.
 
+[www.CodeEval.com](https://web.archive.org/web/20120413153241/http://www.codeeval.com:80/public_sc/47/)
+
 **Input Sample:**
 
 Your program should accept as its first argument a path to a filename. Each line in this file is one test case. Each test case will contain two positive integers, L and R (in that order), separated by a space. eg. 
@@ -25,8 +27,6 @@ For each line of input, print out the number of interesting subranges of [L,R] e
 1
 
 For the curious: In the third example, the subranges are: [87](0 palindromes), [87,88](1 palindrome), [88](1 palindrome). Hence the number of interesting palindromic ranges is 1
-
-[www.CodeEval.com](https://web.archive.org/web/20120413153241/http://www.codeeval.com:80/public_sc/47/)
 
 <br />
 
