@@ -33,6 +33,7 @@ time node robotMovements.js
 getPaths( gridSize, debug )
 		
 * gridSize(int): Arbitrarily large square
+* prune(int): Delete paths longer than this length
 * debug(true|false): Print the paths as they’re found.
 
 <br />

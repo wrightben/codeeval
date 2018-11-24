@@ -78,13 +78,14 @@ var walkPath = function( pos, gridSize, board, paths ) {
 	// void
 }
 
+paths = { "blocked":0, "valid": 0 };
 
-var getPaths = function( gridSize, debug ) {
+var getPaths = function( gridSize, prune, debug ) {
 
 	var	board_length = Math.pow( gridSize, 2 ),
 		board,
-		paths = { "blocked":0, "valid": 0 },
 		currentPath = [],
+		completedPath,
 		valid = 0;
 
 	// walkPath: If currentPath.join(",") = 1, there are no valid paths.
@@ -92,9 +93,30 @@ var getPaths = function( gridSize, debug ) {
 		
 		board = new Array( board_length );
 		
-		currentPath = walkPath( 1, gridSize, board, paths );		
+		currentPath = walkPath( 1, gridSize, board, paths );
 		
-		( board[ board_length - 1 ] == 1 ) ? paths.valid += 1 : paths.blocked += 1;
+		completedPath = board[ board_length - 1 ];
+		
+		( completedPath == 1 ) ? paths.valid += 1 : paths.blocked += 1;
+		
+		// Prune Paths
+		if ( ( currentPath.length <= prune ) && ( completedPath != 1 ) ) {
+			
+			var prc = Object.keys(paths).length;
+			
+			var re = new RegExp('^'+currentPath.join(",")+'.');
+			for (var i in paths) {
+				if ( Boolean( re.exec( i.toString() ) ) == true  ) {
+					delete paths[i];
+				}
+			}
+			
+			var ppc = Object.keys(paths).length;
+			if (prc > ppc) {
+				console.log("PRUNED: "+( prc - ppc )+" | "+ppc);
+			}
+
+		}
 		
 		paths[ currentPath.join(",") ] = 1;
 		
@@ -103,7 +125,7 @@ var getPaths = function( gridSize, debug ) {
 	}
 	
 	valid = paths.valid;
-	paths = {};
+	console.log(paths);
 	
 	// # of Paths ( exclude paths = { "blocked":0 } )
 	return valid;
@@ -112,6 +134,6 @@ var getPaths = function( gridSize, debug ) {
 
 // console.log( getPaths( 2, false ) ); // 2
 // console.log( getPaths( 3, false ) ); // 12
-// console.log( getPaths( 4, true ) ); // 184 (1200 ≈ 1087)
- console.log( getPaths( 5, false ) ); // 8512
-// console.log( getPaths( 6, false ) ); // 
+// console.log( getPaths( 4, 3, false ) ); // 184 (1200 ≈ 1087)
+// console.log( getPaths( 5, 4, false ) ); // 8512
+console.log( getPaths( 6, 10, false ) ); // ??
