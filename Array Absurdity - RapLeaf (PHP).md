@@ -47,7 +47,7 @@ The book above shows an easy way to sum a sequence beginning with 0 when no digi
 
 The challenge 5:**0,1,2,3,3** has a length of 5, or **n = 5**. If the **actual sum** of 0 + 1 + 2 + 3 + 3 = **9** and the **expected sum** is equal to: 0 + 1 + 2 + 3 = **6**, we know a **3** must be repeated.
 
-**Expected Sum Shortcut**
+Expected Sum Shortcut:
 
 0 + 1 + 2 + 3 = **6** &nbsp;&nbsp;is the same as&nbsp;&nbsp; ( (n - 2) x (n - 1) ) / 2 = **6** &nbsp;&nbsp;&nbsp; when n = 5
 
