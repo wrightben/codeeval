@@ -10,7 +10,7 @@ Imagine we have an immutable array of size N which we know to be filled with int
 
 **Input sample:**
 
-Your program should accept as its first argument a path to a filename. Each line in this file is one test case. Ignore all empty lines. Each line begins with the size of the array (n), a semicolon, and a comma separated list of positive numbers ranging from 0 to n-2.
+Your program should accept as its first argument a path to a filename. Each line in this file is one test case. Ignore all empty lines. Each line begins with the size of the array (n), a semicolon, and a comma-separated list of positive numbers ranging from 0 to n-2.
 
 > 5;0,1,2,3,0<br />
 20;0,1,10,3,2,4,5,7,6,8,11,9,15,12,13,4,16,18,17,14
