@@ -102,7 +102,8 @@ var prunePaths = function( currentPath, debug ) {
 		return paths;
 }
 
-
+// GLOBAL VARIABLE 
+// delete paths[i] not allowed with 'var'
 paths = { "blocked":0, "valid": 0 };
 
 var getPaths = function( gridSize, prune, debug ) {
@@ -143,4 +144,4 @@ var getPaths = function( gridSize, prune, debug ) {
 
 };
 
-console.log( getPaths( 5, 0, [false, false] ) ); // 184 (1200 ≈ 1087)
+console.log( getPaths( 4, 0, [false, false] ) ); // 184 (1200 ≈ 1087)
