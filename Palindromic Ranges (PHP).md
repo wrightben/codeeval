@@ -1,8 +1,8 @@
 # Palindromic Ranges (PHP)
 
-### Description
-
 [http://www.codeeval.com:80/public_sc/47/](https://web.archive.org/web/20120413153241/http://www.codeeval.com:80/public_sc/47/)
+
+### Description
 
 A positive integer is a palindrome if its decimal representation (without leading zeros) is a palindromic string (a string that reads the same forwards and backwards). For example, the numbers **5**, 77, 363, 4884, 11111, 12121 and 349943 are palindromes.
 
