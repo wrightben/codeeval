@@ -1,3 +1,5 @@
+#!/usr/local/bin/node
+
 var	fs = require('fs'),
 	file = process.argv[2];
 	
