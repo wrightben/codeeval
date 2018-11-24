@@ -80,11 +80,9 @@ foreach ($lines as $line) {
 
 	$range = preg_split("/\s/",$line);
 
-	$range = range($range[0],$range[1]);
-
 	$s = new SequenceHelper;
 
-	$c = $s->getPalindromicSubRanges($range);
+	$c = $s->getPalindromicSubRanges( range($range[0],$range[1]) ); // range(0,3) = 0,1,2,3
 
 	($c == 0) ? print " \n" : print $c."\n";
 
