@@ -1,6 +1,6 @@
 # String Permutations (JavaScript)
 
-[http://www.codeeval.com:80/public_sc/14](https://web.archive.org/web/20120123110915/http://www.codeeval.com:80/public_sc/14)
+[http://www.codeeval.com:80/public_sc/14/](https://web.archive.org/web/20120123110915/http://www.codeeval.com:80/public_sc/14/)
 
 ### Description
 
