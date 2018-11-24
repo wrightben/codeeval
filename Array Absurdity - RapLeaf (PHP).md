@@ -34,7 +34,7 @@ Print out the duplicated entry, each one on a new line eg
 [The Art of the Infinite: The Pleasures of Mathematics](https://www.amazon.com/Art-Infinite-Pleasures-Mathematics/dp/1608198693):<br />
 > There is a touch of the showman in mathematical presentations,<br />where the deductions are made to look effortless.
 
-The book above shows an easy way to sum a sequence beginning with 0 when no digits are repeated. This is the **expected sum**. Here are some examples:
+The book above shows an easy way to sum a sequence beginning with 0 when no digits are repeated. Here are some examples:
 
 0 + 1 + 2 + 3 = **6** &nbsp;&nbsp;is the same as&nbsp;&nbsp; *( 3 x (3 + 1) ) / 2* = **6**<br />
 0 + 1 + 2 + 3 + 4 = **10** &nbsp;&nbsp;is the same as&nbsp;&nbsp; *( 4 x (4 + 1) ) / 2* = **10**<br />
@@ -42,7 +42,7 @@ The book above shows an easy way to sum a sequence beginning with 0 when no digi
 
 **Algebra Shortcut**
 
-The challenge 5:**0,1,2,3,3** has a length of 5, or **n = 5**. If the **actual sum** of 0 + 1 + 2 + 3 + 3 = **9** and the expected sum is equal to: 0 + 1 + 2 + 3 = **6** &nbsp;&nbsp;which is the same as&nbsp;&nbsp; **( (n - 2) x (n - 1) ) / 2** = **6** &nbsp;&nbsp;&nbsp; when n = 5, we know a **3** must be repeated. See the "3 Repeats" column below
+The challenge 5:**0,1,2,3,3** has a length of 5, or **n = 5**. If the **actual sum** of 0 + 1 + 2 + 3 + 3 = **9** and the **expected sum** is equal to: 0 + 1 + 2 + 3 = **6** &nbsp;&nbsp;which is the same as&nbsp;&nbsp; **( (n - 2) x (n - 1) ) / 2** = **6** &nbsp;&nbsp;&nbsp; when n = 5, we know a **3** must be repeated. See the "3 Repeats" column below
 
 
 |  | 0  Repeats | 1 Repeats | 2 Repeats | 3 Repeats|
