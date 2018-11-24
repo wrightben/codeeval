@@ -43,7 +43,7 @@ var isValidMove = function( move, pos, gridSize, board ) {
 	return next;
 }
 
-var walkPath = function( pos, gridSize, board ) {
+var walkPath = function( pos, gridSize, board, paths ) {
 	
 	var	currentPath = [pos],
 		dir = [ 'u', 'd', 'l', 'r' ],
@@ -87,7 +87,7 @@ var getPaths = function( gridSize, limit, debug ) {
 	while( Boolean( paths.blocked < limit ) ) {
 		
 		board = new Array( board_length );
-		currentPath = walkPath( 1, gridSize, board );
+		currentPath = walkPath( 1, gridSize, board, paths );
 		if ( debug == true ) { console.log(currentPath.length, currentPath); }
 		( board[ board_length - 1 ] == 1 ) ? paths[ currentPath.join(",") ] = 1 : paths.blocked += 1;
 
@@ -99,4 +99,4 @@ var getPaths = function( gridSize, limit, debug ) {
 };
 
 
-console.log( getPaths( 3, 2000, true ) );
+console.log( getPaths( 4, 5000, true ) );
