@@ -31,11 +31,7 @@ For the curious: In the third example, the subranges are: [87](0 palindromes), [
 <br />
 
 ---
-### Code
-
-[palindromicRanges.php](https://github.com/wrightben/codeeval/blob/master/code/palindromicRanges.php)
-
-#### About My Solution
+### About My Solution
 
 > Range: 87 88<br />
 Range + Subranges: [87](0 palindromes), [87,88](1 palindrome), [88](1 palindrome)<br />
@@ -45,6 +41,9 @@ Range + Subranges: [87](0 palindromes), [87,88](1 palindrome), [88](1 palindrome
 
 ---
 ### Run the Code
+
+[palindromicRanges.php](https://github.com/wrightben/codeeval/blob/master/code/palindromicRanges.php)
+
 ```sh
 time php palindromicRanges.php input_sample_3.txt
 ```
