@@ -23,26 +23,11 @@ Print to stdout, permutations of the string, comma separated, in alphabetical or
 <br />
 
 ---
-### Code
+### Run the Code
 
 [cachedPermutationStrings.js](https://github.com/wrightben/codeeval/blob/master/code/cachedPermutationStrings.js) (Optional)<br />
 [stringPermutations.js](https://github.com/wrightben/codeeval/blob/master/code/stringPermutations.js)
 
-#### About My Solution
-A sorted list of the permutations of the numerical sequence *"123"* begins with a min equal to *123* and concludes with a max equal to *321*. It's possible to generate the complete list of permutations by counting up from the min to the max and selecting the interim numbers having the same digits (e.g. *213* and *231*).
-
-The sorted list of permutations for a particular numerical sequence is always the same. Because each *letter* of a word has a *numerical position* within the word, it isn't necessary to calculate the word's permutations. A function can return saved permutations for the equivalent numerical sequence and replace the numbers with the word's letters.
-
-e.g. Both "abc" and "cat" are equivalent to "123".
-
-**Notes**
-* The final array sort is only necessary when there are duplicate letters. 
-* Words with duplicate letters could use modified starting and ending indexes: "abc" = [123,321]; "aac" = [112,211]
-
-<br/>
-
----
-### Run the Code
 ```sh
 time node stringPermutations.js input_sample_1.txt
 
@@ -53,3 +38,17 @@ time node stringPermutations.js input_sample_1.txt
 cat cachedPermutationStrings.js stringPermutations.js > ~/Desktop/runnable.js \
 && echo -n "123456789" > ~/Desktop/input.txt && cd ~/Desktop && node runnable.js input.txt
 ```
+
+<br/>
+
+---
+### About My Solution
+A sorted list of the permutations of the numerical sequence *"123"* begins with a min equal to *123* and concludes with a max equal to *321*. It's possible to generate the complete list of permutations by counting up from the min to the max and selecting the interim numbers having the same digits (e.g. *213* and *231*).
+
+The sorted list of permutations for a particular numerical sequence is always the same. Because each *letter* of a word has a *numerical position* within the word, it isn't necessary to calculate the word's permutations. A function can return saved permutations for the equivalent numerical sequence and replace the numbers with the word's letters.
+
+e.g. Both "abc" and "cat" are equivalent to "123".
+
+**Notes**
+* The final array sort is only necessary when there are duplicate letters. 
+* Words with duplicate letters could use modified starting and ending indexes: "abc" = [123,321]; "aac" = [112,211]
