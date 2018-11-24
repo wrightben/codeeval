@@ -125,7 +125,11 @@ var getPaths = function( gridSize, prune, debug ) {
 		( completedPath == 1 ) ? paths.valid += 1 : paths.blocked += 1;
 		
 		// Prune Paths
-		if ( ( currentPath.length <= prune ) && ( completedPath != 1 ) ) {
+		if ( 
+			( prune > 0 ) &&
+			( currentPath.length <= prune ) && 
+			( completedPath != 1 ) 
+		) {
 			paths = prunePaths( currentPath, debug );
 		}
 		
@@ -142,4 +146,4 @@ var getPaths = function( gridSize, prune, debug ) {
 
 };
 
-console.log( getPaths( 5, 10, [true, false] ) ); // 184 (1200 ≈ 1087)
+console.log( getPaths( 5, 0, [false, false] ) ); // 184 (1200 ≈ 1087)
