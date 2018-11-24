@@ -48,8 +48,7 @@ var isValidMove = function( move, pos, gridSize, board ) {
 var walkPath = function( pos, gridSize, board, paths ) {
 	
 	var	currentPath = [pos],
-		dir = [ 'u', 'd', 'l', 'r' ],
-		next;
+		dir = [ 'u', 'd', 'l', 'r' ];
 	
 	setPos( pos, board ); // Starting Position
 
@@ -58,8 +57,8 @@ var walkPath = function( pos, gridSize, board, paths ) {
 		// Seek Moves
 		dir.next = [];
 		dir.forEach(function(e,i) {
-			var next = isValidMove( e, pos, gridSize, board );
-			if ( Boolean(next) == true ) { dir.next.push( next ); }
+			var option = isValidMove( e, pos, gridSize, board );
+			if ( Boolean(option) == true ) { dir.next.push( option ); }
 		});
 		
 		// Path Blocked (No valid moves available)
@@ -82,7 +81,7 @@ var getPaths = function( gridSize, limit, debug ) {
 
 	var	board_length = Math.pow( gridSize, 2 ),
 		board,
-		paths = { "blocked":0, "length":0 },
+		paths = { "blocked":0 },
 		currentPath;
 
 
@@ -95,8 +94,8 @@ var getPaths = function( gridSize, limit, debug ) {
 
 	}
 	
-	paths.length = Object.keys( paths ).length - 2;
-	return paths.length;
+	// # of Paths ( exclude paths = { "blocked":0 } )
+	return Object.keys( paths ).length - 1;
 
 };
 
