@@ -79,16 +79,16 @@ var walkPath = function( pos, gridSize, board, paths ) {
 }
 
 
-var getPaths = function( gridSize, limit, debug ) {
+var getPaths = function( gridSize, debug ) {
 
 	var	board_length = Math.pow( gridSize, 2 ),
 		board,
 		paths = { "blocked":0, "valid": 0 },
-		currentPath,
+		currentPath = [],
 		valid = 0;
 
-
-	while( Boolean( paths.blocked < limit ) ) {
+	// walkPath: If currentPath.join(",") = 1, there are no valid paths.
+	while( currentPath.join(",") != "1" ) { 
 		
 		board = new Array( board_length );
 		
@@ -112,5 +112,5 @@ var getPaths = function( gridSize, limit, debug ) {
 
 // console.log( getPaths( 2, 2, false ) ); // 2
 // console.log( getPaths( 3, 100, false ) ); // 12
-console.log( getPaths( 4, 1200, true ) ); // 184 (1200 ≈ 1087)
+ console.log( getPaths( 4, true ) ); // 184 (1200 ≈ 1087)
 // console.log( getPaths( 5, 90000, false ) ); // 8512
