@@ -1,9 +1,3 @@
-#!/usr/local/bin/node
-
-var	fs = require('fs'),
-	file = process.argv[2];
-	
-	
 var selectMove = function( moves ) {
 	
 	return moves[ Math.floor( Math.random() * moves.length ) ];
@@ -17,6 +11,7 @@ var setPos = function( pos, board ) {
 
 	return pos;
 }
+
 
 var isValidMove = function( move, pos, gridSize, board, currentPath, paths ) {
 	
@@ -48,6 +43,7 @@ var isValidMove = function( move, pos, gridSize, board, currentPath, paths ) {
 
 	return next;
 }
+
 
 var walkPath = function( pos, gridSize, board, paths ) {
 	
@@ -101,6 +97,8 @@ var prunePaths = function( currentPath, debug ) {
 		
 		return paths;
 }
+
+
 
 // GLOBAL VARIABLE 
 // delete paths[i] not allowed with 'var'
