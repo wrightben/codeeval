@@ -6,20 +6,20 @@ Posted Oct 9, 2011
 
 ## Description
 
-Imagine we have an immutable array of size *n* which we know to be filled with numbers ranging from 0 to (n - 2). The array contains exactly one duplicate number. Find it. 
+Imagine we have an immutable array of size *n* which we know to be filled with digits ranging from 0 to (n - 2). The array contains exactly one duplicate digit. Find it. 
 
 Bonus: Create a solution with constant space and time proportional to n.
 
 **Input sample:**
 
-Your program should accept as its first argument a path to a filename. Each line in this file is one test case. Ignore all empty lines. Each line begins with the size of the array (n), a semicolon, and a comma-separated list of positive numbers ranging from 0 to *n - 2*.
+Your program should accept as its first argument a path to a filename. Each line in this file is one test case. Ignore all empty lines. Each line begins with the size of the array (n), a semicolon, and a comma-separated list of digits ranging from 0 to *n - 2*.
 
 > 5;0,1,2,3,0<br />
 20;0,1,10,3,2,4,5,7,6,8,11,9,15,12,13,4,16,18,17,14
 
 **Output sample:**
 
-Print out the duplicate number for each line:
+Print out the duplicate digit for each line:
 
 > 0<br />4
 
