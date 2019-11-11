@@ -1,5 +1,5 @@
 # Robot Movements (JavaScript)
-[https://www.codeeval.com/public_sc/57/](https://web.archive.org/web/20150721085940/https://www.codeeval.com/public_sc/57/)<br />
+[https://www.codeeval.com/public_sc/56/](https://web.archive.org/web/20150721085940/https://www.codeeval.com/public_sc/56/)<br />
 
 ### Description
 
