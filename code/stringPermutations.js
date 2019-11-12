@@ -6,6 +6,7 @@ var getPermutationString = function( length ) {
 
 	// CACHED Permutation Strings
 	// Performance: Very Good: 7 (real 0m0.137s), 8 (real 0m0.260s), 9 (real 0m1.378s); 9-dupes (real 0m1.616s)
+	// Include cachedPermutationStrings.js to define var cachedPermutationStrings
 	if ( typeof cachedPermutationStrings != "undefined" ) { return cachedPermutationStrings[ length - 1 ]; }
 	
 	
@@ -34,7 +35,7 @@ var getPermutationString = function( length ) {
 		No apriori knowledge within algorithm
 		9-digit limit
 	*/
-	for (var i = _s; i <= _e; i += 9) { // 9 is based on Factorial Math*
+	for (var i = _s; i <= _e; i += 9) { // += 9 is based on Factorial Math*
 		
 		if ( _s == i.toString().split("").sort().join("") ) {
 			permutationString += i.toString();
