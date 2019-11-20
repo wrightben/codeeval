@@ -77,34 +77,11 @@ var walkPath = function( pos, gridSize, board, paths ) {
 }
 
 
-var prunePaths = function( currentPath, debug ) {
-
-		var	prc = Object.keys(paths).length,
-			ppc =  0,
-			re = new RegExp('^'+currentPath.join(",")+'.');
-		
-		for (var i in paths) {
-			if ( Boolean( re.exec( i.toString() ) ) == true  ) {
-				delete paths[i];
-			}
-		}
-		
-		ppc = Object.keys(paths).length;
-		
-		if ( (prc > ppc) && ( debug[1] == true) ) {
-			console.log("Pruned: "+( prc - ppc )+"| "+ppc+' stored paths and ' + paths.valid + ' valid');
-		}
-	
-	// undefined
-}
-
-
-
 // GLOBAL VARIABLE 
 // delete paths[i] not allowed with 'var'
 paths = { "blocked":0, "valid": 0 };
 
-var getPaths = function( gridSize, prune, debug ) {
+var getPaths = function( gridSize, debug ) {
 
 	var	board_length = Math.pow( gridSize, 2 ),
 		board,
@@ -121,15 +98,6 @@ var getPaths = function( gridSize, prune, debug ) {
 		
 		( completedPath == 1 ) ? paths.valid += 1 : paths.blocked += 1;
 		
-		// Prune
-		if ( 
-			( prune > 0 ) &&
-			( currentPath.length <= prune ) && 
-			( completedPath != 1 ) 
-		) {
-			prunePaths( currentPath, debug );
-		}
-		
 		paths[ currentPath.join(",") ] = 1;
 		
 		if ( debug[0] == true ) { console.log(currentPath.length, currentPath); }
@@ -142,4 +110,4 @@ var getPaths = function( gridSize, prune, debug ) {
 
 };
 
-console.log( getPaths( 4, 0, [false, false] ) ); // 4:184, 5:8512
+console.log( getPaths( 5, [true] ) ); // 4:184, 5:8512
