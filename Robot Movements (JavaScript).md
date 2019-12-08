@@ -40,4 +40,4 @@ getPaths( gridSize, debug )
 
 I'm leveraging previous experience when I shift from a grid metaphor (an array of arrays) into a linear metaphor (a single array) to create a space for my robot.
 
-My first solution let the robot generate random paths up to some limit. I chose a limit of 1500 for a 4x4 grid, which I now realize was a good approximation for the sum of valid + invalid paths ≈ 1087.
+My first solution let the robot generate random paths along contiguous squares up to some limit. In other words, in each turn, the computer started at square 1, and then selected contiguous squares that it hadn't selected before *in that turn*. I chose a limit of 1500 for a 4x4 grid, which I now realize was a good approximation for the sum of valid + invalid paths ≈ 1087. My second solution records the results of prior turns.
