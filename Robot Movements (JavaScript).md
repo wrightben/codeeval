@@ -45,4 +45,4 @@ Wandering randomly also allowed the robot to count 1087 *invalid* paths.
 
 #### 2017
 
-I translated the original from PHP to JavaScript. I updated the robot to use a depth-first algorithm.
+I translated the original from PHP to JavaScript. I updated the robot to use a depth-first algorithm. The algorithm is efficient, but less interesting. The solution is *inefficiently* "object oriented". Compare it to poker.js.
