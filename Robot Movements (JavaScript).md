@@ -43,6 +43,6 @@ My original solution let the robot wander randomly from square 1 every iteration
 
 Wandering randomly also allowed the robot to count 1087 *invalid* paths.
 
-#### 2017
+#### 2018
 
 I translated the original from PHP to JavaScript. I updated the robot to use a depth-first algorithm. The algorithm is efficient, but less interesting. Compared to poker.js, the solution is *inefficiently* object oriented.
