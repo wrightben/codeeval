@@ -49,6 +49,7 @@ Each letter of a *word* has a *numerical position* within the word, e.g. both "a
 
 An improvement is to count by 9, leveraging factorial math. And an even more efficient algorithm can use carry rules.
 
-**Notes**
+#### Notes
 * The final array sort is only necessary when there are duplicate letters. 
 * Words with duplicate letters could use modified starting and ending indexes: "abc" = [123,321]; "aac" = [112,211]
+* 6 distinct values share the permutation list of 123.
