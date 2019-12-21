@@ -49,7 +49,7 @@ Each letter of a *word* has a *numerical position* within the word. Since the wo
 
 #### More efficient algorithms
 
-An improvement is to count by 9, leveraging factorial math. An efficient algorithm can use carry rules.
+An improvement is to count by 9, leveraging factorial math. An efficient algorithm can use carry rules to generate the numerical permutation string. An efficient replacement algorithm might not create the array of arrays before outputting the result.
 
 #### Notes
 * A final array sort is only necessary when there are duplicate letters. 
