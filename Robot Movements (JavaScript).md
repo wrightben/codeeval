@@ -39,7 +39,7 @@ getPaths( gridSize, debug )
 
 #### 2010
 
-My original solution let the robot wander randomly from square 1 every iteration. If a path it wandered successfully reached the destination, it counted it. 1500 iterations gave the robot enough chances to find all **184** successful paths. 
+My original solution let the robot wander randomly from square 1 every iteration. If a path it wandered reached the destination, it counted it. 1500 iterations gave the robot enough chances to find all **184** successful paths. 
 
 Wandering randomly also allowed the robot to count 1087 *invalid* paths.
 
