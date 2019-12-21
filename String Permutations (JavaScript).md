@@ -47,7 +47,7 @@ Each letter of a *word* has a *numerical position* within the word, e.g. both "a
 
 #### More efficient algorithms
 
-An improvement is to count by 9, leveraging factorial math. And an even more efficient algorithm can use carry rules.
+An improvement is to count by 9, leveraging factorial math. An efficient algorithm can use carry rules.
 
 #### Notes
 * The final array sort is only necessary when there are duplicate letters. 
