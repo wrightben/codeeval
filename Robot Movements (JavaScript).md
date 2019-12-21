@@ -33,11 +33,12 @@ time node robotMovements.js
 getPaths( gridSize, debug )
 		
 * gridSize(int): Arbitrarily large square
-* prune(int): Prune when: currentPath length < prune
-* debug[ (true|false), (true|false) ]: Print the paths as they’re found, Show Pruning
+* debug[ (true|false), (true|false) ]: Print the paths as they’re found
 
 <br />
 
-I'm leveraging previous experience when I shift from a grid metaphor (an array of arrays) into a linear metaphor (a single array) to create a space for my robot.
+####2010
 
-My first solution let the robot generate random paths along contiguous squares up to some limit. In other words, in each turn, the computer started at square 1, and then selected contiguous squares that it hadn't selected before *in that turn*. I chose a limit of 1500 for a 4x4 grid, which I now realize was a good approximation for the sum of valid + invalid paths ≈ 1087. My second solution records the results of prior turns.
+My original solution let the "robot" wander randomly from square 1 every iteration. If the path it wandered ended up being successful, it counted it. An upper limit of only 1500 gives the robot enough chances to find all 184 successful paths. 
+
+I chose a limit of 1500 for a 4x4 grid, which I now realize was a good approximation for the sum of valid + invalid paths ≈ 1087.
