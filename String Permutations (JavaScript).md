@@ -41,9 +41,9 @@ cat cachedPermutationStrings.js stringPermutations.js > ~/Desktop/runnable.js \
 
 ---
 ### About My Solution
-It's possible to generate the complete sorted list of permutations of a numerical sequence by counting up from the min to the max and selecting the interim values having the same digits, e.g. 123, 132, 213, 231, 312, 321.
+It's possible to generate the complete sorted list of permutations of a numerical sequence by counting up from the min to the max and selecting the interim values having the same digits, e.g. 123, 132, 213, 231, 312, 321. This can be done once.
 
-Each letter of a *word* has a *numerical position* within the word, e.g. both "abc" and "cat" are equivalent to "123". If c-a-t (or d-o-g, or b-u-s) is equal to 1-2-3, it isn't necessary to generate permutations of letters. The letters of any word can replace the digits of the saved numerical sequence of the same length.
+Each letter of a *word* has a *numerical position* within the word, e.g. both "abc" and "cat" are equivalent to "123". If c-a-t (or d-o-g, or b-u-s) is equal to 1-2-3, it isn't necessary to generate permutations of letters. The letters of any word can replace the digits of the numerical sequence of the same length.
 
 #### More efficient algorithms
 
