@@ -41,7 +41,7 @@ cat cachedPermutationStrings.js stringPermutations.js > ~/Desktop/runnable.js \
 
 ---
 ### About My Solution
-It's possible to generate the complete sorted list of permutations of a numerical sequence by counting up from the min to the max and selecting the interim values having the same digits.
+Generate the sorted list of permutations of a numerical sequence by counting up from the min to the max and selecting the interim values having the same digits.
 
 Example: The sequence 1-2-3 has the permutations: 123, 132, 213, 231, 312, 321. Counting from 123 to 321 will produce an ordered list of permutations for the sequence 123, after removing the values with other digits. This can be done once.
 
