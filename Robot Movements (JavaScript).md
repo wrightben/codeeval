@@ -39,6 +39,6 @@ getPaths( gridSize, debug )
 
 #### 2010
 
-My original solution let the "robot" wander randomly from square 1 every iteration. If the path it wandered ended up being successful, it counted it. An upper limit of only 1500 gives the robot enough chances to find all 184 successful paths. 
+My original solution let the "robot" wander randomly from square 1 every iteration. If the path it wandered ended up being successful, it counted it. An upper limit of only *1500* gives the robot enough chances to find all **184** successful paths. 
 
-I chose a limit of 1500 for a 4x4 grid, which I now realize was a good approximation for the sum of valid + invalid paths ≈ 1087.
+Somehow I ended up with *1087* invalid paths.
