@@ -41,7 +41,7 @@ cat cachedPermutationStrings.js stringPermutations.js > ~/Desktop/runnable.js \
 
 ---
 ### About My Solution
-A sorted list of the permutations of the numerical sequence *1,2,3* begins with a min equal to *123* and concludes with a max equal to *321*. It's possible to generate the complete list of permutations by counting up from the min to the max and selecting the interim numbers having the same digits, e.g. 123, 132, 213, 231, 312, 321.
+A sorted list of the permutations of the numerical sequence *1,2,3* begins with a min equal to *123* and concludes with a max equal to *321*. It's possible to generate the complete list of permutations by counting up from the min to the max and selecting the interim numbers having the same digits, e.g. 123, ..., 132, ..., 213, 231, 312, 321.
 
 Each letter of a *word* has a *numerical position* within the word, e.g. both "abc" and "cat" are equivalent to "123". So it isn't necessary to calculate the word's permutations. The letters of a word can replace the digits of the saved numerical sequence of the same length.
 
