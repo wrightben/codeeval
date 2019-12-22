@@ -3,16 +3,6 @@
 perl iter.pl 5
 ```
 
-#### Requires
-```
-var _ = [];
-
-/* Insert Output Here */
-
-console.log( _.join(",") );
-```
-
-
 #### Output
 ```
 // n (nPr): user-defined variable
@@ -30,4 +20,13 @@ console.log( _.join(",") );
 _.push( [ i5 + 1,i4 + 1,i3 + 1,i2 + 1,i1 + 1 ].join("") );
 
 }}}}}}}}}
+```
+
+#### JavaScript (Create a file)
+```
+var _ = [];
+
+/* Insert Output Here */
+
+console.log( _.join(",") );
 ```
