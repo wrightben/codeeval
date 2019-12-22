@@ -51,7 +51,7 @@ var sub = function(_array, m, n) {
 /*******************
 VARIABLES
 *******************/
-var 	n = 11;
+var 	n = 10;
 var	_iph = {}; // Hash lookup { n : 1 }
 var	_ip = []; // [] (int): Sortable integers
 var	_nph = { "length": 0 }; // Collection: { "length" :0, "n" : [ [](int), n ] }
@@ -81,9 +81,9 @@ while ( _nph.length > 0 ) {
 	
 	for (var i = n + 1; i > 0; i-- ) { // 6, 5, 4, 3, 2, 1
 	
-		_ids.forEach(function(e, f) {
+		for (var j = 0; j < _ids.length; j++ ) {
 
-			_id = e;
+			_id = _ids[j];
 			_element = _nph[ _id ][0];
 			_status =  _nph[ _id ][1];
 
@@ -108,7 +108,7 @@ while ( _nph.length > 0 ) {
 			
 			}
 
-		});	
+		};	
 	
 
 
