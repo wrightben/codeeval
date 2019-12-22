@@ -53,7 +53,7 @@ For the sequence 1-2-3-4-5-6-7, we can figure out 7P2 by using the starting inde
 
 
 #### Notes
-* Nested for-loops: The file /code/perl/iter.pl generates a conventional nested for-loop structure. It's *way* more efficient than my algorithm, but still generates n^n numbers where n = r.
+* Nested for-loops: The file /code/perl/iter.pl generates a conventional nested for-loop structure. It's *way* more efficient than my algorithm, but still iterates over n^n numbers where n = r.
 * A final array sort is only necessary when there are duplicate letters. 
 * Words with duplicate letters could use modified starting and ending indexes: "abc" = [123,321]; "aac" = [112,211]
 * 6 distinct values share the permutation list of 123.
