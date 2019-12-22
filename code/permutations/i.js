@@ -22,9 +22,9 @@ var getNPR = function (n, r) {
 
 
 // Function: _array (complex element; m (int): mask; n (int): high value
-var sub = function(_array, m, n) {
+var sub = function(s, m, n) {
 
-	var _ = _array[0];
+	var _ = s.toString().split("");
 	var __ = [];
 	
 	var l = _.length;
@@ -43,7 +43,7 @@ var sub = function(_array, m, n) {
 		
 	}
 	
-	return [ __, Number(__.join("")) ];
+	return __.join("");
 
 }
 
@@ -51,19 +51,20 @@ var sub = function(_array, m, n) {
 /*******************
 VARIABLES
 *******************/
-var 	n = 3;
+var 	n = 9;
 var	_iph = {}; // Hash lookup { n : 1 }
 var	_ip = []; // [] (int): Sortable integers
 var	_nph = { "length": 0 }; // Collection: { "length" :0, "n" : [ [](int), n ] }
+var	bound = Math.pow(10,5);
 
 // Build starting array
 var x = [];
 for (var i = 0; i < n; i ++) { x.push(i+1); }
-x = [ x, Number(x.join("")) ];
+x = x.join("");
 
 
 
-_nph[ x[1] ] = [x, (new Array(n+1)).fill(0) ];
+_nph[ x ] = ( new Array(n+1) ).fill(0); //  _nph.id = status
 _nph.length += 1;
 
 // console.log(getRandomID(_nph));
@@ -71,40 +72,45 @@ _nph.length += 1;
 while ( _nph.length > 0 ) {
 
 	console.log(_nph.length);
+	
+	var ll = 0;
+	(_nph.length > bound) ? ll = bound : ll = _nph.length;
+	
 
 	var _ids = [];
+	var _pi = 0;
 	for (p in _nph) { // Max 10 ids
 		if ( _nph.hasOwnProperty(p) && (p != "length") ) {
 			_id = p;			
 			_ids.push( _id );
 		}
+		if (_pi > bound) { break; }
 	}
-	_ids = _ids.slice(0, Math.floor( _nph.length / 2 ) );
 
 	
 	for (var i = n + 1; i > 0; i-- ) { // 6, 5, 4, 3, 2, 1
 	
-		for (var j = 0; j < _ids.length; j++ ) {
+		for (var j = 0; j < ll; j++ ) {
 
-			_id = _ids[j];
-			_element = _nph[ _id ][0];
-			_status =  _nph[ _id ][1];
+			_id = _ids[j]; // (int)
+			_status =  _nph[ _id ]; // []
 
 	
 			if ( _status[i-1] != 1 ) { // Mirrored value: Skip
 	
-				var ro = sub(_element,i,n); // Args: [[1,2,3,4,5,6], 123456 ], i, 4
-				var _roID = ro[1];
+				var ro = sub(_id,i,n); // Args: 123456, i, 4
+				var _roID = ro;
 			
 				if ( 	(typeof _iph[_roID] == "undefined" ) && // Not _ip
 					(typeof _nph[_roID] == "undefined") ) 	// Not _np
 				{
-					_nph[_roID] = [ro, (new Array(n+1)).fill(0) ]; // _nph.ID = [ element, status ]
-					_nph[_roID][1][i - 1] = 1; // Mirrored Value: ro.status[..i..] = 1;
+					_nph[_roID] = ( new Array(n+1) ).fill(0);  // _nph.ID = [ element, status ]
+					_nph[_roID][i - 1] = 1; // Mirrored Value: ro.status[..i..] = 1;
 					_nph.length += 1;
+					
 				} else if ( typeof _nph[_roID] != "undefined" ) {
 					// Not completed, but mirrored
-					_nph[_roID][1][i - 1] = 1; // Mirrored Value: ro.status[..i..] = 1;
+					_nph[_roID][i - 1] = 1; // Mirrored Value: ro.status[..i..] = 1;
 				}
 			
 				_status[i-1] = 1; // _element.status[..i..] = 1;
@@ -118,11 +124,10 @@ while ( _nph.length > 0 ) {
 		
 	}
 	
-	_ids.forEach(function(e, i) {
+	for (var j = 0; j < ll; j++ ) {
 		
-		_id = e;
-		_element = _nph[ _id ][0];
-		_status =  _nph[ _id ][1];
+		_id = _ids[j];
+		_status =  _nph[ _id ];
 		
 		 // REM from _nph
 		delete _nph[ _id ]; _nph.length -= 1;
@@ -133,11 +138,11 @@ while ( _nph.length > 0 ) {
 			_ip.push(_id); // _ip.push( Number )
 		}
 	
-	});
+	}
 
 
 		
 }
 
-// console.log(_nph.length, _ip.length);
+
 console.log(_ip.length, _ip.sort());
