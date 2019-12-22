@@ -85,6 +85,7 @@ while ( _nph.length > 0 ) {
 			_ids.push( _id );
 		}
 		if (_pi > bound) { break; }
+		_pi ++;
 	}
 
 	
