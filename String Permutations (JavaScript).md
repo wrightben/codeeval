@@ -51,8 +51,6 @@ Each letter of a *word* has a *numerical position* within the word. Since the wo
 
 For the sequence 1-2-3-4-5-6-7, we can figure out 7P2 by using the starting index 1-2 and the ending index 7-6.<sup>1</sup>
 
-<sup>1: When n = r, it's possible to increment by 9. When n != r, it might be necessary to increment by 1</sup>
-
 ##### Nested for-loops
 The file /code/perl/iter.pl generates a conventional nested for-loop structure. It's *way* more efficient than testing strings the way I am, but it still generates n^n numbers where n = r.
 
@@ -66,3 +64,6 @@ A simple improvement to generate the numerical permutation string: count by 9. A
 * A final array sort is only necessary when there are duplicate letters. 
 * Words with duplicate letters could use modified starting and ending indexes: "abc" = [123,321]; "aac" = [112,211]
 * 6 distinct values share the permutation list of 123.
+
+-----
+<sup>1: When n = r, it's possible to increment by 9. When n != r, it might be necessary to increment by 1</sup>
