@@ -49,7 +49,7 @@ Each letter of a *word* has a *numerical position* within the word. Since the wo
 
 #### Other Considerations: nPr
 
-For the sequence 1-2-3-4-5-6-7, we can figure out 7P2 by using a starting index of 1-2 and an ending index of 7-6.<sup>1</sup>
+For the sequence 1-2-3-4-5-6-7, we can figure out 7P2 by using the starting index 1-2 and the ending index 7-6.<sup>1</sup>
 
 <sup>1: When n = r, it's possible to increment by 9. When n != r, it might be necessary to increment by 1</sup>
 
