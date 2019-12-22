@@ -58,5 +58,14 @@ For the sequence 1-2-3-4-5-6-7, we can figure out 7P2 by using the starting inde
 * Words with duplicate letters could use modified starting and ending indexes: "abc" = [123,321]; "aac" = [112,211]
 * 6 distinct values share the permutation list of 123.
 
+JavaScript Test: *"event": "Allocation failed - JavaScript heap out of memory"*
+```
+var x = Math.pow(10,10);
+
+for (var i = 1; i < x; i++) {
+	console.log( i );
+}
+```
+
 -----
 <sup>1: When n = r, it's possible to increment by 9. When n != r, it might be necessary to increment by 1</sup>
