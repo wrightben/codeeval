@@ -47,3 +47,10 @@ var _ = [];
 
 console.log( _.join(",") );
 ```
+
+
+----
+
+### Results
+
+The for-loop method completes in about 5 seconds with up to 10 nested for-loops.
