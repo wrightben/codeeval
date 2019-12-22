@@ -77,7 +77,7 @@ var rmElement = function(_array1, _array2) {
 /*******************
 VARIABLES
 *******************/
-var 	n = 8;
+var 	n = 9;
 //	r = 2;
 	
 	
@@ -116,7 +116,6 @@ while ( _np.length > 0 ) {
 				
 			_nph[_element[1]][i-1] = 1;
 		}
-	
 	}
 	
 	_np = rmElement(_element, _np);
@@ -127,9 +126,4 @@ while ( _np.length > 0 ) {
 }
 
 
-//	console.log(_np);
-	console.log(_ip.length);
-// 	console.log('_nph = ',_nph);
-//	console.log(_ip);
-
-
+console.log(_ip.length);
