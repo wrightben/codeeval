@@ -43,17 +43,10 @@ var sub = function(_array, m, n) {
 		
 	}
 	
-	return [ __, Number(__.join("")) ,[] ];
+	return [ __, Number(__.join("")) ];
 
 }
 
-var sortCollection = function(_array1, _array2) {
-	var	_l = _array1.length;
-	
-	for (var i = 0; i < _l; i++) {
-		return _array1[0][i] - _array2[0][i];
-	}
-}
 
 // Array 1 is the complex element. Array 2 is the collection of complex elements
 var inCollection = function(_array1, _array2) {
@@ -81,53 +74,62 @@ var rmElement = function(_array1, _array2) {
 }
 
 
-
-var 	n = 6;
+/*******************
+VARIABLES
+*******************/
+var 	n = 8;
 //	r = 2;
 	
 	
 // 	console.log( getNPR(n,r) );
 	
 
+var	_iph = {};
 var	_ip = [];
 var	_np = [];
+var	_nph = {};
 
 // Build starting array
 var x = [];
 for (var i = 0; i < n; i ++) { x.push(i+1); }
-x = [ x, Number(x.join("")), [] ];
+x = [ x, Number(x.join("")) ];
 _np.push(x);
+_nph[x[1]] = new Array(n+1);
+
 
 
 while ( _np.length > 0 ) {
 	
 	_element = _np[0];
 	
-	for (var i = n; i > 0; i-- ) { // 4, 3, 2, 1
+	for (var i = n + 1; i > 0; i-- ) { // 6, 5, 4, 3, 2, 1
 	
-// 		if ( _element[2][i-1] != 1 ) {
+		if ( _nph[_element[1]][i-1] != 1 ) {
 
-			var ro = sub(_element,i,n); // Args: [[1,2,3,4],"1234"], i, 4
+			var ro = sub(_element,i,n); // Args: [[1,2,3,4,5,6], 123456 ], i, 4
 	
-			if ( 	(! inCollection( ro, _ip )) && 
-				(! inCollection( ro, _np ) )  ) {
-// 				ro[2][i-1] = 1; // Mirrored Subtraction
+			if ( ( _iph[ro[1]] != 1 ) && (! inCollection( ro, _np ) )  ) {
 				_np.push( ro );
+				_nph[ro[1]] = new Array(n+1);
+				_nph[ro[1]][i-1] = 1;
 			}
-		
-// 			_element[2][i-1] = 1;
-		
-// 		}
-
+				
+			_nph[_element[1]][i-1] = 1;
+		}
+	
 	}
 	
 	_np = rmElement(_element, _np);
  	
-	_ip.push(_element);
+ 	_iph[_element[1]] = 1;
+	_ip.push(_element[1]);
 		
 }
 
-// console.log(_np);
-console.log(_ip.length);
+
+//	console.log(_np);
+	console.log(_ip.length);
+// 	console.log('_nph = ',_nph);
+//	console.log(_ip);
 
 
