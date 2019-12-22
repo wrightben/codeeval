@@ -47,11 +47,11 @@ Example: The sequence 1-2-3 has the permutations: 123, 132, 213, 231, 312, 321. 
 
 Each letter of a *word* has a *numerical position* within the word. Since the words *c-a-t*, *d-o-g*, and *p-e-t* are each equal to the sequence *1-2-3* after sorting the letters, the sorted letters of any word can replace the digits in the permutation string of the numerical sequence of the same length.
 
+#### Other Considerations: nPr
+
 For the collection 1-2-3-4, we can figure out what 4P2 is by using a starting index of 1-2 and an ending index of 4-3. However, in this case, we must count by 1. Fortunately, the distance between 1-2 and 4-3 is very short.
 
 Consider 1-2-3-4-5-6-7-8-9 taken 2 ways: 12 ... 98.
-
-#### Naive Approach
 
 ##### Nested for-loops
 The file /code/perl/iter.pl generates a conventional nested for-loop structure. It's *way* more efficient than testing strings the way I am, but it still generates n^n numbers where n = r.
