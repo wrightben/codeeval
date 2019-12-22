@@ -49,9 +49,11 @@ Each letter of a *word* has a *numerical position* within the word. Since the wo
 
 #### Other Considerations: nPr
 
-For the sequence 1-2-3-4, we can figure out 4P2 by using a starting index of 1-2 and an ending index of 4-3. However, in this case, we must count by 1. Fortunately, the distance between 1-2 and 4-3 is very short.
+For the sequence 1-2-3-4, we can figure out 4P2 by using a starting index of 1-2 and an ending index of 4-3.<sup>1</sup>
 
 Consider 1-2-3-4-5-6-7-8-9 taken 2 ways: 12 ... 98.
+
+<sup>1: When n = r, it's possible to increment by 9. When n != r, it might be necessary to increment by 1</sup>
 
 ##### Nested for-loops
 The file /code/perl/iter.pl generates a conventional nested for-loop structure. It's *way* more efficient than testing strings the way I am, but it still generates n^n numbers where n = r.
