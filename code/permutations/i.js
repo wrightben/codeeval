@@ -18,6 +18,23 @@ var getNPR = function (n, r) {
 	
 	return _(n) / _(n - r);
 	
+}
+
+var getRandomID = function( o, n ) {
+	var _i = 0;
+	var _id = 0;
+	if (typeof n == "undefined") { n = 1; _i = n; }
+	
+	for (i in o) {
+		if ( o.hasOwnProperty(i) && (i != "length") && ( _i >= n ) ) {
+
+			_id = i;
+			break;
+
+		}
+		_i++;
+	}
+	return _id;
 }	
 
 
@@ -48,82 +65,68 @@ var sub = function(_array, m, n) {
 }
 
 
-// Array 1 is the complex element. Array 2 is the collection of complex elements
-var inCollection = function(_array1, _array2) {
-
-	return _array2.some(function(e,i) {
-		return Boolean( e[1] == _array1[1] ); // if ( "1234" == "1234" )
-	});
-
-}
-
-
-// Array 1 is the complex element. Array 2 is the collection of complex elements
-var rmElement = function(_array1, _array2) {
-
-	var	_ = [],
-		l = _array2.length;
-	
-	for (var i = 0; i < l; i++) {
-		if ( _array2[i][1] != _array1[1] ) {
-			_.push( _array2[i] );
-		}
-	}
-	return _;
-
-}
-
-
 /*******************
 VARIABLES
 *******************/
-var 	n = 9;
-//	r = 2;
-	
-	
-// 	console.log( getNPR(n,r) );
-	
-
-var	_iph = {};
-var	_ip = [];
-var	_np = [];
-var	_nph = {};
+var 	n = 8;
+var	_iph = {}; // Hash lookup { n : 1 }
+var	_ip = []; // [] (int): Sortable integers
+var	_nph = { "length": 0 }; // Collection: { "length" :0, "n" : [ [](int), n ] }
 
 // Build starting array
 var x = [];
 for (var i = 0; i < n; i ++) { x.push(i+1); }
 x = [ x, Number(x.join("")) ];
-_np.push(x);
-_nph[x[1]] = new Array(n+1);
 
 
+console.log(x);
 
-while ( _np.length > 0 ) {
+_nph[ x[1] ] = [x, (new Array(n+1)).fill(0) ];
+_nph.length += 1;
+
+// console.log(getRandomID(_nph));
+
+while ( _nph.length > 0 ) {
 	
-	_element = _np[0];
+	_id = getRandomID(_nph,0);
+	_element = _nph[ _id ][0];
+	_status =  _nph[ _id ][1];
+
 	
 	for (var i = n + 1; i > 0; i-- ) { // 6, 5, 4, 3, 2, 1
-	
-		if ( _nph[_element[1]][i-1] != 1 ) {
 
-			var ro = sub(_element,i,n); // Args: [[1,2,3,4,5,6], 123456 ], i, 4
+		if ( _status[i-1] != 1 ) { // Mirrored value: Skip
 	
-			if ( ( _iph[ro[1]] != 1 ) && (! inCollection( ro, _np ) )  ) {
-				_np.push( ro );
-				_nph[ro[1]] = new Array(n+1);
-				_nph[ro[1]][i-1] = 1;
+			var ro = sub(_element,i,n); // Args: [[1,2,3,4,5,6], 123456 ], i, 4
+			var _roID = ro[1];
+			
+			if ( 	(typeof _iph[_roID] == "undefined" ) && // Not _ip
+				(typeof _nph[_roID] == "undefined") ) 	// Not _np
+			{
+				_nph[_roID] = [ro, (new Array(n+1)).fill(0) ]; // _nph.ID = [ element, status ]
+				_nph[_roID][1][i - 1] = 1; // Mirrored Value: ro.status[..i..] = 1;
+				_nph.length += 1;
+			} else if ( typeof _iph[ro[1]] == "undefined" ) {
+				// Not completed, but mirrored
+				_nph[_roID][1][i - 1] = 1; // Mirrored Value: ro.status[..i..] = 1;
 			}
-				
-			_nph[_element[1]][i-1] = 1;
+			
+			_status[i-1] = 1; // _element.status[..i..] = 1;
+			
 		}
+		
 	}
 	
-	_np = rmElement(_element, _np);
+	
+ 	// REM from _nph
+ 	delete _nph[ _id ]; _nph.length -= 1;
  	
- 	_iph[_element[1]] = 1;
-	_ip.push(_element[1]);
+ 	// ADD to _iph, _ip
+ 	_iph[_element[1]] = 1; // iph[ Number ] = 1
+	_ip.push(_element[1]); // _ip.push( Number )
+
 		
 }
 
-
-console.log(_ip.length);
+// console.log(_nph.length, _ip.length);
+console.log(_ip.length, _ip.sort());
