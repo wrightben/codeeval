@@ -76,7 +76,7 @@ var 	n = 11;
 var	f = getNPR(n);
 var	_iph = { "length": 0 }; // Hash lookup { n : 1 }
 var	_nph = { "length": 0 }; // Collection: { "length" :0, "n" : [ [](int), n ] }
-var	bound = 1500;
+var	bound = 50000;
 var	boole = true;
 
 
@@ -120,19 +120,18 @@ while ( _nph.length > 0 ) {
 
 	console.log(f, _iph.length);
 	
-	
-	
-	for (var i = n + 1; i > 0; i-- ) { // 6, 5, 4, 3, 2, 1
 
-		// _ids.forEach
-		for (var j = 0; j < _ids.length; j++ ) {
+	// _ids.forEach
+	for (var j = 0; j < _ids.length; j++ ) {
+	
+		_id = _ids[j]; // (int)
 		
-			_id = _ids[j]; // (int)
+		for (var i = n + 1; i > 0; i-- ) { // 6, 5, 4, 3, 2, 1
 
 			if (_nph[ _id ][i-1] != 1) {
 
 				var ro = sub(_id,i,n); // Args: 123456, i, 4
-		
+	
 				if ( (typeof _iph[ro] == "undefined" ) && (typeof _nph[ro] == "undefined" ) ) {
 					_nph[ ro ] = (new Array(n+1)).fill(0);
 					_nph[ ro ][i-1] = 1; // Mirror Status
@@ -140,20 +139,14 @@ while ( _nph.length > 0 ) {
 				} else if ( typeof _nph[ro] != "undefined"  ) {
 					_nph[ ro ][i-1] = 1; // Mirror Status
 				}
-				
+			
 			}
-				
 		
-		};	
-
-	
-	}
-
-	// _ids.forEach
-	for (var j = 0; j < _ids.length; j++ ) {
+		}
+			
 	
 		_id = _ids[j];
-	
+
 		 // REM from _nph
 		delete _nph[ _id ]; _nph.length -= 1;
 
@@ -162,8 +155,9 @@ while ( _nph.length > 0 ) {
 			_iph[_id] = 1;
 			_iph.length += 1;
 		}
-
-	}
+			
+	
+	};
 	
 		
 }
