@@ -22,7 +22,7 @@ var getNPR = function (n, r) {
 
 
 // Function: _array (complex element; m (int): mask; n (int): high value
-var sub = function(s, m, n) {
+var increment = function(s, m, n) {
 
 	var _ = s.split("");
 	var __ = [];
@@ -77,7 +77,6 @@ var	f = getNPR(n);
 var	_iph = { "length": 0 }; // Hash lookup { n : 1 }
 var	_nph = { "length": 0 }; // Collection: { "length" :0, "n" : [ [](int), n ] }
 var	bound = 50000;
-var	boole = true;
 
 
 // Build starting index
@@ -105,6 +104,8 @@ console.log(_nph);
 
 while ( _nph.length > 0 ) {
 
+	console.log( _nph.length );
+
 	
 	var _ids = [];
 	
@@ -117,8 +118,6 @@ while ( _nph.length > 0 ) {
 		if (_pi >= bound) { break; }
 		_pi ++;
 	}
-
-	console.log(f, _iph.length);
 	
 
 	// _ids.forEach
@@ -130,7 +129,7 @@ while ( _nph.length > 0 ) {
 
 			if (_nph[ _id ][i-1] != 1) {
 
-				var ro = sub(_id,i,n); // Args: 123456, i, 4
+				var ro = increment(_id,i,n); // Args: 123456, i, 4
 	
 				if ( (typeof _iph[ro] == "undefined" ) && (typeof _nph[ro] == "undefined" ) ) {
 					_nph[ ro ] = (new Array(n+1)).fill(0);
