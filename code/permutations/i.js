@@ -51,7 +51,7 @@ var sub = function(_array, m, n) {
 /*******************
 VARIABLES
 *******************/
-var 	n = 10;
+var 	n = 11;
 var	_iph = {}; // Hash lookup { n : 1 }
 var	_ip = []; // [] (int): Sortable integers
 var	_nph = { "length": 0 }; // Collection: { "length" :0, "n" : [ [](int), n ] }

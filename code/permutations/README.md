@@ -1,6 +1,6 @@
 ## Algorithms for generating permutations
 
-i.js is nearly as fast as the nested for-loops up to n = 9
+i.js is nearly as fast as the nested for-loops created by iter.pl up to n = 9
 
 ```
 $time node i.js
