@@ -1,6 +1,6 @@
 ### Use
 ```
-perl iter.pl 3
+perl iter.pl 5
 ```
 
 
