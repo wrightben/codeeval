@@ -43,7 +43,7 @@ var sub = function(_array, m, n) {
 		
 	}
 	
-	return [ __, __.join("") ];
+	return [ __, Number(__.join("")) ,[] ];
 
 }
 
@@ -82,7 +82,7 @@ var rmElement = function(_array1, _array2) {
 
 
 
-var 	n = 8;
+var 	n = 6;
 //	r = 2;
 	
 	
@@ -101,18 +101,24 @@ _np.push(x);
 
 while ( _np.length > 0 ) {
 	
-	console.log(_np.length);
-	
 	_element = _np[0];
 	
 	for (var i = n; i > 0; i-- ) { // 4, 3, 2, 1
+	
+// 		if ( _element[2][i-1] != 1 ) {
 
-		var ro = sub(_element,i,n); // Args: [[1,2,3,4],"1234"], i, 4
+			var ro = sub(_element,i,n); // Args: [[1,2,3,4],"1234"], i, 4
 	
-		if ( (! inCollection( ro, _ip )) && (! inCollection( ro, _np ) )  ) {
-			_np.push( ro );
-		}
-	
+			if ( 	(! inCollection( ro, _ip )) && 
+				(! inCollection( ro, _np ) )  ) {
+// 				ro[2][i-1] = 1; // Mirrored Subtraction
+				_np.push( ro );
+			}
+		
+// 			_element[2][i-1] = 1;
+		
+// 		}
+
 	}
 	
 	_np = rmElement(_element, _np);
@@ -121,7 +127,7 @@ while ( _np.length > 0 ) {
 		
 }
 
-console.log(_np);
+// console.log(_np);
 console.log(_ip.length);
 
 
