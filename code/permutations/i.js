@@ -24,14 +24,26 @@ var getNPR = function (n, r) {
 // Function: _array (complex element; m (int): mask; n (int): high value
 var sub = function(s, m, n) {
 
-	var _ = s.toString().split("");
+	var _ = s.split("");
 	var __ = [];
 	
 	var l = _.length;
 	
 	for (var i = 0; i < l; i++ ) {
-		var 	_e = _[i],
-			_d = m - _e;
+		var 	_e =  _[i];
+		
+		if ( ( _e == "A" ) || ( _e == "B" ) || ( _e == "C" ) ) {
+			_e = {
+				"A":10,
+				"B":11,
+				"C":12,
+				"D":13
+			}[_e];
+		}
+		
+		
+		
+		var	_d = m - _e;
 			
 		if ( _d == 0 ) {
 			__[i] = m;
@@ -39,6 +51,15 @@ var sub = function(s, m, n) {
 			__[i] = n + 1 + _d;
 		} else {
 			__[i] = _d;
+		}
+		
+		if (__[i] > 9) {
+			__[i] = {
+				"10":"A",
+				"11":"B",
+				"12":"C",
+				"13":"D"
+			}[__[i].toString()];
 		}
 		
 	}
@@ -51,99 +72,101 @@ var sub = function(s, m, n) {
 /*******************
 VARIABLES
 *******************/
-var 	n = 9;
-var	_iph = {}; // Hash lookup { n : 1 }
-var	_ip = []; // [] (int): Sortable integers
+var 	n = 11;
+var	f = getNPR(n);
+var	_iph = { "length": 0 }; // Hash lookup { n : 1 }
 var	_nph = { "length": 0 }; // Collection: { "length" :0, "n" : [ [](int), n ] }
-var	bound = Math.pow(10,5);
+var	bound = 1500;
+var	boole = true;
 
-// Build starting array
+
+// Build starting index
 var x = [];
-for (var i = 0; i < n; i ++) { x.push(i+1); }
+for (var i = 0; i < n; i ++) { 
+	var _num = i+1;
+	if (_num > 9) {
+		_num = {
+			"10":"A",
+			"11":"B",
+			"12":"C",
+			"13":"D"
+		}[_num.toString()];
+	}
+	x.push(_num); 
+}
 x = x.join("");
 
 
-
-_nph[ x ] = ( new Array(n+1) ).fill(0); //  _nph.id = status
+// Add starting index to _nph
+_nph[ x ] = (new Array(n+1)).fill(0);
 _nph.length += 1;
 
-// console.log(getRandomID(_nph));
+console.log(_nph);
 
 while ( _nph.length > 0 ) {
 
-	console.log(_nph.length);
 	
-	var ll = 0;
-	(_nph.length > bound) ? ll = bound : ll = _nph.length;
-	
-
 	var _ids = [];
-	var _pi = 0;
+	
+	
+	var _pi = 1;
 	for (p in _nph) { // Max 10 ids
-		if ( _nph.hasOwnProperty(p) && (p != "length") ) {
-			_id = p;			
-			_ids.push( _id );
+		if ( _nph.hasOwnProperty(p) && (p != "length") ) {		
+			_ids.push( p );
 		}
-		if (_pi > bound) { break; }
+		if (_pi >= bound) { break; }
 		_pi ++;
 	}
 
+	console.log(f, _iph.length);
+	
+	
 	
 	for (var i = n + 1; i > 0; i-- ) { // 6, 5, 4, 3, 2, 1
-	
-		for (var j = 0; j < ll; j++ ) {
 
+		// _ids.forEach
+		for (var j = 0; j < _ids.length; j++ ) {
+		
 			_id = _ids[j]; // (int)
-			_status =  _nph[ _id ]; // []
 
-	
-			if ( _status[i-1] != 1 ) { // Mirrored value: Skip
-	
+			if (_nph[ _id ][i-1] != 1) {
+
 				var ro = sub(_id,i,n); // Args: 123456, i, 4
-				var _roID = ro;
-			
-				if ( 	(typeof _iph[_roID] == "undefined" ) && // Not _ip
-					(typeof _nph[_roID] == "undefined") ) 	// Not _np
-				{
-					_nph[_roID] = ( new Array(n+1) ).fill(0);  // _nph.ID = [ element, status ]
-					_nph[_roID][i - 1] = 1; // Mirrored Value: ro.status[..i..] = 1;
+		
+				if ( (typeof _iph[ro] == "undefined" ) && (typeof _nph[ro] == "undefined" ) ) {
+					_nph[ ro ] = (new Array(n+1)).fill(0);
+					_nph[ ro ][i-1] = 1; // Mirror Status
 					_nph.length += 1;
-					
-				} else if ( typeof _nph[_roID] != "undefined" ) {
-					// Not completed, but mirrored
-					_nph[_roID][i - 1] = 1; // Mirrored Value: ro.status[..i..] = 1;
+				} else if ( typeof _nph[ro] != "undefined"  ) {
+					_nph[ ro ][i-1] = 1; // Mirror Status
 				}
-			
-				_status[i-1] = 1; // _element.status[..i..] = 1;
-			
+				
 			}
-
+				
+		
 		};	
+
 	
-
-
-		
 	}
+
+	// _ids.forEach
+	for (var j = 0; j < _ids.length; j++ ) {
 	
-	for (var j = 0; j < ll; j++ ) {
-		
 		_id = _ids[j];
-		_status =  _nph[ _id ];
-		
+	
 		 // REM from _nph
 		delete _nph[ _id ]; _nph.length -= 1;
-	
+
 		// ADD to _iph, _ip
-		if (typeof _iph[_id] == "undefined" ) {
-			_iph[_id] = 1; // iph[ Number ] = 1
-			_ip.push(_id); // _ip.push( Number )
+		if ( typeof _iph[_id] == "undefined" ) {
+			_iph[_id] = 1;
+			_iph.length += 1;
 		}
-	
+
 	}
-
-
+	
 		
 }
 
 
-console.log(_ip.length, _ip.sort());
+console.log(_iph.length);
