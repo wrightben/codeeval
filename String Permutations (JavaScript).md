@@ -45,7 +45,7 @@ Generate the sorted list of permutations of a numerical sequence by counting up 
 
 Example: The sequence 1-2-3 has the permutations: 123, 132, 213, 231, 312, 321. Counting from 123 to 321 will produce this list after removing the values with other digits. This can be done once.
 
-Each letter of a *word* has a *numerical position* within the word. Since the words *c-a-t*, *d-o-g*, and *p-e-t* are each equal to the sequence *1-2-3* after sorting the letters, the sorted letters of any word can replace the digits in sorted list of permutations of the numerical sequence of the same length.
+Each letter of a *word* has a *numerical position* within the word. Since the words *c-a-t*, *d-o-g*, and *p-e-t* are each equal to the sequence *1-2-3* after sorting the letters, the sorted letters of any word can replace the digits in the sorted list of permutations of the numerical sequence of the same length.
 
 #### Other Considerations: nPr
 
