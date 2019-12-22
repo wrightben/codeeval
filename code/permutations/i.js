@@ -51,7 +51,7 @@ var sub = function(_array, m, n) {
 /*******************
 VARIABLES
 *******************/
-var 	n = 11;
+var 	n = 3;
 var	_iph = {}; // Hash lookup { n : 1 }
 var	_ip = []; // [] (int): Sortable integers
 var	_nph = { "length": 0 }; // Collection: { "length" :0, "n" : [ [](int), n ] }
@@ -70,6 +70,8 @@ _nph.length += 1;
 
 while ( _nph.length > 0 ) {
 
+	console.log(_nph.length);
+
 	var _ids = [];
 	for (p in _nph) { // Max 10 ids
 		if ( _nph.hasOwnProperty(p) && (p != "length") ) {
@@ -77,6 +79,7 @@ while ( _nph.length > 0 ) {
 			_ids.push( _id );
 		}
 	}
+	_ids = _ids.slice(0, Math.floor( _nph.length / 2 ) );
 
 	
 	for (var i = n + 1; i > 0; i-- ) { // 6, 5, 4, 3, 2, 1
@@ -99,7 +102,7 @@ while ( _nph.length > 0 ) {
 					_nph[_roID] = [ro, (new Array(n+1)).fill(0) ]; // _nph.ID = [ element, status ]
 					_nph[_roID][1][i - 1] = 1; // Mirrored Value: ro.status[..i..] = 1;
 					_nph.length += 1;
-				} else if ( typeof _iph[ro[1]] == "undefined" ) {
+				} else if ( typeof _nph[_roID] != "undefined" ) {
 					// Not completed, but mirrored
 					_nph[_roID][1][i - 1] = 1; // Mirrored Value: ro.status[..i..] = 1;
 				}
