@@ -3,7 +3,17 @@
 i.js is nearly as fast as the nested for-loops created by iter.pl up to n = 9
 
 ```
-$time node i.js
+ime node i.js
+1
+10
+81
+612
+3984
+21786
+92568
+198140
+143666
+43838
 362880 [
   '123456789', '123456798', '123456879', '123456897', '123456978',
   '123456987', '123457689', '123457698', '123457869', '123457896',
@@ -28,7 +38,7 @@ $time node i.js
   ... 362780 more items
 ]
 
-**real	0m5.842s**
-user	0m6.912s
-sys	0m0.556s
+real	0m4.969s
+user	0m4.998s
+sys	0m0.155s
 ```
