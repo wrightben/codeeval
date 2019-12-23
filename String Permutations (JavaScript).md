@@ -42,7 +42,7 @@ cat cachedPermutationStrings.js stringPermutations.js > ~/Desktop/runnable.js \
 ---
 ### About My Solution
 
-Each letter of a *word* has a *numerical position* within the word. The words *a-c-t*, *a-i-r*, and *d-i-p* are each equal to the sequence *1-2-3*, and so the letters of the words can replace the digits in the sorted list of permutations of the numerical sequence of the same length.
+Each letter of a *word* has a *numerical position* within the word. The words *a-c-t*, *a-i-r*, and *d-i-p* each have their letters in the sequence *1-2-3*. The letters of these words can replace the digits in the sorted list of permutations of the numerical sequence of the same length, i.e. 1-2-3.
 
 #### Algorithms
 
