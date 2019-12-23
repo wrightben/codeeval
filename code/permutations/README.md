@@ -3,7 +3,7 @@
 
 ### About this algorithm
 
-This algorithm makes use of the idea that subtracting the distinct integers in any permutation from (n+1) yields a new permutation. This skips values not in the permutation set. This idea of working with only numbers in the set comes at the price of having to perform operations on n digits for each permutation.
+This algorithm makes use of the idea that subtracting the distinct integers in any permutation from (n+1) yields a new permutation. This subtraction never generates values not in the permutation set. This idea of working with only numbers in the set comes at the price of having to perform operations on n digits for each permutation.
 
 ##### Subtracting Rules
 * if (a - b) = 0, a = a
@@ -14,7 +14,7 @@ This algorithm makes use of the idea that subtracting the distinct integers in a
 
 ```
 	  5 5 5 5	
-	- 1 2 3 4
+	- 1 2 3 4 ← Each digit is subracted from n+1 (5)
 	= 4 3 2 1
 	
 	  4 4 4 4	  2 2 2 2
