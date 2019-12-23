@@ -71,7 +71,7 @@ var increment = function(s, m, n) {
 
 
 // VARIABLES
-var 	n = 5;
+var 	n = 9;
 var	f = getNPR(n);
 var	_iph = { "length": 0 }; // Hash lookup { n : 1 }
 var	_nph = { "length": 0 }; // Collection: { "length" :0, "n" : [ [](int), n ] }
