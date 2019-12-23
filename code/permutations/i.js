@@ -22,7 +22,7 @@ var getNPR = function (n, r) {
 
 
 // Function: _array (complex element; m (int): mask; n (int): high value
-var increment = function(s, m, n) {
+var subtract = function(s, m, n) {
 
 	var _ = s.split("");
 	var __ = [];
@@ -128,7 +128,7 @@ while ( _nph.length > 0 ) {
 
 			if (_nph[ _id ][i-1] != 1) {
 
-				var ro = increment(_id,i,n); // Args: 123456, i, 4
+				var ro = subtract(_id,i,n); // Args: 123456, i, 4
 	
 				if ( (typeof _iph[ro] == "undefined" ) && (typeof _nph[ro] == "undefined" ) ) {
 					_nph[ ro ] = (new Array(n+1)).fill(0);
