@@ -34,7 +34,7 @@ The rest of the algorithm manages duplicates. Certain permutations, when subtrac
 
 #### Performance
 
-i.js is approximately as fast as the nested for-loops created by iter.pl up to n = 9.
+i.js is approximately as fast as the nested for-loops created by ./perl/iter.pl up to n = 9.
 
 ```
 $time node i.js 
