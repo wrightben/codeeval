@@ -69,14 +69,13 @@ var increment = function(s, m, n) {
 }
 
 
-/*******************
-VARIABLES
-*******************/
-var 	n = 11;
+
+// VARIABLES
+var 	n = 5;
 var	f = getNPR(n);
 var	_iph = { "length": 0 }; // Hash lookup { n : 1 }
 var	_nph = { "length": 0 }; // Collection: { "length" :0, "n" : [ [](int), n ] }
-var	bound = 50000;
+var	bound = 100000;
 
 
 // Build starting index
@@ -160,6 +159,5 @@ while ( _nph.length > 0 ) {
 	
 		
 }
-
 
 console.log(_iph.length);
