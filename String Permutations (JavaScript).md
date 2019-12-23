@@ -53,7 +53,7 @@ Example: The sequence 1-2-3 has the permutations: 123, 132, 213, 231, 312, 321. 
 Generating the numerical permutation list has to be done just once. See ./code/permutations for other examples
 
 #### Notes
-* The idea that permutations exist "in order" as values in a sequence is not naive. In fact, it's a fundamental idea.
+* The idea that permutations exist "in order" as values in a sequence is not naive. In fact, it's fundamental.
 * A final array sort is only necessary when there are duplicate letters. 
 * Words with duplicate letters could use modified starting and ending indexes: "abc" = [123,321]; "aac" = [112,211]
 * For the sequence 1-2-3-4-5-6-7, we can figure out 7P2 by using the starting index 1-2 and the ending index 7-6.<sup>1</sup>
