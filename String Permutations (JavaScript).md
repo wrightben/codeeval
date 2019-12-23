@@ -48,7 +48,7 @@ Each letter of a *word* has a *numerical position* within the word. The words *a
 
 Generate the sorted list of permutations of a numerical sequence by counting up from the min to the max and selecting the interim values having the same digits.
 
-Example: The sequence 1-2-3 has the permutations: 123, 132, 213, 231, 312, 321. Counting from 123 to 321 will produce this list after removing the values with other digits. Generating the numerical permutation list has to be done just once.
+Example: The sequence 1-2-3 has the permutations: 123, 132, 213, 231, 312, 321. Counting from 123 to 321 will produce this list after removing the values containing other digits. Generating the numerical permutation list has to be done just once.
 
 See ./code/permutations for other examples
 
