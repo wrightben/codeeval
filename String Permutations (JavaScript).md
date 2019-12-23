@@ -53,6 +53,7 @@ Each letter of a *word* has a *numerical position* within the word. Since the wo
 * For the sequence 1-2-3-4-5-6-7, we can figure out 7P2 by using the starting index 1-2 and the ending index 7-6.<sup>1</sup>
 * 6 distinct values share the permutation list of 123. The words A-C-T and C-A-T share a permutation string with 1-2-3 as all 3-letter words do. But they have an even closer bond: They produce exactly the same ordered *letter* permutation string.
 
+----
 ##### JavaScript Test
 "event": "Allocation failed - JavaScript heap out of memory"
 ```
