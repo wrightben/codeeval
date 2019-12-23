@@ -10,7 +10,7 @@ This algorithm makes use of the idea that subtracting the distinct integers in a
 * if (a - b) > 0, a - b
 * if (a - b) < 0, ( n+1 ) + (a - b)
 
-#### Example:
+##### Example:
 
 ```
 	  5 5 5 5	
