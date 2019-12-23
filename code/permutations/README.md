@@ -1,5 +1,9 @@
 ## Algorithms for generating permutations
 
+### Preface
+
+This is not an *nPr* function, although this code does calculate that value. Knowing the value of nPr does not tell you what the permutations are. This code is about producing the actual permutations of numerical strings in order to use them for other purposes.
+
 
 ### About this algorithm
 
