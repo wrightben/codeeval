@@ -7,7 +7,7 @@
 
 This code does calculate nPr, but that isn't the primary purpose. Knowing the value of nPr does not tell you what the permutations are. This code is about producing the actual permutations of numerical strings in order to use them for something practical.
 
-This algorithm makes use of the idea that subtracting the distinct integers in any permutation from (n+1) yields a new permutation. This subtraction never generates values not in the permutation set. This idea of working with only numbers in the set comes at the price of having to perform operations on n digits for each permutation.
+The algorithm makes use of the idea that subtracting the distinct integers in any permutation from (n+1) yields a new permutation. This subtraction never generates values not in the permutation set. This idea of working with only numbers in the set comes at the price of having to perform operations on n digits for each permutation.
 
 ##### Subtracting Rules
 * if (a - b) = 0, a = a
