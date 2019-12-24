@@ -58,3 +58,13 @@ $time node i.js
 user	0m4.436s
 sys	0m0.139s
 ```
+
+##### JavaScript Test ( Benchmark )
+"event": "Allocation failed - JavaScript heap out of memory"
+```
+var x = Math.pow(10,10);
+
+for (var i = 1; i < x; i++) {
+	console.log( i );
+}
+```
