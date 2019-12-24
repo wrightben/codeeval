@@ -52,9 +52,10 @@ Example: 123, 132, 213, 231, 312, 321 becomes ace,aec,cae,cea,eac,eca.
 
 Generate the sorted list of permutations of a numerical sequence by counting up from the min to the max and selecting the interim values having the same digits.
 
-Example: The sequence 1-2-3 has the ordered permutations: 123, 132, 213, 231, 312, 321. Counting from 123 to 321 will produce this list after removing the values containing other digits. 
-
 Generating the sorted list of permutations for a numerical sequence has to be done just once. See ./code/permutations for faster algorithms.
+
+##### Example
+The sequence 1-2-3 has the ordered permutations: 123, 132, 213, 231, 312, 321. Counting from 123 to 321 will produce this list after removing the values containing other digits. 
 
 #### Notes
 * The idea that permutations exist "in order" as values in a sequence is not naive. In fact, it's fundamental.
