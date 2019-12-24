@@ -71,11 +71,11 @@ var subtract = function(s, m, n) {
 
 
 // VARIABLES
-var 	n = 9;
+var 	n = 8;
 var	f = getNPR(n);
 var	_iph = { "length": 0 }; // Hash lookup { n : 1 }
 var	_nph = { "length": 0 }; // Collection: { "length" :0, "n" : [ [](int), n ] }
-var	bound = 100000;
+var	bound = 100;
 
 
 // Build starting index
@@ -103,7 +103,7 @@ console.log(_nph);
 
 while ( _nph.length > 0 ) {
 
-	console.log( _nph.length );
+	console.log( _iph.length, _nph.length );
 
 	
 	var _ids = [];
@@ -124,7 +124,7 @@ while ( _nph.length > 0 ) {
 	
 		_id = _ids[j]; // (int)
 		
-		for (var i = n + 1; i > 0; i-- ) { // 6, 5, 4, 3, 2, 1
+		for (var i = n + 1; i > n - 2; i-- ) { // 6, 5, 4, 3, 2, 1
 
 			if (_nph[ _id ][i-1] != 1) {
 
