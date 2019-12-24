@@ -42,7 +42,7 @@ cat cachedPermutationStrings.js stringPermutations.js > ~/Desktop/runnable.js \
 ---
 ### About My Solution
 
-The letters *a-c-e* occur in the sequence *1-2-3*. This suggests the letters can substitute the digits in the sorted list of permutations of a corresponding numerical sequence—in this case, it's 1-2-3. This works for any word.
+The letters *a-c-e* occur in the sequence *1-2-3*. This suggests the letters can substitute the digits in the sorted list of permutations of a corresponding numerical sequence—in this case, that sequence is 1-2-3.
 
 Example: 12,21 becomes ac,ca <br />
 Example: 123, 132, 213, 231, 312, 321 becomes ace,aec,cae,cea,eac,eca.
@@ -58,6 +58,7 @@ Generating the sorted list of permutations for a numerical sequence has to be do
 The sequence 1-2-3 has the ordered permutations: 123, 132, 213, 231, 312, 321. Counting from 123 to 321 will produce this list after removing the values containing other digits. 
 
 #### Other Attributes
+* The numerical permutation string is a substitute for any orderable concept.
 * The idea that permutations exist "in order" as values in a sequence is not naive. In fact, it's fundamental.
 * A final array sort is only necessary when there are duplicate letters. Words with duplicate letters could use modified starting and ending indexes: "abc" = [123,321]; "aac" = [112,211]
 * For the sequence 1-2-3-4-5-6-7, we can figure out 7P2 by using the starting index 1-2 and the ending index 7-6.
