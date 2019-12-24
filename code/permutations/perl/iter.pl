@@ -26,7 +26,8 @@ for ($i = 0; $i < $s; $i ++ ) {
 		if ($i == $s - 1 ) {
 			@_con = ();
 			for ($iii = $i; $iii >= 0; $iii --) {
-				push @_con, ('i'.($iii+1).' + 1');
+# 				push @_con, ('i'.($iii+1).' + 1');
+				push @_con, ('i'.($iii+1));
 			}
 			push @_o, "\n\n". '_.push( [ '.(join ",", @_con).' ].join("") );'."\n\n";
 		}		
