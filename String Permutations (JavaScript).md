@@ -42,24 +42,24 @@ cat cachedPermutationStrings.js stringPermutations.js > ~/Desktop/runnable.js \
 ---
 ### About My Solution
 
-Each letter of a *word* has a *numerical position* within the word. For example, the word *a-c-e* has its letters in the sequence *1-2-3*. The letters of a-c-e can replace the digits in the sorted list of permutations of the numerical sequence 1-2-3.
+The word *a-c-e* has its letters in the sequence *1-2-3*. The letters of a-c-e can replace the digits in the sorted list of permutations of the numerical sequence 1-2-3. This works for any word (as long as the letters are sorted).
 
 Example: 123, 132, 213, 231, 312, 321 becomes ace,aec,cae,cea,eac,eca.
 
-This works for any word and its corresponding numerical sequence as long as the letters are sorted.
+
 
 #### Algorithms
 
 Generate the sorted list of permutations of a numerical sequence by counting up from the min to the max and selecting the interim values having the same digits.
 
-Example: The sequence 1-2-3 has the permutations: 123, 132, 213, 231, 312, 321. Counting from 123 to 321 will produce this list after removing the values containing other digits. 
+Example: The sequence 1-2-3 has the ordered permutations: 123, 132, 213, 231, 312, 321. Counting from 123 to 321 will produce this list after removing the values containing other digits. 
 
-Generating the numerical permutation list has to be done just once. See ./code/permutations for faster algorithms.
+Generating the sorted list of permutations for a numerical sequence has to be done just once. See ./code/permutations for faster algorithms.
 
 #### Notes
 * The idea that permutations exist "in order" as values in a sequence is not naive. In fact, it's fundamental.
 * A final array sort is only necessary when there are duplicate letters. Words with duplicate letters could use modified starting and ending indexes: "abc" = [123,321]; "aac" = [112,211]
-* For the sequence 1-2-3-4-5-6-7, we can figure out 7P2 by using the starting index 1-2 and the ending index 7-6.<sup>1</sup>
+* For the sequence 1-2-3-4-5-6-7, we can figure out 7P2 by using the starting index 1-2 and the ending index 7-6.
 * 6 distinct values share the permutation list of 123. The words A-C-T and C-A-T share a permutation string with 1-2-3 as all 3-letter words do. But they have an even closer bond: They produce exactly the same ordered *letter* permutation string.
 
 ----
@@ -72,6 +72,3 @@ for (var i = 1; i < x; i++) {
 	console.log( i );
 }
 ```
-
------
-<sup>1: When n = r, it's possible to increment by 9. When n != r, it might be necessary to increment by 1</sup>
