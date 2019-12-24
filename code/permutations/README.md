@@ -60,6 +60,9 @@ sys	0m0.139s
 ```
 
 ##### JavaScript Test ( Benchmark )
+
+Permutations of the numerical sequence n=10 take more time—up to 1m on a Macbook using the nested for-loops of ./perl/iter.pl. The test below suggests that these algorithms will not work for n>10 as node won't even iterate to 10B.
+
 "event": "Allocation failed - JavaScript heap out of memory"
 ```
 var x = Math.pow(10,10);
