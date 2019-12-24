@@ -50,16 +50,9 @@ Example: 123, 132, 213, 231, 312, 321 becomes ace,aec,cae,cea,eac,eca.
 
 #### Algorithms
 
-Generate the sorted list of permutations of a numerical sequence by counting up from the min to the max and selecting the interim values having the same digits.
+Generate the sorted list of permutations of a numerical sequence by counting up from the min to the max and selecting the interim values having the same digits. Generating the sorted list of permutations for a numerical sequence has to be done just once.
 
-Generating the sorted list of permutations for a numerical sequence has to be done just once. See ./code/permutations for faster algorithms.
+See ./code/permutations for faster algorithms.
 
 ##### Example
 The sequence 1-2-3 has the ordered permutations: 123, 132, 213, 231, 312, 321. Counting from 123 to 321 will produce this list after removing the values containing other digits. 
-
-#### Other Attributes
-* The numerical permutation string is a substitute for any orderable concept.
-* The idea that permutations exist "in order" as values in a sequence is not naive. In fact, it's fundamental.
-* A final array sort is only necessary when there are duplicate letters. Words with duplicate letters could use modified starting and ending indexes: "abc" = [123,321]; "aac" = [112,211]
-* For the sequence 1-2-3-4-5-6-7, we can figure out 7P2 by using the starting index 1-2 and the ending index 7-6.
-* 6 distinct values share the permutation list of 123. The words A-C-T and C-A-T share a permutation string with 1-2-3 as all 3-letter words do. But they have an even closer bond: They produce exactly the same ordered *letter* permutation string.
