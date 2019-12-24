@@ -42,7 +42,11 @@ cat cachedPermutationStrings.js stringPermutations.js > ~/Desktop/runnable.js \
 ---
 ### About My Solution
 
-Each letter of a *word* has a *numerical position* within the word. The words *a-c-t*, *a-i-r*, and *d-i-p* each have their letters in the sequence *1-2-3*. The letters of these words can replace the digits in the sorted list of permutations of the numerical sequence of the same length, i.e. 123, 132, 213, 231, 312, 321.
+Each letter of a *word* has a *numerical position* within the word. For example, the word *a-c-e* has its letters in the sequence *1-2-3*. The letters of a-c-e can replace the digits in the sorted list of permutations of the numerical sequence 1-2-3.
+
+Example: 123, 132, 213, 231, 312, 321 becomes ace,aec,cae,cea,eac,eca.
+
+This works for any word and its corresponding numerical sequence as long as the letters are sorted.
 
 #### Algorithms
 
@@ -50,7 +54,7 @@ Generate the sorted list of permutations of a numerical sequence by counting up 
 
 Example: The sequence 1-2-3 has the permutations: 123, 132, 213, 231, 312, 321. Counting from 123 to 321 will produce this list after removing the values containing other digits. 
 
-Generating the numerical permutation list has to be done just once. See ./code/permutations for other examples
+Generating the numerical permutation list has to be done just once. See ./code/permutations for faster algorithms.
 
 #### Notes
 * The idea that permutations exist "in order" as values in a sequence is not naive. In fact, it's fundamental.
