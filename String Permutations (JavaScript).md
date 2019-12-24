@@ -42,10 +42,10 @@ cat cachedPermutationStrings.js stringPermutations.js > ~/Desktop/runnable.js \
 ---
 ### About My Solution
 
-The word *a-c-e* has its letters in the sequence *1-2-3*. The letters of a-c-e can replace the digits in the sorted list of permutations of the numerical sequence 1-2-3. This works for any word (as long as the letters are sorted).
+The letters *a-c-e* occur in the sequence *1-2-3*. This suggests the letters can substitute the digits in the sorted list of permutations of a corresponding numerical sequence, *1-2-3* in this case. This works for any word (as long as the letters are sorted).
 
+Example: 12,21 becomes ac,ca
 Example: 123, 132, 213, 231, 312, 321 becomes ace,aec,cae,cea,eac,eca.
-
 
 
 #### Algorithms
