@@ -1,7 +1,7 @@
 ## Algorithms for generating permutations
 
 
-### About this algorithm
+### About this algorithm (i.js)
 
 #### Purpose
 
