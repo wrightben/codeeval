@@ -73,7 +73,7 @@ var subtract = function(s, m, n) {
 // VARIABLES
 var 	n = 7;
 var	f = getNPR(n);
-var	_iph = { "length": 0 }; // Hash lookup { n : 1 }
+var	_iph = { "length": 0 }; // Hash lookup { n : 1 } //
 var	_nph = { "length": 0 }; // Collection: { "length" :0, "n" : [ [](int), n ] }
 var	bound = 100;
 
