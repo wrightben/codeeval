@@ -30,7 +30,7 @@ time node robotMovements.js
 ---
 ### About My Solution
 
-#### 2010
+#### 2010-2020
 
 Let the robot wander randomly from square 1 every iteration. If the robot reaches the destination, it counts it. Approximately 1500 iterations give the robot enough chances to find all **184** successful paths.
 
