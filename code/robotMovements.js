@@ -9,7 +9,7 @@ var	size = 4, // Grid
 	path = [1], // Inital
 	moves = [2, 5], // R, L, U, D; pos += [1, -1, size^2, -size^2]    
 	paths = { "c":0, "u":0 },
-	randomGuesses = 1500;
+	randomGuesses = 5500;  // Wrapper program finds limit by increasing this variable
 
 for (var i = 0; i < randomGuesses ; i++) {
 
