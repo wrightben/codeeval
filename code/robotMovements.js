@@ -5,7 +5,7 @@ var	size = 4,
 		 9, 10, 11, 12, 
 		13, 14, 15, 16
 	],
-	moves = [1, -1, size*size, -size*size], // R, L, U, D
+	moves = [], // R, L, U, D  pos += [1, -1, size*size, -size*size]
 	pos = 1,
 	path = [1],
 	paths = { "c":0, "u":0 },
