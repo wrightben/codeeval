@@ -1,13 +1,13 @@
-var	size = 4,
-	grid = [ 
+var	size = 4, // Grid
+	grid = [ // 4 x 4 (-1 Initial)
 		-1,  2,  3,  4, 
 		 5,  6,  7,  8,
 		 9, 10, 11, 12, 
 		13, 14, 15, 16
 	],
-	moves = [], // R, L, U, D  pos += [1, -1, size*size, -size*size]
-	pos = 1,
-	path = [1],
+	moves = [], // R, L, U, D; pos += [1, -1, size^2, -size^2]
+	pos = 1, // Initial
+	path = [1], // Inital
 	paths = { "c":0, "u":0 },
 	randomGuesses = 1500;
 
