@@ -43,7 +43,7 @@ My original solution let the robot wander randomly from square 1 every iteration
 
 Wandering randomly also allowed the robot to count 1087 *invalid* paths.
 
-[robotMovements2.js (2020) ](https://github.com/wrightben/codeeval/blob/master/code/robotMovements.js)
+[robotMovements2.js (2020) ](https://github.com/wrightben/codeeval/blob/master/code/robotMovements2.js)
 
 
 #### 2018
