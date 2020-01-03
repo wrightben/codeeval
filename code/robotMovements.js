@@ -1,113 +1,65 @@
-var selectMove = function( moves ) {
+var	size = 4,
+	grid = [ 
+		-1,  2,  3,  4, 
+		 5,  6,  7,  8,
+		 9, 10, 11, 12, 
+		13, 14, 15, 16
+	],
+	moves = [1, -1, size*size, -size*size], // R, L, U, D
+	pos = 1,
+	path = [1],
+	paths = { "c":0, "u":0 },
+	randomGuesses = 1500;
+
+for (var i = 0; i < randomGuesses ; i++) {
+
+	_grid = grid.slice();
+	pos = 1;
+	path = [1];
+	moves = [2,5];
 	
-	return moves[ Math.floor( Math.random() * moves.length ) ];
+	while(  ( moves.length > 0 ) && ( pos != size * size ) ) {
 	
-}
+		pos = moves[ Math.floor( Math.random() * Math.floor( moves.length ) ) ];
 
+		_grid[pos - 1] = -1;
+		path.push( pos );
 
-var setPos = function( pos, board ) {
-
-	board[ pos - 1 ] = 1;
-
-	return pos;
-}
-
-
-var isValidMove = function( move, pos, gridSize, board, currentPath, paths ) {
+		moves = [];
+		[pos +1, pos -1, pos +size, pos -size].forEach(function( e, i ) {
 	
-	var	next = pos; // Destination
-
-	if ( "u" == move ) {
-		next -= gridSize;
-		if ( next < 1  ) { return false; } // Bound
-	}
-	
-	if ( "d" == move ) {
-		next += gridSize;
-		if ( next > board.length ) { return false; } // Bound
-	}
-
-	if ( "l" == move ) {
-		next = pos - 1;
-		if ( (next % gridSize) == 0 ) { return false; } // Bound
-	}
-	
-	if ( "r" == move ) {
-		next = pos + 1;
-		if (pos % gridSize == 0) { return false; } // Bound (Note: Based on current position, not next!)
-	}	
-
-	if ( board[ next - 1 ] == 1 ) { return false; } // currentPath: Visited
-	
-	if ( typeof paths[ currentPath.join(",") + "," + next ] != "undefined" ) { return false; } // Paths: Visited (Completion or Invalid)
-
-	return next;
-}
-
-
-var walkPath = function( pos, gridSize, board, paths ) {
-	
-	var	currentPath = [pos],
-		dir = [ 'u', 'd', 'l', 'r' ];
-	
-	setPos( pos, board ); // Starting Position
-
-	while ( true ) {
-	
-		// Seek Moves
-		dir.next = [];
-		dir.forEach(function(e,i) {
-			var option = isValidMove( e, pos, gridSize, board, currentPath, paths );
-			if ( Boolean(option) == true ) { dir.next.push( option ); }
+			if (	// Left, Right Boundary
+				((pos % size == 0) && ( e != pos + 1 )) ||
+				((pos % size == 1) && ( e != pos - 1 )) ||
+				( pos % size > 1 )
+			) {
+				// Min, Max Boundary
+				if ( (e > 0) && (e < size * size + 1) && ( _grid[e - 1] != -1 ) ) {
+			
+					moves.push( e );
+				}
+			}
+			
 		});
-		
-		// Path Blocked (No valid moves available)
-		if ( dir.next.length == 0 ) { return currentPath; }
-		
-		// Select Move
-		pos = setPos( selectMove( dir.next ), board );		
-		currentPath.push(pos);
-		
-		// Path Complete
-		if ( pos == board.length ) { return currentPath; }
-		
+	
 	}
-
-	// undefined
+	
+	path =  path.join(" "); // [] to ""
+	(typeof paths[ path ] == "undefined" ) ? paths[ path ] = 1 : paths[ path ] += 1; // Hash index of path
+	if ( ( pos == size * size ) && ( paths[path] == 1 ) ) { paths.c += 1; } // Increment paths.c
+	if ( ( pos != size * size ) && ( paths[path] == 1 ) ) { paths.u += 1; } // Increment paths.u
+	
 }
 
 
-// GLOBAL VARIABLE 
-// delete paths[i] not allowed with 'var'
-paths = { "blocked":0, "valid": 0 };
+console.log( paths.c );
 
-var getPaths = function( gridSize, debug ) {
 
-	var	board_length = Math.pow( gridSize, 2 ),
-		board,
-		currentPath = [],
-		completedPath;
 
-	while( currentPath.join(",") != "1" ) { // If currentPath.join(",") = 1, there are no valid paths.
-		
-		board = new Array( board_length );
-		
-		currentPath = walkPath( 1, gridSize, board, paths );
-		
-		completedPath = board[ board_length - 1 ];
-		
-		( completedPath == 1 ) ? paths.valid += 1 : paths.blocked += 1;
-		
-		paths[ currentPath.join(",") ] = 1;
-		
-		if ( debug[0] == true ) { console.log(currentPath.length, currentPath); }
 
-	}
-
-	
-	// # of Paths ( exclude paths = { "blocked":0 } )
-	return paths.valid;
-
-};
-
-console.log( getPaths( 5, [true] ) ); // 4:184, 5:8512
+// Probability Check
+// var	_p = [0,0,0,0];
+// 
+// for (i = 0; i < 100; i++) {
+// 	_p[Math.floor( Math.random() * Math.floor( 4 ) )] += 1;
+// }
