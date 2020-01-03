@@ -5,8 +5,8 @@ var	size = 4, // Grid
 		 9, 10, 11, 12, 
 		13, 14, 15, 16
 	],
-	moves = [], // R, L, U, D; pos += [1, -1, size^2, -size^2]
 	pos = 1, // Initial
+	moves = [], // R, L, U, D; pos += [1, -1, size^2, -size^2]    
 	path = [1], // Inital
 	paths = { "c":0, "u":0 },
 	randomGuesses = 1500;
