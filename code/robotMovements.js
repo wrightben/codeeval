@@ -6,7 +6,7 @@ var	size = 4, // Grid
 		13, 14, 15, 16
 	],
 	pos = 1, // Initial
-	path = [1], // Inital
+	path = [1], // Initial
 	moves = [2, 5], // R, L, U, D; pos += [1, -1, size^2, -size^2]    
 	paths = { "c":0, "u":0 },
 	randomGuesses = 5500;  // Wrapper program finds limit by increasing this variable
