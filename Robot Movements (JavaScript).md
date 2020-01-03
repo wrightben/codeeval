@@ -34,14 +34,6 @@ time node robotMovements.js
 
 Let the robot wander randomly from square 1 every iteration. If the robot reaches the destination, it counts it. Approximately 1500 iterations give the robot enough chances to find all **184** successful paths.
 
-
-#### 2018
+#### Other
 
 [_robotMovements.js](https://github.com/wrightben/codeeval/blob/master/code/_robotMovements.js)
-
-getPaths( gridSize, debug )
-		
-* gridSize(int): Arbitrarily large square
-* debug[ (true|false), (true|false) ]: Print the paths as they’re found
-
-I translated the original from PHP to JavaScript. I updated the robot to use a depth-first algorithm. The algorithm is efficient, but less interesting. Compared to poker.js, the solution is *inefficiently* object oriented.
