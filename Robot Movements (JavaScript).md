@@ -32,5 +32,5 @@ time node robotMovements.js
 
 #### 2010-2020
 
-* Random Walks: [robotMovements.js](https://github.com/wrightben/codeeval/blob/master/code/robotMovements.js)
-* Depth First: [_robotMovements.js](https://github.com/wrightben/codeeval/blob/master/code/_robotMovements.js)
+* Random Walks (Ordinal): [robotMovements.js](https://github.com/wrightben/codeeval/blob/master/code/robotMovements.js)
+* Depth First (OO): [_robotMovements.js](https://github.com/wrightben/codeeval/blob/master/code/_robotMovements.js)
