@@ -57,7 +57,7 @@ console.log( paths.c );
 
 
 
-// Probability Check
+// Distribution of Math.random()
 // var	_p = [0,0,0,0];
 // 
 // for (i = 0; i < 100; i++) {
