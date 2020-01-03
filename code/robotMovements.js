@@ -28,12 +28,12 @@ for (var i = 0; i < randomGuesses ; i++) {
 		moves = [];
 		[pos +1, pos -1, pos +size, pos -size].forEach(function( e, i ) {
 	
-			if (	// Left, Right Boundary
+			if (	// Right, Left Boundary
 				((pos % size == 0) && ( e != pos + 1 )) ||
 				((pos % size == 1) && ( e != pos - 1 )) ||
 				( pos % size > 1 )
 			) {
-				// Min, Max Boundary
+				// Max, Min Boundary
 				if ( (e > 0) && (e < size * size + 1) && ( _grid[e - 1] != -1 ) ) {
 			
 					moves.push( e );
