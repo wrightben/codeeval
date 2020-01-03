@@ -32,6 +32,8 @@ time node robotMovements.js
 
 #### 2010-2020
 
+Random Walks: [robotMovements.js](https://github.com/wrightben/codeeval/blob/master/code/robotMovements.js)
+
 Let the robot wander randomly from square 1 every iteration. If the robot reaches the destination, it counts it. Approximately 1500 iterations give the robot enough chances to find all **184** successful paths.
 
 Depth-first algorithm: [_robotMovements.js](https://github.com/wrightben/codeeval/blob/master/code/_robotMovements.js)
