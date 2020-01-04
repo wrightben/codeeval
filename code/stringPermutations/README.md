@@ -34,7 +34,6 @@ The rest of the algorithm manages duplicates. Certain permutations, when subtrac
 
 #### Performance
 
-i.js is approximately as fast as the nested for-loops created by ./perl/iter.pl up to **n = 9**.
 
 ```
 $time node i.js 
@@ -57,17 +56,4 @@ $time node i.js
 **real	0m4.403s**
 user	0m4.436s
 sys	0m0.139s
-```
-
-##### JavaScript Test ( Benchmark )
-
-General performance benchmark: Node won't even iterate to 10B.
-
-"event": "Allocation failed - JavaScript heap out of memory"
-```
-var x = Math.pow(10,10);
-
-for (var i = 1; i < x; i++) {
-	console.log( i );
-}
 ```
