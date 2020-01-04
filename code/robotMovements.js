@@ -4,14 +4,13 @@ var	size = 4, // Grid
 	path = [1], // Initial
 	moves = [2, 5], // R, L, U, D; pos += [1, -1, size^2, -size^2]    
 	paths = { "c":0, "i":0 },
-	randomGuesses = 5000;	// Wrapper program finds limit by increasing 
+	randomGuesses = 200;	// Wrapper program finds limit by increasing 
 				// randomGuesses (setting high-water mark) and/or joining sets
-
-grid[0] = -1; 
 
 for (var i = 0; i < randomGuesses ; i++) {
 
 	_grid = grid.slice();
+	grid[0] = -1;
 	pos = 1;
 	path = [1];
 	moves = [2,5];
