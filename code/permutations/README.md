@@ -5,7 +5,7 @@
 
 #### Purpose
 
-This code does calculate nPr, but that isn't the primary purpose. Knowing the value of nPr does not tell you what the permutations are. This code is about producing the actual permutations of numerical strings in order to use them for something practical.
+This code does calculate nPr, but that isn't the primary purpose. Knowing the value of nPr does not tell you what the permutations are. This code is about producing the actual permutations of sequential numerical strings in order to use them for something practical.
 
 #### Subtraction
 
