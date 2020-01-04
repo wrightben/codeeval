@@ -20,7 +20,7 @@ _.push( [ i3,i2,i1 ].join("") );
 }}}}}
 ```
 
-#### JavaScript (Create a file)
+#### Create a JavaScript file
 ```
 var _ = [];
 
