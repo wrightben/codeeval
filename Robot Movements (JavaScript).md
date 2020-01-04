@@ -30,7 +30,4 @@ time node robotMovements.js
 ---
 ### About My Solution
 
-#### 2010-2020
-
 * Random Walks (Ordinal): [robotMovements.js](https://github.com/wrightben/codeeval/blob/master/code/robotMovements.js)
-* Depth First (OO): [_robotMovements.js](https://github.com/wrightben/codeeval/blob/master/code/_robotMovements.js)
