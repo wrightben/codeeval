@@ -21,7 +21,7 @@ for (var i = 0; i < randomGuesses ; i++) {
 	
 	while(  ( moves.length > 0 ) && ( pos != size * size ) ) {
 	
-		pos = moves[ Math.floor( Math.random() * Math.floor( moves.length ) ) ];
+		pos = moves[ Math.floor( Math.random() * moves.length ) ];
 
 		_grid[pos - 1] = -1;
 		path.push( pos );
