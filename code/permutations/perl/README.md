@@ -24,10 +24,9 @@ _.push( [ i3,i2,i1 ].join("") );
 ```
 var _ = [];
 
-/* 
-	Insert Output Here 
-	Note: I added code to the shown output to replace "10" with "A"
-*/
+
+	// Insert Output Here
+
 
 console.log( _.join(",") );
 ```
