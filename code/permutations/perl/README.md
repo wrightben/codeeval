@@ -3,8 +3,13 @@
 perl iter.pl 3
 ```
 
-* n (nPr): user-defined variable; n = r (or set n in file)
-* r (nPr): # of for-loops; r <= n if n is set
+**n (nPr)**
+* n = r by default
+* set n in JS file
+
+**r (nPr)**
+* # of for-loops
+* if n is set, r <= n
 
 #### Output
 ```
