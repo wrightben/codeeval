@@ -53,18 +53,9 @@ var line = function( word ) {
 	var	l = word.length,
 		letters = word.split("").sort(),
 		ps = getPermutationString( l ).split(""),
-		psArray = [],
-		dupes = false;
+		psArray = [];
 
-	// Determine if duplicate letters (in order to avoid post sort)
-	for (var i = 1; i <= l; i++) {
-		if (letters[i] == letters[i-1]) {
-			dupes = true;
-			break;
-		}
-	}
-
-	// Substituting letters in the permutationString
+	// Substitute letters in the permutationString
 	ps.forEach(function(e,i) {
 		ps[i] = letters[e - 1];
 	});
@@ -73,9 +64,6 @@ var line = function( word ) {
 	for (var n = l; n <= ps.length ; n += l) {
 		psArray.push( ps.slice( n-l , n ).join("") );
 	}
-
-	// Sort the array of permutations (only if duplicate letters in word)
-	if (dupes == true) { psArray.sort(); } 
 
 	return psArray.join(",");
 	
