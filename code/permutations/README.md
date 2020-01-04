@@ -39,7 +39,7 @@ The rest of the code manages duplicates. Certain permutations, when subtracted f
 
 #### Performance
 
-i.js is approximately as fast as the nested for-loops created by ./perl/iter.pl up to **n = 9**.
+i.js is approximately as fast as the nested for-loops created by ./perl/i.pl up to **n = 9**.
 
 ### Other uses for the subtractor algorithm
 
