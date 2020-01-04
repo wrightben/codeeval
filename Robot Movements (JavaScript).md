@@ -19,15 +19,8 @@ CodeEval's answer for a four-by-four grid:<br/>
 ---
 ### Run the Code
 
-[robotMovements.js](https://github.com/wrightben/codeeval/blob/master/code/robotMovements.js)
+[robotMovements.js](https://github.com/wrightben/codeeval/blob/master/code/robotMovements.js) - Random Walks (Ordinal)
 
 ```sh
 time node robotMovements.js
 ```
-
-<br />
-
----
-### About My Solution
-
-* Random Walks (Ordinal): [robotMovements.js](https://github.com/wrightben/codeeval/blob/master/code/robotMovements.js)
