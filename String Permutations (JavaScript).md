@@ -50,7 +50,3 @@ Counting from 123 to 321 will produce the ordered permutations 123, 132, 213, 23
 
 12, 21 becomes ah, ha <br />
 123, 132, 213, 231, 312, 321 becomes aht, ath, hat, hta, tah, tha
-
-3579 (1234) becomes	3579,3597,3759,3795,3957,3975,5379,5397,5739,...
-			1234,1243,1324,1342,1423,1432,2134,2143,2314,...
-
