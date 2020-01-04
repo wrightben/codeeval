@@ -1,26 +1,3 @@
-var getNPR = function (n, r) {
-
-	if ( ( typeof r != "number" ) || ( r > n ) ) { r = n; }
-
-	var _ = function( n ) {
-		
-		var _n = n;
-		
-		for (var i = 1; i < _n; i ++ ) {
-			n *= i;
-		}
-		
-		if (n == 0) { n = 1; }
-		
-		return n;
-		
-	}
-	
-	return _(n) / _(n - r);
-	
-}	
-
-
 // Function: _array (complex element; m (int): mask; n (int): high value
 var subtract = function(s, m, n) {
 
@@ -72,7 +49,6 @@ var subtract = function(s, m, n) {
 
 // VARIABLES
 var 	n = 7;
-var	f = getNPR(n);
 var	_iph = { "length": 0 }; // Hash lookup { n : 1 } //
 var	_nph = { "length": 0 }; // Collection: { "length" :0, "n" : [ [](int), n ] }
 var	bound = 100;
