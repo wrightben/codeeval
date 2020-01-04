@@ -6,7 +6,7 @@ perl iter.pl 3
 #### Output
 ```
 // n (nPr): user-defined variable
-// r (nPr): Defined by # of for loops; r <= n
+// r (nPr): # of for-loops; r <= n
 
 ( (typeof n != "number") || (n < 3) ) ? _n = 3 : _n = n;
 
