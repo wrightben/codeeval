@@ -37,3 +37,7 @@ The rest of the code manages duplicates. Certain permutations, when subtracted f
 #### Performance
 
 i.js is approximately as fast as the nested for-loops created by ./perl/iter.pl up to **n = 9**.
+
+### Other uses for the subtractor algorithm
+
+An array counter can be used to track permutations where recursion (or similar approaches) cause memory problems. This is useful in the browser context.
