@@ -7,6 +7,8 @@ var	size = 4, // Grid
 	randomGuesses = 4500;	// Wrapper program finds limit by increasing 
 				// randomGuesses (setting high-water mark) and/or joining sets
 
+grid[0] = -1; 
+
 for (var i = 0; i < randomGuesses ; i++) {
 
 	_grid = grid.slice();
