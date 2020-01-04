@@ -1,4 +1,4 @@
-var	size = 4, // Grid
+var	size = 5, // Grid
 	grid = new Array( size * size ).fill(0),
 	pos = 1, // Initial
 	path = [1], // Initial
