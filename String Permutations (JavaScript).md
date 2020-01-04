@@ -46,7 +46,7 @@ The letters h-a-t occur in the sequence 2-1-3. The letters can substitute the di
 
 ##### Example
 
-Counting from 123 to 321 will produce the ordered permutations 123, 132, 213, 231, 312, 321 after removing values containing other digits and duplicates. 
+Once the permutations of a numerical sequence are known, and ordered, they can be substituted with the ordered letters of any word of the same length. Counting from 123 to 321 will produce the ordered permutations 123, 132, 213, 231, 312, 321 after removing values containing other digits and duplicates. 
 
 12, 21 becomes ac, ca <br />
 123, 132, 213, 231, 312, 321 becomes ace, aec, cae, cea, eac, eca.
