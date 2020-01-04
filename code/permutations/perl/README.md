@@ -4,7 +4,7 @@ perl iter.pl 3
 ```
 
 **n (nPr)**
-* n = r by default
+* n = r (default)
 * set n in JS file
 
 **r (nPr)**
