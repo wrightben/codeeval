@@ -1,10 +1,5 @@
 var	size = 4, // Grid
-	grid = [ // 4 x 4 (-1 Initial)
-		-1,  2,  3,  4, 
-		 5,  6,  7,  8,
-		 9, 10, 11, 12, 
-		13, 14, 15, 16
-	],
+	grid = new Array( size * size ).fill(0),
 	pos = 1, // Initial
 	path = [1], // Initial
 	moves = [2, 5], // R, L, U, D; pos += [1, -1, size^2, -size^2]    
