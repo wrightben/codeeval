@@ -48,7 +48,7 @@ The letters *a-c-e* occur in the sequence *1-2-3*. This suggests the letters can
 
 Counting from 123 to 321 will produce the ordered permutations *123, 132, 213, 231, 312, 321* after removing values containing other digits and duplicates. 
 
-12,21 becomes ac, ca <br />
+12, 21 becomes ac, ca <br />
 123, 132, 213, 231, 312, 321 becomes ace, aec, cae, cea, eac, eca.
 
 Consider the permutations of 3579. It's easier for me to use the substitution method over the sequence 1234.
