@@ -1,6 +1,6 @@
 ### Use
 ```
-perl iter.pl 3 # r = 3
+perl i.pl 3 # r = 3
 ```
 
 **n (nPr)**
