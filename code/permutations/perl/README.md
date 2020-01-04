@@ -31,17 +31,3 @@ var _ = [];
 
 console.log( _.join(",") );
 ```
-
-----
-
-### Results
-
-The for-loop method completes in about 5 seconds with up to **9** nested for-loops.
-
-```
-$ time node for.js
-
-real	0m4.507s
-user	0m4.418s
-sys	0m0.636s
-```
