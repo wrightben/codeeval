@@ -1,10 +1,10 @@
-var	size = 5, // Grid
+var	size = 4, // Grid
 	grid = new Array( size * size ).fill(0),
 	pos = 1, // Initial
 	path = [1], // Initial
 	moves = [2, 5], // R, L, U, D; pos += [1, -1, size^2, -size^2]    
 	paths = { "c":0, "i":0 },
-	randomGuesses = 4500;	// Wrapper program finds limit by increasing 
+	randomGuesses = 5000;	// Wrapper program finds limit by increasing 
 				// randomGuesses (setting high-water mark) and/or joining sets
 
 grid[0] = -1; 
