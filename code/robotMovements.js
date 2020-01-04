@@ -51,8 +51,9 @@ for (var i = 0; i < randomGuesses ; i++) {
 	(typeof paths[ path ] == "undefined" ) ? paths[ path ] = 1 : paths[ path ] += 1; 
 
 	// += paths.c(omplete) || paths.i(ncomplete)
-	if ( ( pos == size * size ) && ( paths[path] == 1 ) ) { paths.c += 1; }
-	if ( ( pos != size * size ) && ( paths[path] == 1 ) ) { paths.i += 1; }
+	if ( paths[path] == 1 ) {
+		( pos == size * size ) ? paths.c += 1 : paths.i += 1;
+	}
 		
 }
 
