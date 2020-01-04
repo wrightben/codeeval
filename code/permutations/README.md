@@ -7,6 +7,9 @@
 
 This code does calculate nPr, but that isn't the primary purpose. Knowing the value of nPr does not tell you what the permutations are. This code is about producing the actual permutations of sequential numerical strings in order to use them for something practical.
 
+##### Example
+This code produces 123,132,213,231,312,321 given a starting sequence of 123.
+
 #### Subtraction
 
 The algorithm makes use of the idea that subtracting the distinct integers in any permutation from (n+1) yields a new permutation. This subtraction never generates values not in the set of related permutations. This idea of working with only numbers in the set comes at the price of having to perform operations on n digits for each permutation.
