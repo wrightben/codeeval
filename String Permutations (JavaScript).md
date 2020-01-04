@@ -42,7 +42,7 @@ cat cachedPermutationStrings.js stringPermutations.js > ~/Desktop/runnable.js \
 ---
 ### About My Solution
 
-The letters *a-c-e* occur in the sequence *1-2-3*. This suggests the letters can substitute the digits in the sorted list of permutations for the numerical sequence 1-2-3.
+The letters *a-c-e* occur in the sequence *1-2-3*. The letters can substitute the digits in the ordered list of permutations for the numerical sequence 1-2-3.
 
 ##### Example
 
