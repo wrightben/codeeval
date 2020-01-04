@@ -8,7 +8,7 @@ perl iter.pl 3
 * set n in JS file
 
 **r (nPr)**
-* # of for-loops
+* number of for-loops
 * if n is set, r <= n
 
 #### Output
