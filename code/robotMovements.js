@@ -8,7 +8,7 @@ var	size = 4, // Grid
 	pos = 1, // Initial
 	path = [1], // Initial
 	moves = [2, 5], // R, L, U, D; pos += [1, -1, size^2, -size^2]    
-	paths = { "c":0, "u":0 },
+	paths = { "c":0, "i":0 },
 	randomGuesses = 4500;	// Wrapper program finds limit by increasing 
 				// randomGuesses (setting high-water mark) and/or joining sets
 
@@ -45,10 +45,10 @@ for (var i = 0; i < randomGuesses ; i++) {
 	
 	}
 	
-	path =  path.join(" "); // [] to ""
-	(typeof paths[ path ] == "undefined" ) ? paths[ path ] = 1 : paths[ path ] += 1; // Hash index of path
-	if ( ( pos == size * size ) && ( paths[path] == 1 ) ) { paths.c += 1; } // Increment paths.c
-	if ( ( pos != size * size ) && ( paths[path] == 1 ) ) { paths.u += 1; } // Increment paths.u
+	path =  path.join(" ");
+	(typeof paths[ path ] == "undefined" ) ? paths[ path ] = 1 : paths[ path ] += 1; // += paths[path]
+	if ( ( pos == size * size ) && ( paths[path] == 1 ) ) { paths.c += 1; } // += paths.c(omplete)
+	if ( ( pos != size * size ) && ( paths[path] == 1 ) ) { paths.i += 1; } // += paths.i(ncomplete)
 	
 }
 
