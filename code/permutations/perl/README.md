@@ -3,10 +3,11 @@
 perl iter.pl 3
 ```
 
+* n (nPr): user-defined variable; n = r (or set n in file)
+* r (nPr): # of for-loops; r <= n if n is set
+
 #### Output
 ```
-// n (nPr): user-defined variable
-// r (nPr): # of for-loops; r <= n
 
 ( (typeof n != "number") || (n < 3) ) ? _n = 3 : _n = n;
 
@@ -17,11 +18,13 @@ perl iter.pl 3
 _.push( [ i3,i2,i1 ].join("") );
 
 }}}}}
+
 ```
 
 #### Create a JavaScript file
 ```
-var _ = [];
+var	_ = [],
+	n = undefined;
 
 
 	// Insert Output Here

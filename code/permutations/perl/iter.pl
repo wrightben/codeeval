@@ -41,11 +41,6 @@ for ($i = 0; $i < $s; $i ++ ) {
 
 }
 
-
-
-print "// n (nPr): user-defined variable\n";
-print "// r (nPr): Defined by # of for loops\n";
-print "// n cannot be less than r\n";
 print "\n( (typeof n != \"number\") || (n < $s) ) ? _n = $s : _n = n;\n";
 print join "", @_o;
 print join "", @_c;
