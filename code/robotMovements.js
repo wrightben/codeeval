@@ -52,14 +52,4 @@ for (var i = 0; i < randomGuesses ; i++) {
 	
 }
 
-
 console.log( paths.c );
-
-
-
-// Distribution of Math.random()
-// var	_p = [0,0,0,0];
-// 
-// for (i = 0; i < 100; i++) {
-// 	_p[Math.floor( Math.random() * Math.floor( 4 ) )] += 1;
-// }
