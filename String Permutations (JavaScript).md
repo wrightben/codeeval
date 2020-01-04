@@ -42,9 +42,9 @@ cat cachedPermutationStrings.js stringPermutations.js > ~/Desktop/runnable.js \
 ---
 ### About My Solution
 
-The letters h-a-t occur in the sequence 2-1-3. The letters can substitute the digits in the ordered list of permutations for the numerical sequence 1-2-3.
+The letters h-a-t occur in the sequence 2-1-3. Once the permutations of a numerical sequence are known, and ordered, they can be substituted with the ordered letters of any word of the same length. 
 
-Once the permutations of a numerical sequence are known, and ordered, they can be substituted with the ordered letters of any word of the same length. Counting from 123 to 321 will produce the ordered permutations 123, 132, 213, 231, 312, 321 after removing values containing other digits and duplicates.
+Counting from 123 to 321 will produce the ordered permutations 123, 132, 213, 231, 312, 321 after removing values containing other digits and duplicates.
 
 ##### Example
 
