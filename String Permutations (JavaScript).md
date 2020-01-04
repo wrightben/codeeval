@@ -51,5 +51,6 @@ Counting from 123 to 321 will produce the ordered permutations 123, 132, 213, 23
 12, 21 becomes ah, ha <br />
 123, 132, 213, 231, 312, 321 becomes aht, ath, hat, hta, tah, tha
 
-Consider the permutations of 3579. It's easy for me to use the substitution method over the sequence 1234.
+3579 (1234) becomes	3579,3597,3759,3795,3957,3975,5379,5397,5739,5793,5937,5973,7359,7395,7539,7593,7935,7953,9357,9375,9537,9573,9735,9753
+			
 
