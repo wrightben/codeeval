@@ -32,7 +32,7 @@ var	_ = [],
 	n = undefined;
 
 
-	// Insert Output Here
+	// Output goes here!
 
 
 console.log( _.join(",") );
