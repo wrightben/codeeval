@@ -42,17 +42,11 @@ cat cachedPermutationStrings.js stringPermutations.js > ~/Desktop/runnable.js \
 ---
 ### About My Solution
 
-The letters *a-c-e* occur in the sequence *1-2-3*. This suggests the letters can substitute the digits in the sorted list of permutations of a corresponding numerical sequence—in this case, that sequence is 1-2-3.
-
-Example: 12,21 becomes ac,ca <br />
-Example: 123, 132, 213, 231, 312, 321 becomes ace,aec,cae,cea,eac,eca.
-
-
-#### Algorithms
-
-Generate the sorted list of permutations of a numerical sequence by counting up from the min to the max and selecting the interim values having the same digits. Generating the sorted list of permutations for a numerical sequence has to be done just once.
-
-See ./code/permutations for faster algorithms.
+The letters *a-c-e* occur in the sequence *1-2-3*. This suggests the letters can substitute the digits in the sorted list of permutations for the numerical sequence 1-2-3.
 
 ##### Example
-The sequence 1-2-3 has the ordered permutations: 123, 132, 213, 231, 312, 321. Counting from 123 to 321 will produce this list after removing the values containing other digits. 
+
+Counting from 123 to 321 will produce the ordered permutations *123, 132, 213, 231, 312, 321* after removing values containing other digits and duplicates. 
+
+12,21 becomes ac,ca <br />
+123, 132, 213, 231, 312, 321 becomes ace,aec,cae,cea,eac,eca.
