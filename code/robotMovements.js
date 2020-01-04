@@ -47,8 +47,8 @@ for (var i = 0; i < randomGuesses ; i++) {
 	
 	path =  path.join(" ");
 	(typeof paths[ path ] == "undefined" ) ? paths[ path ] = 1 : paths[ path ] += 1; // += paths[path]
-	if ( ( pos == size * size ) && ( paths[path] == 1 ) ) { paths.c += 1; } // += paths.c(omplete)
-	if ( ( pos != size * size ) && ( paths[path] == 1 ) ) { paths.i += 1; } // += paths.i(ncomplete)
+	if ( pos == size * size ) { paths.c += 1; } // += paths.c(omplete)
+	else { paths.i += 1; } // += paths.i(ncomplete)
 	
 }
 
