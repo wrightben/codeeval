@@ -5,13 +5,11 @@ var	fs = require('fs'),
 var isSelfDescribing = function( number ) {
 
 	var	n = number.split(""),
-		h = new Array(n.length);
+		h = new Array(n.length).fill(0);
 
 	n.forEach(function(e,i) { // element, iterator (zero-based)
 
-		if ( typeof h[i] == "undefined" ) { h[i] = 0; } // Use iterator to create zeros in h array.
-
-		(h[e] == 1) ? h[e] += 1 : h[e] = 1; // Increment number count for symbolic int
+		h[e] += 1;
 
 	});
 
