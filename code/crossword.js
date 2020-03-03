@@ -53,14 +53,6 @@ letters.forEach(function( e, i ) {
 });
 
 
-// FIND the words
-dict.forEach(function(e, i) {
-
-	
-
-
-});
-
 var findWordAtPosition = function( pos, word ) {
 		
 	var	_rc = getRowCol( pos ),
@@ -188,16 +180,27 @@ var getRDiagLetters = function( pos ) {
 
 
 
-// //*// pos = getIndex( 5, 3 );
-// pos = index["s"][13];
+// pos = getIndex( 5, 3 ); // OPTION 1
+// pos = index["s"][13]; // OPTION 2
 // _rc = getRowCol( pos );
 
 // console.log( pos, _rc[0], _rc[1], letters[pos] );
 // console.log( getRowLetters(_rc[0]), getColLetters(_rc[1]) );
 // console.log( getLDiagLetters( pos ), getRDiagLetters( pos ) );
  
-// //*// Test 2
+// Test 2
 // console.log( findWordAtPosition( index["s"][13], "stone" ) );
 
 // Test 3
-console.log( find("stone") );
+// console.log( find("stone") );
+
+
+
+// FIND the words
+var seek = {};
+dict.forEach(function(e, i) {
+
+	seek[e] = find( e );
+	
+});
+console.log( JSON.stringify( seek ) );
