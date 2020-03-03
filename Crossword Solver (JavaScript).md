@@ -36,4 +36,4 @@ RESULT MAP
 ```
 
 
-Note the meaning difference between forward-reverse when comparing row/cols to diags
+Note the meaning difference between forward-reverse when comparing row (or cols) to diags
