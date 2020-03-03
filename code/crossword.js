@@ -102,7 +102,7 @@ var getLDiagLetters = function( pos ) {
 	
 }
 
-// R to L ( Top to Bottom )
+// L to R ( Bottom to Top )
 var getRDiagLetters = function( pos ) {
 	
 	var	_ = [ letters[pos] ],
