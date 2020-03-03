@@ -110,9 +110,9 @@ var find = function( word ) {
 
 	var w = word.split("")[0];
 
-	var _ci = [];
+	var _ci = {};
 	for (var i = 0; i < index[w].length; i ++) {
-		_ci.push( findWordAtPosition( index[w][i], word) );
+		_ci[index[w][i] + "-" + getRowCol(index[w][i])[0] + "-" + getRowCol(index[w][i])[1] ] = findWordAtPosition( index[w][i], word);
 	}
 	
 	return _ci;
@@ -188,15 +188,16 @@ var getRDiagLetters = function( pos ) {
 
 
 
-pos = getIndex( 5, 3 );
-pos = index["s"][13];
+// //*// pos = getIndex( 5, 3 );
+// pos = index["s"][13];
+// _rc = getRowCol( pos );
 
-_rc = getRowCol( pos );
+// console.log( pos, _rc[0], _rc[1], letters[pos] );
+// console.log( getRowLetters(_rc[0]), getColLetters(_rc[1]) );
+// console.log( getLDiagLetters( pos ), getRDiagLetters( pos ) );
+ 
+// //*// Test 2
+// console.log( findWordAtPosition( index["s"][13], "stone" ) );
 
-
-console.log( pos, _rc[0], _rc[1], letters[pos] );
-console.log( getRowLetters(_rc[0]), getColLetters(_rc[1]) );
-console.log( getLDiagLetters( pos ), getRDiagLetters( pos ) );
-
-// console.log( find( "stone" ) );
-console.log( findWordAtPosition( index["s"][13], "stone" ) );
+// Test 3
+console.log( find("stone") );
