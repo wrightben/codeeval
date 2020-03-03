@@ -23,4 +23,8 @@ time node crossword.js
 
 Finds words in square strings (n^2) using indexes. Seeks words in rows, cols, and diags; forward and backward. Optimizable using adjacent-row/col results.
 
-[crossword-output.js](https://github.com/wrightben/codeeval/blob/master/code/output/crossword-output.js)
+See [crossword-output.js](https://github.com/wrightben/codeeval/blob/master/code/output/crossword-output.js) for example. 
+
+Results [ row, col, diag (from UL), diag (from LL), row (rev), col (rev), diag (rev), diag (rev) ]
+
+Note the meaning difference between forward-reverse when comparing row/cols to diags
