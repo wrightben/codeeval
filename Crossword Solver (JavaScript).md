@@ -29,7 +29,10 @@ See [crossword-output.js](https://github.com/wrightben/codeeval/blob/master/code
 RESULT MAP
 
 ```
-"POS ( ROW , COL)": [row, col, diag (from UL), diag (from LL), row (R), col (R),  diag (R), diag (R)],
+"POS ( ROW , COL)":	[
+				row, col, diag (from UL), diag (from LL), 
+				row (R), col (R),  diag (R), diag (R)
+			],
 ```
 
 
