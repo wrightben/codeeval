@@ -29,9 +29,7 @@ See [crossword-output.js](https://github.com/wrightben/codeeval/blob/master/code
 RESULT MAP
 
 ```
-"38 (2,14)": [13,  ,  ,  ,  ,  ,  ,  ],
-
-// row, col, diag (from UL), diag (from LL), row (rev), col (rev), diag (rev), diag (rev)
+"POS ( ROW , COL)": [row, col, diag (from UL), diag (from LL), row (R), col (R),  diag (R), diag (R)],
 ```
 
 
