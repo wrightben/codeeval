@@ -191,11 +191,7 @@ var getRDiagLetters = function( pos ) {
 pos = getIndex( 5, 3 );
 pos = index["s"][13];
 
-_rc = getRowCol( pos, "stone" );
-
-
-
-
+_rc = getRowCol( pos );
 
 
 console.log( pos, _rc[0], _rc[1], letters[pos] );
