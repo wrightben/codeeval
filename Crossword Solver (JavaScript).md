@@ -21,4 +21,6 @@ time node crossword.js
 ---
 ### About My Solution
 
-N/A
+Finds words in square strings (n^2) using indexes. Seeks words in rows, cols, and diags; forward and backward. Optimizable using adjacent-row/col results.
+
+[crossword-output.js](https://github.com/wrightben/codeeval/blob/master/code/output/crossword-output.js)
