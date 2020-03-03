@@ -195,30 +195,3 @@ dict.forEach(function(e, i) {
 	
 });
 console.log( JSON.stringify( seek ) );
-
-
-
-
-
-
-
-
-
-
-// *******************************
-// Dev Notes
-// *******************************
-
-// pos = getIndex( 5, 3 ); // OPTION 1
-// pos = index["s"][13]; // OPTION 2
-// _rc = getRowCol( pos );
-
-// console.log( pos, _rc[0], _rc[1], letters[pos] );
-// console.log( getRowLetters(_rc[0]), getColLetters(_rc[1]) );
-// console.log( getLDiagLetters( pos ), getRDiagLetters( pos ) );
- 
-// Test 2
-// console.log( findWordAtPosition( index["s"][13], "stone" ) );
-
-// Test 3
-// console.log( find("stone") );
