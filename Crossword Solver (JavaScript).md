@@ -3,7 +3,7 @@
 
 ### Description
 
-25 x 25 Crossword with 34 words. Quickly find them.
+Crossword Solver
 
 <br />
 
