@@ -25,6 +25,14 @@ Finds words in square strings (n^2) using indexes. Seeks words in rows, cols, an
 
 See [crossword-output.js](https://github.com/wrightben/codeeval/blob/master/code/output/crossword-output.js) for example. 
 
-Results [ row, col, diag (from UL), diag (from LL), row (rev), col (rev), diag (rev), diag (rev) ]
+
+RESULT MAP
+
+```
+"38 (2,14)": [13,  ,  ,  ,  ,  ,  ,  ],
+
+// row, col, diag (from UL), diag (from LL), row (rev), col (rev), diag (rev), diag (rev)
+```
+
 
 Note the meaning difference between forward-reverse when comparing row/cols to diags
