@@ -49,7 +49,7 @@ var find = function( word ) {
 
 	var _ci = {};
 	for (var i = 0; i < index[w].length; i ++) {
-		_ci[index[w][i] + "-" + getRowCol(index[w][i])[0] + "-" + getRowCol(index[w][i])[1] ] = findWordAtPosition( index[w][i], word);
+		_ci[index[w][i] + " (" + getRowCol(index[w][i])[0] + "," + getRowCol(index[w][i])[1]+")"] = findWordAtPosition( index[w][i], word);
 	}
 	
 	return _ci;
