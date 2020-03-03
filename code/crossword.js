@@ -32,15 +32,14 @@ var dict = [ // 34
 	"march", "mischief", "of", "parade", "patrick", "pie", 
 	"pot", "potato", "pudding", "rainbow", "saint", "shamrock", 
 	"shepherds", "shillelagh", "snakes", "stone"
-];
+].reverse(); // Longest to shortest
 
 
 // ARRAY letters
 letters = letters.split(/\s/);
 //console.log( letters.slice(22,25) );
 var root = Math.pow( letters.length , (1/2) );
-
-console.log(letters.length, root);
+// console.log(letters.length, root);
 
 
 // INDEX the letters
@@ -53,17 +52,155 @@ letters.forEach(function( e, i ) {
 
 });
 
+
 // FIND the words
 dict.forEach(function(e, i) {
 
-	console.log(e);
+	
+
 
 });
+
+var findWordAtPosition = function( pos, word ) {
+		
+	var	_rc = getRowCol( pos ),
+		_ci = [];
+		
+	
+	var 	row = getRowLetters(_rc[0]),
+		col = getColLetters(_rc[1]),
+		ld = getLDiagLetters( pos ),
+		rd = getRDiagLetters( pos ),
+		
+		rowr = row.split("").reverse().join(""),
+		colr = col.split("").reverse().join(""),
+		ldr = ld.split("").reverse().join(""),
+		rdr =  rd.split("").reverse().join("");
+	
+	
+	var	search = [
+			row,
+			col,
+			ld,
+			rd
+		],
+		rsearch = [
+			rowr,
+			colr,
+			ldr,
+			rdr
+		];	
+	
+	
+	search.forEach(function(e, i ) {
+		_ci.push( e.search(word) );
+	})
+
+	
+	rsearch.forEach(function(e, i ) {
+		_ci.push( e.search(word) );
+	})
+	
+	return _ci;
+
+}
 
 
 var find = function( word ) {
 
-	
+	var w = word.split("")[0];
 
+	var _ci = [];
+	for (var i = 0; i < index[w].length; i ++) {
+		_ci.push( findWordAtPosition( index[w][i], word) );
+	}
+	
+	return _ci;
+	
 };
 
+
+var getRowCol = function( pos ) {
+	var	col = ( pos % root ) + 1,
+		row = Math.floor(( pos / root )) + 1;	
+	
+	return [row, col];
+}
+
+var getIndex = function( row, col ) {
+	return ( ( row - 1) * root ) + ( col - 1 );
+}
+
+var getRowLetters = function( row ) {
+	return letters.slice( (row - 1) * root, ( (row -1) * root) + root ).join( "" );;
+}
+	
+var getColLetters = function( col ) {
+
+	colLetters = [ letters[col -= 1] ];
+	while (colLetters.length < root) {
+		colLetters.push( letters[col += root]);
+	}
+	return colLetters.join("");
+}
+
+//L to R ( Top to Bottom )
+var getLDiagLetters = function( pos ) {
+	
+	var	_ = [ letters[pos] ],
+		_rc = getRowCol( pos );
+		
+	for (var i = pos - 26; i >= 0; i -= 26) { // Seek UP-LEFT-DIAG
+		if ( getRowCol(i)[1] < _rc[1] ) {
+			_.unshift( letters[i] );
+		}	
+	}
+	for (i = pos + 26; i <= root * root; i += 26) { // Seek DOWN-RIGHT-DIAG
+		if ( getRowCol(i)[1] > _rc[1] ) {
+			_.push( letters[i] );
+		}
+	}
+	
+	return _.join("");
+	
+}
+
+// R to L ( Top to Bottom )
+var getRDiagLetters = function( pos ) {
+	
+	var	_ = [ letters[pos] ],
+		_rc = getRowCol( pos );
+		
+	for (var i = pos - 24; i >= 0; i -= 24) { // Seek UP-RIGHT-DIAG
+		if ( getRowCol(i)[1] > _rc[1] ) {
+			_.push( letters[i] );
+		}	
+	}
+	for (i = pos + 24; i <= root * root; i += 24) { // Seek DOWN-LEFT-DIAG
+		if ( getRowCol(i)[1] < _rc[1] ) {
+			_.unshift( letters[i] );
+		}
+	}
+	
+	return _.join("");
+	
+}
+
+
+
+pos = getIndex( 5, 3 );
+pos = index["s"][13];
+
+_rc = getRowCol( pos, "stone" );
+
+
+
+
+
+
+console.log( pos, _rc[0], _rc[1], letters[pos] );
+console.log( getRowLetters(_rc[0]), getColLetters(_rc[1]) );
+console.log( getLDiagLetters( pos ), getRDiagLetters( pos ) );
+
+// console.log( find( "stone" ) );
+console.log( findWordAtPosition( index["s"][13], "stone" ) );
