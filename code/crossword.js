@@ -6,8 +6,8 @@ var findWordAtPosition = function( pos, word ) {
 	
 	var 	row = getRowLetters(_rc[0]),
 		col = getColLetters(_rc[1]),
-		ld = getLDiagLetters( pos ),
-		rd = getRDiagLetters( pos ),
+		ld = getPDiagLetters( pos ),
+		rd = getNDiagLetters( pos ),
 		
 		rowr = row.split("").reverse().join(""),
 		colr = col.split("").reverse().join(""),
@@ -82,7 +82,7 @@ var getColLetters = function( col ) {
 }
 
 // W + 1 Diagonal
-var getLDiagLetters = function( pos ) {
+var getPDiagLetters = function( pos ) {
 	
 	var	_ = [ letters[pos] ],
 		_rc = getRowCol( pos );
@@ -103,7 +103,7 @@ var getLDiagLetters = function( pos ) {
 }
 
 // W - 1 Diagonal
-var getRDiagLetters = function( pos ) {
+var getNDiagLetters = function( pos ) {
 	
 	var	_ = [ letters[pos] ],
 		_rc = getRowCol( pos );
