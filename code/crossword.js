@@ -81,7 +81,7 @@ var getColLetters = function( col ) {
 	return colLetters.join("");
 }
 
-//L to R ( Top to Bottom )
+// W + 1 Diagonal
 var getLDiagLetters = function( pos ) {
 	
 	var	_ = [ letters[pos] ],
@@ -102,7 +102,7 @@ var getLDiagLetters = function( pos ) {
 	
 }
 
-// L to R ( Bottom to Top )
+// W - 1 Diagonal
 var getRDiagLetters = function( pos ) {
 	
 	var	_ = [ letters[pos] ],

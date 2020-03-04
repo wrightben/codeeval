@@ -30,7 +30,7 @@ RESULT MAP
 
 ```
 "POS ( ROW , COL)":	[
-				row, col, diag (from UL), diag (from LL), 
+				row, col, diag (+1), diag (-1), 
 				row (R), col (R),  diag (R), diag (R)
 			],
 ```
