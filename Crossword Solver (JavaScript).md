@@ -36,4 +36,4 @@ RESULT MAP
 ```
 
 
-Note the meaning difference between forward-reverse when comparing row (or cols) to diags
+"Forward" diagonals are left-to-right
