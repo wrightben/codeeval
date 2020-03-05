@@ -159,7 +159,7 @@ h j r k s z m a w e z m x h z a t e a h o o a s f";
 // ARRAY letters
 letters = letters.split(/\s/);
 
-root = Math.pow( letters.length , (1/2) );
+root = Math.pow( letters.length , 1/2 );
 
 
 
