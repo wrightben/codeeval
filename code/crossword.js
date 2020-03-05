@@ -194,4 +194,5 @@ dict.forEach(function(e, i) {
 	seek[e] = find( e );
 	
 });
+
 console.log( JSON.stringify( seek ) );
