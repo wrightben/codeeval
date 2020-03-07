@@ -150,9 +150,6 @@ letters = letters.split(/\s/);
 
 root = Math.pow( letters.length, 1/2 );
 
-console.log( "Puzzle: ", root );
-
-
 
 // INDEX the letters
 var index = {};
@@ -169,7 +166,7 @@ letters.forEach(function( e, i ) {
 // DICTIONARY of words to be found
 var dict = [ // 34
 	"saved", "bell", "bayside", "zack", "morris", "kelly", "kapowski", "lisa", "turtle", "screech", "jessie", "mrbelding", "mariolopez", "stacey", "themax"
-].reverse(); // Longest to shortest
+].sort().reverse(); // Longest to shortest
 
 
 
