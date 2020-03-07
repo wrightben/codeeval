@@ -1,19 +1,19 @@
-# Crossword Solver (JavaScript)
+# Word Search Solver (JavaScript)
 
 
 ### Description
 
-Crossword Solver
+Word Search Solver
 
 <br />
 
 ---
 ### Run the Code
 
-[crossword.js](https://github.com/wrightben/codeeval/blob/master/code/crossword.js)
+[word search.js](https://github.com/wrightben/codeeval/blob/master/code/word%20search.js)
 
 ```sh
-time node crossword.js
+time node word\ search.js
 ```
 
 <br />
@@ -23,7 +23,7 @@ time node crossword.js
 
 Finds words in square strings (n^2) using indexes. Seeks words in rows, cols, and diags; forward and backward. Optimizable using adjacent-row/col results.
 
-See [crossword-output.js](https://github.com/wrightben/codeeval/blob/master/code/output/crossword-output.js) for example. 
+See [word search output.js](https://github.com/wrightben/codeeval/blob/master/code/output/word%20search%20output.js) for example. 
 
 
 RESULT MAP
