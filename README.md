@@ -1,1 +1,1 @@
-Coding challenges from **CodeEval.com**, which ranked developers by points earned for qualifying solutions. These puzzles are linked to each other by relationships with both combinatorics and language.
+Coding challenges from **CodeEval.com** (HireVue), which ranked developers by points earned for qualifying solutions. These puzzles are linked to each other by relationships with both combinatorics and language.
