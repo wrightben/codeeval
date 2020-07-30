@@ -40,3 +40,10 @@ RESULT MAP
 ld = \ = Diagonal from top-left to bottom-right <br />
 rd = / = Diagonal from bottom-left to top-right <br />
 (R) = Reverse string
+
+#### Anomalies and Errata
+
+Because of the way search works, unusual results happen when the following things are true:
+
+* "Fun" appears more than once, or "Fun|uF", and other "duplicates"
+* Both "Fun" and "Funny" are both included
