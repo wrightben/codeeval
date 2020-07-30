@@ -45,5 +45,5 @@ rd = / = Diagonal from bottom-left to top-right <br />
 
 Unusual or interesting results happen when the following things are true:
 
-* Duplicates: "Fun" occurs multiple times, or "FunuF"
+* Duplicates: "Fun" occurs multiple times, or the word appears as a palindrome ("FunuF")
 * Substrings: "Fun" and "Funny" are both included
