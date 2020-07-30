@@ -26,7 +26,7 @@ Finds words in square strings (n^2). Creates substrings from rows, cols, and dia
 See [word search output.js](https://github.com/wrightben/codeeval/blob/master/code/output/word%20search%20output.js) for example. 
 
 
-RESULT MAP
+#### RESULT MAP
 
 ```
 "POS ( ROW , COL)":	[
