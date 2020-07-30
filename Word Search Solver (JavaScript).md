@@ -37,6 +37,6 @@ RESULT MAP
 
 "POS ( ROW , COL)"[i] = "example".search("p") = 4, because .search is zero-based.
 
-ld = \ = Diagonal from Top-Left to Bottom-Right <br />
-rd = / = Diagonal from Bottom-Left to Top-Right <br />
+ld = \ = Diagonal from top-left to bottom-right <br />
+rd = / = Diagonal from bottom-left to top-right <br />
 (R) = Reverse string
