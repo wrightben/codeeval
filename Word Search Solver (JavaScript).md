@@ -31,7 +31,7 @@ RESULT MAP
 ```
 "POS ( ROW , COL)":	[
 				row, col, ld \, rd /, 
-				row (R), col (R),  diag (R), diag (R)
+				row (R), col (R),  ld \ (R), rd / (R)
 			],
 ```
 
