@@ -35,7 +35,7 @@ RESULT MAP
 			],
 ```
 
-POS[x] = "example".search("p") = 4, because .search is zero-based.
+"POS ( ROW , COL)"[i] = "example".search("p") = 4, because .search is zero-based.
 
 ld = \ = Diagonal from Top-Left to Bottom-Right <br />
 rd = / = Diagonal from Bottom-Left to Top-Right <br />
