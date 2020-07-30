@@ -30,8 +30,12 @@ RESULT MAP
 
 ```
 "POS ( ROW , COL)":	[
-				row, col, diag \, diag /, 
+				row, col, ld \, rd /, 
 				row (R), col (R),  diag (R), diag (R)
 			],
 ```
 
+ld = Diagonal from Top-Left to Bottom-Right
+rd = Diagonal from Bottom-Left to Top-Right
+
+(R) = Reverse string
