@@ -21,7 +21,7 @@ time node word\ search.js
 ---
 ### About My Solution
 
-Finds each word in a square string (n^2). Creates strings from an index in rows, cols, and diagonals. Performs word search on each string (forward and reverse). Optimizable using adjacent-row/col results.
+Find words in square strings (n^2). Creates strings from an index in rows, cols, and diagonals. Performs word search on each string (forward and reverse). Optimizable using adjacent-row/col results.
 
 See [word search output.js](https://github.com/wrightben/codeeval/blob/master/code/output/word%20search%20output.js) for example. 
 
