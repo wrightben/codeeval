@@ -35,7 +35,6 @@ RESULT MAP
 			],
 ```
 
-ld = Diagonal from Top-Left to Bottom-Right
-rd = Diagonal from Bottom-Left to Top-Right
-
+ld = Diagonal from Top-Left to Bottom-Right <br />
+rd = Diagonal from Bottom-Left to Top-Right <br />
 (R) = Reverse string
