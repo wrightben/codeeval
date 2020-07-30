@@ -41,7 +41,7 @@ ld = \ = Diagonal from top-left to bottom-right <br />
 rd = / = Diagonal from bottom-left to top-right <br />
 (R) = Reverse string
 
-#### Anomalies and Errata
+#### ANOMALIES AND ERRATA
 
 Because of the way search works, unusual results happen when the following things are true:
 
