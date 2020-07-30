@@ -43,7 +43,7 @@ rd = / = Diagonal from bottom-left to top-right <br />
 
 #### ANOMALIES AND ERRATA
 
-Because of the way search works, unusual results happen when the following things are true:
+Unusual or interesting results happen when the following things are true:
 
 * "Fun" appears more than once, or "Fun|uF", and other "duplicates"
 * Both "Fun" and "Funny" are both included
