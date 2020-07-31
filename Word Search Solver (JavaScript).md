@@ -43,7 +43,7 @@ rd = / = Diagonal from bottom-left to top-right <br />
 
 #### ANOMALIES AND ERRATA
 
-Unusual or interesting results happen when the following things are true:
+Unusual or interesting results happen when any of the following are true:
 
 * Duplicates: "Fun" occurs multiple times, or the word appears as a palindrome ("FunuF")
 * Substrings: "Fun" and "Funny" are both included
