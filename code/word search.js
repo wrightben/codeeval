@@ -126,23 +126,34 @@ var getNDiagLetters = function( pos ) {
 
 
 // PREPARE THE PUZZLE
-
+// Find words in Excel using sed -e '/\s/\t/'
 var	root,
 	letters = "\
-t s i r r o m s b e y e e k \
-a h r a y e n b o b e p a a \
-m d e h s l s z t u r t l e \
-r t s m e a l s e l p e e k \
-b s i s a k v e e a h i r a \
-e l r t e x l e k t s y b p \
-l s k c a z c e d s e a s o \
-d s c r e e c h e c y e l w \
-i c o e l l s j a s e a x s \
-n b e l l l i t i l t t t k \
-g e c k m y s d l i s a l i \
-z l o s y k e e d z e e s l \
-s v j m a r i o l o p e z k \
-d l j j a r i i s e s j m a";
+f i b b g n r x b x z f u c i o e p f l c a b p k \
+r c e i y x n e l n w l t o b b x d u o h k g m q \
+e c m n v q a a b m u l m d b c t k j u i x h w z \
+s n n y s u k r r e j z e l j z r m v k l j c g d \
+h u z m t g n i r i p s n i j r a c e l l f p i t \
+s y c i s w e e t r g y k g y x o p r e y z d e o \
+w w f t j u c d f t d l e o l r r z r p y n e h o \
+b u d q w i t u n a y r o n q u d u e t e y v o f \
+l s m a s x y p h o m a c f i l i h u l y l g i f \
+b e j v l t t p t r b e g a z f n v p t a n n q u \
+z r n d a q r c a n m r c q t r a s i f p s n t t \
+h t k v z d e w e i a o i j u h r h z o b r x w b \
+u m t w h n j g p g l i f g w s y l j s m b g r o \
+x l d h v x n h l d e h l h h c o l o r f u l o q \
+t o f p i r s k r k s s q l b t o l h e j s p a o \
+d j s v o r u g e k a a i s i a l i d g a y k m i \
+i o i z z x o r c f v i h q v r v o w e i a f n u \
+b n e k e l i q m r x m g b w t b l u g w d s q r \
+i r f h d o r d l x a c m u c b k c f x o l u n w \
+g l i e r i o n v a e e q v j i x e c z v f v l j \
+u n n s l p l r k j k a l s y o a e d h e e i o f \
+s p a a k c g o l o o c d c z m z m h v f f d g i \
+c e h h a z y x k i t x j u p u q j d y g t n f o \
+s j x s p w z c b w f g h g b y w w l y l e v o l \
+k u g x b t b c f n g e f y z z s u p a j a q v m";
 
 
 // ARRAY letters
@@ -165,7 +176,30 @@ letters.forEach(function( e, i ) {
 
 // DICTIONARY of words to be found
 var dict = [ // 34
-	"saved", "bell", "bayside", "zack", "morris", "kelly", "kapowski", "lisa", "turtle", "screech", "jessie", "mrbelding", "mariolopez", "stacey", "themax"
+	"beautiful",
+	"brisk",
+	"cold",
+	"dew",
+	"fine",
+	"golden",
+	"lovely",
+	"sunny",
+	"bright",
+	"chilly",
+	"colorful",
+	"early",
+	"fresh",
+	"hazy",
+	"soft",
+	"sweet",
+	"brilliant",
+	"clear",
+	"cool",
+	"extraordinary",
+	"glorious",
+	"inspiring",
+	"splendid",
+	"warm"
 ].sort().reverse(); // Longest to shortest
 
 
