@@ -45,7 +45,7 @@ var findWordAtPosition = function( pos, word ) {
 
 var find = function( word ) {
 
-	var w = word.split("")[0];
+	var w = word.split("")[0]; // Optimizable: 1. Use least-frequent letter of word; 2. (Using first or least letter) Search all words
 
 	var _ci = {};
 	for (var i = 0; i < index[w].length; i ++) {
@@ -177,28 +177,28 @@ letters.forEach(function( e, i ) {
 // DICTIONARY of words to be found
 var dict = [ // 34
 	"beautiful",
-	"brisk",
-	"cold",
-	"dew",
-	"fine",
-	"golden",
-	"lovely",
-	"sunny",
 	"bright",
-	"chilly",
-	"colorful",
-	"early",
-	"fresh",
-	"hazy",
-	"soft",
-	"sweet",
 	"brilliant",
+	"brisk",
+	"chilly",
 	"clear",
+	"cold",
+	"colorful",
 	"cool",
+	"dew",
+	"early",
 	"extraordinary",
+	"fine",
+	"fresh",
 	"glorious",
+	"golden",
+	"hazy",
 	"inspiring",
+	"lovely",
+	"soft",
 	"splendid",
+	"sunny",
+	"sweet",
 	"warm"
 ].sort().reverse(); // Longest to shortest
 
