@@ -5,3 +5,7 @@ The 9 "small boxes" are distinct entries from the 9!-length list of permutations
 
 #### sudoku.csv
 Use *Numbers to CSV.numbers* to copy a puzzle from Sudoku.com and export to sudoku.csv
+
+
+#### puzzle.tsv
+Output the puzzle with the possible numbers for each box

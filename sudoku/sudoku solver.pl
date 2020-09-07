@@ -5,6 +5,18 @@
 # 	1. EXCEL: Use it to make these constants.
 #	2. READ: Either inline or from external csv; See puzzle ( sudoku.csv ).
 
+@rc = (
+	[ 1, 1 ], [ 1, 2 ], [ 1, 3 ], [ 1, 4 ], [ 1, 5 ], [ 1, 6 ], [ 1, 7 ], [ 1, 8 ], [ 1, 9 ],
+	[ 2, 1 ], [ 2, 2 ], [ 2, 3 ], [ 2, 4 ], [ 2, 5 ], [ 2, 6 ], [ 2, 7 ], [ 2, 8 ], [ 2, 9 ],
+	[ 3, 1 ], [ 3, 2 ], [ 3, 3 ], [ 3, 4 ], [ 3, 5 ], [ 3, 6 ], [ 3, 7 ], [ 3, 8 ], [ 3, 9 ],
+	[ 4, 1 ], [ 4, 2 ], [ 4, 3 ], [ 4, 4 ], [ 4, 5 ], [ 4, 6 ], [ 4, 7 ], [ 4, 8 ], [ 4, 9 ],
+	[ 5, 1 ], [ 5, 2 ], [ 5, 3 ], [ 5, 4 ], [ 5, 5 ], [ 5, 6 ], [ 5, 7 ], [ 5, 8 ], [ 5, 9 ],
+	[ 6, 1 ], [ 6, 2 ], [ 6, 3 ], [ 6, 4 ], [ 6, 5 ], [ 6, 6 ], [ 6, 7 ], [ 6, 8 ], [ 6, 9 ],
+	[ 7, 1 ], [ 7, 2 ], [ 7, 3 ], [ 7, 4 ], [ 7, 5 ], [ 7, 6 ], [ 7, 7 ], [ 7, 8 ], [ 7, 9 ],
+	[ 8, 1 ], [ 8, 2 ], [ 8, 3 ], [ 8, 4 ], [ 8, 5 ], [ 8, 6 ], [ 8, 7 ], [ 8, 8 ], [ 8, 9 ],
+	[ 9, 1 ], [ 9, 2 ], [ 9, 3 ], [ 9, 4 ], [ 9, 5 ], [ 9, 6 ], [ 9, 7 ], [ 9, 8 ], [ 9, 9 ]
+);
+
 @rows = (
 	[ 1, 2, 3,  4, 5, 6,  7, 8, 9],
 	[10,11,12, 13,14,15, 16,17,18],
@@ -17,7 +29,7 @@
 	[55,56,57, 58,59,60, 61,62,63],
 	[64,65,66, 67,68,69, 70,71,72],
 	[73,74,75, 76,77,78, 79,80,81]
-); # @{ $rows[&getRow($index) - 1] }
+); # @{ $rows[ $rc[$index][0] - 1] } )
 
 @cols = (
 	[1,10,19,28,37,46,55,64,73],
@@ -29,7 +41,7 @@
 	[7,16,25,34,43,52,61,70,79],
 	[8,17,26,35,44,53,62,71,80],
 	[9,18,27,36,45,54,63,72,81]
-); # @{ $cols[&getRow($index) - 1] }
+); # @{ $cols[ $rc[$index][1] - 1] } )
 
 @indexToBox = (	
 	1,1,1, 2,2,2, 3,3,3,
@@ -57,9 +69,6 @@
 	[61,62,63,70,71,72,79,80,81]
 ); # @{ $indexesInBox[ $indexToBox[$index] -1 ] }
 
-# Example:
-# $index = 28;
-# print join ", ", @{ $indexesInBox[ $indexToBox[$index] -1 ] };  # 28, 29, 30, 37, 38, 39, 46, 47, 48
 
 # END
 
@@ -75,82 +84,101 @@ chomp @lines;
 $line = join ",", @lines;
 @nums = split /,/g, $line;
 
+
+print scalar @nums;
+print "\n\n";
+
+# Index is zero-based; Cell 28 in Excel/Numbers is cell 27 among the constants (@rc)
 $index = 0;
-# foreach $num (@nums) {
-# 	if ($num =~ /\d/) {
-# 		
-# 		print &testIndex($index);
-# 	
-# 	} elsif ( $num =~ /_/ ) {
-# 
-# 	}
-# 	$index ++;
-# }
+foreach $num (@nums) {
+
+	print "$index :  ";
+	if ($num =~ /\d/) {
+		print $num;
+	} elsif ( $num =~ /_/ ) {
+		$nums[$index] = &getPossible($index);
+		print $nums[$index];
+	}
+	print "\n";
+	
+	$index ++;
+}
+
+&outputPuzzleTSV();
+
+# 0-Based
+# print getPossible(57);
+
+
 
 
 # END
 
 
-
-
-
-
-
-
-# SECTION: 
-# 	Functions
-
-sub getRow() {
-
-	my $index = shift;
-	
-	return int 1 + $index / 9;
-
-}
-
-sub getCol($index) {
-
-	my $index = shift;
-
-	return int $index - ( (&getRow($index) - 1) * 9 ) + 1;
-
-}
+# SECTION: FUNCTIONS	
 
 sub getPossible($index) {
 
 	my $index = shift;
 
-	@row = @{ $rows[&getRow($index) - 1] };
-	@col = @{ $cols[&getCol($index) - 1] };
+	@row = @{ $rows[ $rc[$index][0] - 1 ] };
+	@col = @{ $cols[ $rc[$index][1] - 1 ] };
 	@box = @{ $indexesInBox[ $indexToBox[$index] -1 ] };
 
 	@possible = (1,2,3,4,5,6,7,8,9);
 
-# 	foreach $i (@row) {
-# 		if ( $nums[$i] =~ /\d/ ) {
-# 			$possible[$nums[$i] -1] = _;
-# 		}
-# 	}
+	# Row
+	foreach $i (@row) { # NOT zero-based
+		my $num = $nums[$i - 1];
+		if ($num =~ /\d/) { $possible[$num -1] = undef; }
+	}
+	
+	# Col
+	foreach $i (@col) { # NOT zero-based
+		my $num = $nums[$i - 1];
+		if ($num =~ /\d/) { $possible[$num -1] = undef; }
+	}
+		
+	# Box
+	foreach $i (@box) { # NOT zero-based
+		my $num = $nums[$i - 1];
+		if ($num =~ /\d/) { $possible[$num -1] = undef; }
+	}
 
 	
-	print "\n", @possible;
+	return join "", @possible;
 
 
 }
 
+sub outputPuzzleTSV () {
+	foreach $i (0 .. 80) {
+		print $nums[$i];
+		if  ( (($i + 1) > 0) && (($i + 1) % 9 == 0) ) {
+			print "\n";
+		} else {
+			print "\t";
+		}
+	}
+}
+
 sub testIndex() {
+
+#	OVERVIEW: Prints summary information for a position within the 0-based CSV
+# 	[num, index, row, col, rows, cols, box]
+# 	[28, 28*, 4, 1, [28,29,30,31,32,33,34,35,36], [1,10,19,28,37,46,55,64,73], [28,29,30,37,38,39,46,47,48]
 
 	my $index = shift;
 
 	print "[num, index, row, col, rows, cols, box]\n"; # Header
-	print "[$num, ".(1 + $index).", ".&getRow($index).", ".&getCol($index); # Row and Col
-	print ", [", ( join ",",  @{ $rows[&getRow($index) - 1] } ),  "]" ; # Row Indicies
-	print ", [", ( join ",",  @{ $cols[&getCol($index) - 1] } ),  "]" ; # Col Indicies
+	print "[$num, ".($index +1)."*, ". $rc[$index][0] .", ".$rc[$index][1]; # Row and Col
+	print ", [", ( join ",",  @{ $rows[ $rc[$index][0] - 1] } ),  "]" ; # Row Indicies
+	print ", [", ( join ",",  @{ $cols[ $rc[$index][1] - 1] } ),  "]" ; # Col Indicies
 	print ", [", ( join ",",  @{ $indexesInBox[ $indexToBox[$index] -1 ] } ),  "]" ; # Box (9-digit permutation)
 	print "\n\n";
 
 	return "";
-
+	
 }
 
 # END
