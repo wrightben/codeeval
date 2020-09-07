@@ -2,6 +2,9 @@
 The 9 "small boxes" are entries from the 9!-length list of permutations for [1,2,3,4,5,6,7,8,9]. 
 
 
+```
+cat steps/1\ -\ sudoku.csv | ./sudoku\ solver.pl  > ~/Desktop/output.txt 
+```
 
 
 ## Notes
