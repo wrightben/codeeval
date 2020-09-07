@@ -70,13 +70,35 @@
 ); # @{ $indexesInBox[ $indexToBox[$index] -1 ] }
 
 
+@boxes = ( # zero-based
+	[], #1
+	[], #2
+	[], #3
+	[], #4
+	[], #5
+	[], #6
+	[], #7
+	[], #8
+	[]  #9
+);
+
 # END
+
+
+
+
+
+
+
+
+
+
 
 
 # SECTION: 
 # 	1. Read sudoku.csv
-# 	2. convert to array of integers
-# 	3. process each line.
+# 	2. create array of 81 known/unknown values
+# 	3. each line: replace unknown (blank) values with list of possible values based on puzzle's initial known values
 	
 @lines = (<STDIN>);
 chomp @lines;
@@ -85,34 +107,45 @@ $line = join ",", @lines;
 @nums = split /,/g, $line;
 
 
-print scalar @nums;
-print "\n\n";
+# Get the possible values for the unknown cells.
+foreach $i ( 0 .. 80 ) {
+	$cell = $nums[$i];
 
-# Index is zero-based; Cell 28 in Excel/Numbers is cell 27 among the constants (@rc)
-$index = 0;
-foreach $num (@nums) {
-
-	print "$index :  ";
-	if ($num =~ /\d/) {
-		print $num;
-	} elsif ( $num =~ /_/ ) {
-		$nums[$index] = &getPossible($index);
-		print $nums[$index];
+	if ( $cell =~ /_/ ) {
+		$nums[$i] = &getPossible($i);
 	}
-	print "\n";
-	
-	$index ++;
 }
 
-&outputPuzzleTSV();
+# 
+foreach $i ( 0 .. 8 ) {
+	$regex = "";
+	foreach $item ( @{ $indexesInBox[ $i ] } ) {
+		$regex .= '['. ( join '|', (split //, $nums[$item -1] ) ) . ']';
+	}
+	@{$boxes[$i]} = split /\n/, `cat permutations.txt | grep -E "$regex"`;
 
-# 0-Based
-# print getPossible(57);
+	print "$regex\n";
+	print join ";\t", @{ $boxes[ $i ] };
+	print "\n\n";
+}
+
 
 
 
 
 # END
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 # SECTION: FUNCTIONS	
