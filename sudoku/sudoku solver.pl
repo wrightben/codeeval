@@ -99,34 +99,31 @@
 # 	1. Read sudoku.csv
 # 	2. create array of 81 known/unknown values
 # 	3. each line: replace unknown (blank) values with list of possible values based on puzzle's initial known values
+$file = 'permutations/permutations.txt';
 	
 @lines = (<STDIN>);
 chomp @lines;
 
 $line = join ",", @lines;
-@nums = split /,/g, $line;
+@cells = split /,/g, $line;
 
 
 # Get the possible values for the unknown cells.
 foreach $i ( 0 .. 80 ) {
-	$cell = $nums[$i];
+	$cell = $cells[$i];
 
 	if ( $cell =~ /_/ ) {
-		$nums[$i] = &getPossible($i);
+		$cells[$i] = &getPossible($i);
 	}
 }
 
-# 
+# Build a regex for each box and get all compatible permutations
 foreach $i ( 0 .. 8 ) {
 	$regex = "";
 	foreach $item ( @{ $indexesInBox[ $i ] } ) {
-		$regex .= '['. ( join '|', (split //, $nums[$item -1] ) ) . ']';
+		$regex .= '['. ( join '|', (split //, $cells[$item -1] ) ) . ']';
 	}
-	@{$boxes[$i]} = split /\n/, `cat permutations.txt | grep -E "$regex"`;
-
-	print "$regex\n";
-	print join ";\t", @{ $boxes[ $i ] };
-	print "\n\n";
+	@{$boxes[$i]} = split /\n/, `cat "${file}" | grep -E "$regex"`;
 }
 
 
@@ -150,7 +147,7 @@ foreach $i ( 0 .. 8 ) {
 
 # SECTION: FUNCTIONS	
 
-sub getPossible($index) {
+sub getPossible() {
 
 	my $index = shift;
 
@@ -162,19 +159,19 @@ sub getPossible($index) {
 
 	# Row
 	foreach $i (@row) { # NOT zero-based
-		my $num = $nums[$i - 1];
+		my $num = $cells[$i - 1];
 		if ($num =~ /\d/) { $possible[$num -1] = undef; }
 	}
 	
 	# Col
 	foreach $i (@col) { # NOT zero-based
-		my $num = $nums[$i - 1];
+		my $num = $cells[$i - 1];
 		if ($num =~ /\d/) { $possible[$num -1] = undef; }
 	}
 		
 	# Box
 	foreach $i (@box) { # NOT zero-based
-		my $num = $nums[$i - 1];
+		my $num = $cells[$i - 1];
 		if ($num =~ /\d/) { $possible[$num -1] = undef; }
 	}
 
@@ -186,7 +183,7 @@ sub getPossible($index) {
 
 sub outputPuzzleTSV () {
 	foreach $i (0 .. 80) {
-		print $nums[$i];
+		print $cells[$i];
 		if  ( (($i + 1) > 0) && (($i + 1) % 9 == 0) ) {
 			print "\n";
 		} else {
