@@ -9,7 +9,13 @@ The 9 "small boxes" are entries from the 9!-length list of permutations for [1,2
 File **sudoku solver.pl** uses **sudoku.csv** and **permutations.txt** to solve the puzzle. File **puzzle.tsv** was generated during coding as an intermediate step to verify the getPossible function.
 
 #### sudoku.csv
-Use *Numbers to CSV.numbers* to "Copy Puzzle" from Sudoku.com and copy/paste to sudoku.csv. Do: s/\t/,/; & s/\./_/;
+Use *Numbers to CSV.numbers* to "Copy Puzzle" from Sudoku.com and copy/paste to sudoku.csv.
+
+```
+# BBEdit Replace
+s/\t/,/
+s/\./_/
+```
 
 ```
 9,_,_,_,_,_,_,6,_
