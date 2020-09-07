@@ -17,7 +17,7 @@
 	[55,56,57, 58,59,60, 61,62,63],
 	[64,65,66, 67,68,69, 70,71,72],
 	[73,74,75, 76,77,78, 79,80,81]
-);
+); # @{ $rows[&getRow($index) - 1] }
 
 @cols = (
 	[1,10,19,28,37,46,55,64,73],
@@ -29,10 +29,10 @@
 	[7,16,25,34,43,52,61,70,79],
 	[8,17,26,35,44,53,62,71,80],
 	[9,18,27,36,45,54,63,72,81]
-);
+); # @{ $cols[&getRow($index) - 1] }
 
 @indexToBox = (	
-	1,1,1  2,2,2, 3,3,3,
+	1,1,1, 2,2,2, 3,3,3,
 	1,1,1, 2,2,2, 3,3,3,
 	1,1,1, 2,2,2, 3,3,3,
 
@@ -55,10 +55,11 @@
 	[55,56,57,64,65,66,73,74,75],
 	[58,59,60,67,68,69,76,77,78],
 	[61,62,63,70,71,72,79,80,81]
-);
+); # @{ $indexesInBox[ $indexToBox[$index] -1 ] }
 
+# Example:
 # $index = 28;
-# print join ", ", @{ $indexesInBox[ $indexToBox[$index - 1] -1 ] };  # 28, 29, 30, 37, 38, 39, 46, 47, 48
+# print join ", ", @{ $indexesInBox[ $indexToBox[$index] -1 ] };  # 28, 29, 30, 37, 38, 39, 46, 47, 48
 
 # END
 
@@ -75,14 +76,17 @@ $line = join ",", @lines;
 @nums = split /,/g, $line;
 
 $index = 0;
-foreach $num (@nums) {
-	if ($num =~ /\d/) {
-		print $index.": $num: ".&getRow($index)." ".&getCol($index)."\n";
-	} elsif ( $num =~ /_/ ) {
+# foreach $num (@nums) {
+# 	if ($num =~ /\d/) {
+# 		
+# 		print &testIndex($index);
+# 	
+# 	} elsif ( $num =~ /_/ ) {
+# 
+# 	}
+# 	$index ++;
+# }
 
-	}
-	$index ++;
-}
 
 # END
 
@@ -96,16 +100,57 @@ foreach $num (@nums) {
 # SECTION: 
 # 	Functions
 
-sub getRow($index) {
+sub getRow() {
 
+	my $index = shift;
+	
 	return int 1 + $index / 9;
 
 }
 
 sub getCol($index) {
-	
+
+	my $index = shift;
+
 	return int $index - ( (&getRow($index) - 1) * 9 ) + 1;
+
+}
+
+sub getPossible($index) {
+
+	my $index = shift;
+
+	@row = @{ $rows[&getRow($index) - 1] };
+	@col = @{ $cols[&getCol($index) - 1] };
+	@box = @{ $indexesInBox[ $indexToBox[$index] -1 ] };
+
+	@possible = (1,2,3,4,5,6,7,8,9);
+
+# 	foreach $i (@row) {
+# 		if ( $nums[$i] =~ /\d/ ) {
+# 			$possible[$nums[$i] -1] = _;
+# 		}
+# 	}
+
 	
+	print "\n", @possible;
+
+
+}
+
+sub testIndex() {
+
+	my $index = shift;
+
+	print "[num, index, row, col, rows, cols, box]\n"; # Header
+	print "[$num, ".(1 + $index).", ".&getRow($index).", ".&getCol($index); # Row and Col
+	print ", [", ( join ",",  @{ $rows[&getRow($index) - 1] } ),  "]" ; # Row Indicies
+	print ", [", ( join ",",  @{ $cols[&getCol($index) - 1] } ),  "]" ; # Col Indicies
+	print ", [", ( join ",",  @{ $indexesInBox[ $indexToBox[$index] -1 ] } ),  "]" ; # Box (9-digit permutation)
+	print "\n\n";
+
+	return "";
+
 }
 
 # END
