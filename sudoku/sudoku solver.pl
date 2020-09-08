@@ -209,6 +209,7 @@ sub outputPuzzleTSV () {
 sub outputRegexBox () {
 	foreach my $i (0 .. 8) {
 		print "$regexes[$i]\n";
+		print "Box ".($i + 1).": ". scalar @{$boxes[$i]} . "\n";
 		print join ";\t", @{$boxes[$i]};
 		print ";";
 		print "\n\n";
