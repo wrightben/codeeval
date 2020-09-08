@@ -128,7 +128,7 @@ foreach $i ( 0 .. 8 ) {
 	}
 	push @regexes, $regex;	
 
-	@{$boxes[$i]} = split /\n/, `cat "${file}" | grep -E "$regex"`;
+	@{$boxes[$i]} = split /\n/, `cat "${file}" | grep -e "$regex"`;
 }
 
 
