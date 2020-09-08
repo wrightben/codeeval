@@ -216,6 +216,17 @@ sub outputRegexBox () {
 	}
 }
 
+sub outputCellSummary() {
+	foreach my $i (0 .. 8) {
+		foreach @box ( @{$boxes[$i]} ) {
+			foreach $item (@box) {
+				print $item."\n";
+			}
+		}
+	}
+}
+
+
 sub testIndex() {
 
 #	OVERVIEW: Prints summary information for a position within the 0-based CSV
