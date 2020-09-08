@@ -13,24 +13,19 @@ File **sudoku solver.pl** uses **2 - sudoku.csv** and **1 - permutations.txt** t
 
 #### 2 - sudoku.csv
 Use *Numbers to CSV.numbers* to "Copy Puzzle" from Sudoku.com and copy/paste to **2 - sudoku.csv**.
-```
-# BBEdit Replace
-s/\t/,/
-s/\./_/
-```
 
 ```
-9,_,_,_,_,_,_,6,_
-_,_,_,_,8,_,1,9,_
-_,_,7,_,1,_,_,_,_
-_,_,_,_,_,6,_,7,3
-_,_,_,3,_,9,_,_,_
-3,4,5,_,_,_,_,_,_
-4,_,_,_,_,2,6,8,_
-_,_,2,5,_,_,_,_,_
-_,3,_,7,_,_,_,_,_
+9	1	.	.	.	.	.	6	.
+.	.	.	.	8	.	1	9	.
+.	.	7	.	1	.	.	.	.
+.	.	.	.	.	6	.	7	3
+.	.	.	3	.	9	.	.	.
+3	4	5	.	.	.	.	.	.
+4	.	.	.	.	2	6	8	.
+.	.	2	5	.	.	.	.	.
+.	3	.	7	.	.	.	.	.
 
-# Glitch Warning: s/(,,)|\s|./_/g
+# Glitch Warning: Missing .?
 ```
 
 #### 3 - output.txt
@@ -50,6 +45,5 @@ Modify the permutations for copy-paste into the .numbers file:
 
 
 ```
-s/\t//;
-s/([\d])([\d])([\d])([\d])([\d])([\d])([\d])([\d])([\d])/\1\t\2\t\3\n\4\t\5\t\6\n\7\t\8\t\9\n\n/;
+s/([\d])([\d])([\d])([\d])([\d])([\d])([\d])([\d])([\d])[\t]?/\1\t\2\t\3\n\4\t\5\t\6\n\7\t\8\t\9\n\n/;
 ```

@@ -106,15 +106,15 @@ $file = '1 - permutations.txt';
 @lines = (<STDIN>);
 chomp @lines;
 
-$line = join ",", @lines;
-@cells = split /,/g, $line;
+$line = join "\t", @lines;
+@cells = split /\t/g, $line;
 
 
 # Get the possible values for the unknown cells.
 foreach $i ( 0 .. 80 ) {
 	$cell = $cells[$i];
 
-	if ( $cell =~ /_/ ) {
+	if ( $cell =~ /\./ ) {
 		$cells[$i] = &getPossible($i);
 	}
 }
@@ -210,6 +210,7 @@ sub outputRegexBox () {
 	foreach my $i (0 .. 8) {
 		print "$regexes[$i]\n";
 		print join ";\t", @{$boxes[$i]};
+		print ";";
 		print "\n\n";
 	}
 }
