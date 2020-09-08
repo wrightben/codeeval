@@ -3,7 +3,7 @@ The 9 "small boxes" are entries from the 9!-length list of permutations for [1,2
 
 
 ```
-cat steps/2\ -\ sudoku.csv | ./sudoku\ solver.pl  > ~/Desktop/output.txt 
+cat 2\ -\ sudoku.csv | ./sudoku\ solver.pl  > ~/Desktop/output.txt 
 ```
 
 
