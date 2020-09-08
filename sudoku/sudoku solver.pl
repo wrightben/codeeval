@@ -208,22 +208,48 @@ sub outputPuzzleTSV () {
 
 sub outputRegexBox () {
 	foreach my $i (0 .. 8) {
-		print "$regexes[$i]\n";
-		print "Box ".($i + 1).": ". scalar @{$boxes[$i]} . "\n";
+		
+		print "BOX ".($i + 1)."\t".scalar @{$boxes[$i]}." Permutations\t $regexes[$i]\n\n";
+		&outputCellSummary($i);
+		
+		print "\n";
 		print join ";\t", @{$boxes[$i]};
-		print ";";
-		print "\n\n";
+		print ";\n\n";
+		
 	}
 }
 
 sub outputCellSummary() {
-	foreach my $i (0 .. 8) {
-		foreach @box ( @{$boxes[$i]} ) {
-			foreach $item (@box) {
-				print $item."\n";
-			}
+	
+	my $ind = shift;
+
+	my @charPercent = ( # One Box
+		[0,0,0,0,0,0,0,0,0], # 1st Char
+		[0,0,0,0,0,0,0,0,0], # 2nd Char
+		[0,0,0,0,0,0,0,0,0], # ... 
+		[0,0,0,0,0,0,0,0,0],
+		[0,0,0,0,0,0,0,0,0],
+		[0,0,0,0,0,0,0,0,0],
+		[0,0,0,0,0,0,0,0,0],
+		[0,0,0,0,0,0,0,0,0],
+		[0,0,0,0,0,0,0,0,0]	
+	);
+	
+	foreach $line ( @{$boxes[$ind]} ) {
+		@chars = split //, $line;
+		
+		foreach my $i ( 0 .. 8 ) {
+			$pos = $chars[$i] - 1;
+			$charPercent[$i][ $pos ] += 1;
 		}
+		
 	}
+	
+	foreach $a ( @charPercent ) {
+		print join ", ", @{$a};
+		print "\n";
+	}
+
 }
 
 
