@@ -12,7 +12,7 @@ cat 2\ -\ sudoku.csv | ./sudoku\ solver.pl  > ~/Desktop/output.txt
 File **sudoku solver.pl** uses **2 - sudoku.csv** and **1 - permutations.txt** to solve the puzzle.
 
 #### sudoku.csv
-Use *Numbers to CSV.numbers* to "Copy Puzzle" from Sudoku.com and copy/paste to **2 - sudoku.csv**.
+Use *Numbers to CSV.numbers* to "Copy Puzzle" from Sudoku.com and copy/paste to **2 - sudoku.csv**. Beware of "spaces" without _.
 
 ```
 # BBEdit Replace
@@ -26,8 +26,8 @@ _,_,_,_,8,_,1,9,_
 _,_,7,_,1,_,_,_,_
 _,_,_,_,_,6,_,7,3
 _,_,_,3,_,9,_,_,_
-3,4,5,_,_,,_,_,_
-4,_,_,_,_,2,6,8,
+3,4,5,_,_,_,_,_,_
+4,_,_,_,_,2,6,8,_
 _,_,2,5,_,_,_,_,_
 _,3,_,7,_,_,_,_,_
 ```
