@@ -35,3 +35,9 @@ _,3,_,7,_,_,_,_,_
 #### 3 - output.txt
 - The puzzle in .tsv with the possible numbers for each cell.
 - The regular expressions and permutations available for each box.
+
+Modify the permutations for copy-paste into the .numbers file:
+```
+s/\t//;
+s/([\d])([\d])([\d])([\d])([\d])([\d])([\d])([\d])([\d])/\1\t\2\t\3\n\4\t\5\t\6\n\7\t\8\t\9\n\n/;
+```
