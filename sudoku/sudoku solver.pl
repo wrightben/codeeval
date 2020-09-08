@@ -1,5 +1,9 @@
 #!/usr/bin/perl
 
+use Data::Dumper;
+# print Dumper \@myarray
+
+
 # SECTION:
 #	Overview: Constants for rows, cols, and 9-digit boxes.
 # 	1. EXCEL: Use it to make these constants.
@@ -154,7 +158,7 @@ print "\n\n";
 
 # SECTION: FUNCTIONS	
 
-sub getPossible() {
+sub getPossible {
 
 	my $index = shift;
 
@@ -195,32 +199,7 @@ sub getPossible() {
 
 }
 
-sub outputPuzzleTSV () {
-	foreach $i (0 .. 80) {
-		print $cells[$i];
-		if  ( (($i + 1) > 0) && (($i + 1) % 9 == 0) ) {
-			print "\n";
-		} else {
-			print "\t";
-		}
-	}
-}
-
-sub outputRegexBox () {
-	foreach my $i (0 .. 8) {
-		
-		print "BOX ".($i + 1)."\t".scalar @{$boxes[$i]}." Permutations\t $regexes[$i]\n\n";
-		&outputCellSummary($i);
-		
-		print "\n";
-		print join ";\t", @{$boxes[$i]};
-		print ";\n\n";
-		
-	}
-}
-
-sub outputCellSummary() {
-	
+sub getCellSummary {
 	my $ind = shift;
 
 	my @charPercent = ( # One Box
@@ -245,7 +224,38 @@ sub outputCellSummary() {
 		
 	}
 	
-	foreach $a ( @charPercent ) {
+	return \@charPercent; # Ref (Scalar)
+}
+
+sub outputPuzzleTSV {
+	foreach $i (0 .. 80) {
+		print $cells[$i];
+		if  ( (($i + 1) > 0) && (($i + 1) % 9 == 0) ) {
+			print "\n";
+		} else {
+			print "\t";
+		}
+	}
+}
+
+sub outputRegexBox {
+	foreach my $i (0 .. 8) {
+		
+		print "BOX ".($i + 1)."\t".scalar @{$boxes[$i]}." Permutations\t $regexes[$i]\n\n";
+		&outputCellSummary( &getCellSummary($i) ); # getCellSummary returns $ref, send $ref to outputCellSummary
+		
+		print "\n";
+		print join ";\t", @{$boxes[$i]};
+		print ";\n\n";
+		
+	}
+}
+
+sub outputCellSummary {
+
+	my ($charPercent) = @_; # @_[0] = $ref
+	
+	foreach $a ( @{$charPercent} ) {
 		print join ", ", @{$a};
 		print "\n";
 	}
@@ -253,7 +263,7 @@ sub outputCellSummary() {
 }
 
 
-sub testIndex() {
+sub testIndex {
 
 #	OVERVIEW: Prints summary information for a position within the 0-based CSV
 # 	[num, index, row, col, rows, cols, box]
