@@ -82,6 +82,8 @@
 	[]  #9
 );
 
+@regexes = ();
+
 # END
 
 
@@ -117,26 +119,22 @@ foreach $i ( 0 .. 80 ) {
 	}
 }
 
-
-exit;
-
 # Build a regex for each box and get all compatible permutations
 foreach $i ( 0 .. 8 ) {
 	$regex = "";
 	foreach $item ( @{ $indexesInBox[ $i ] } ) {
-		$regex .= '['.$cells[$item -1].']';
+		#$regex .= $regex .= '['.$cells[$item -1].']'; # SLOW: w/o pipe
+		$regex .= '['. ( join '|', (split //, $cells[$item -1] ) ) . ']'; # FAST: w/ pipe
 	}
-	
-	print $regex."\n";
+	push @regexes, $regex;	
+
 	@{$boxes[$i]} = split /\n/, `cat "${file}" | grep -E "$regex"`;
-	
-	print join ";\t", @{$boxes[$i]};
-	
-	print "\n\n";
 }
 
 
-
+&outputPuzzleTSV();
+print "\n\n";
+&outputRegexBox();
 
 
 # END
@@ -169,27 +167,70 @@ sub getPossible() {
 	# Row
 	foreach $i (@row) { # NOT zero-based
 		my $num = $cells[$i - 1];
-		if ($num =~ /\d/) { $possible[$num -1] = undef; }
+		if ( ($num =~ /\d/) && ($num < 10) ) { $possible[$num -1] = undef; }
 	}
 	
 	# Col
 	foreach $i (@col) { # NOT zero-based
 		my $num = $cells[$i - 1];
-		if ($num =~ /\d/) { $possible[$num -1] = undef; }
+		if ( ($num =~ /\d/) && ($num < 10) ) { $possible[$num -1] = undef; }
 	}
 		
 	# Box
 	foreach $i (@box) { # NOT zero-based
 		my $num = $cells[$i - 1];
-		if ($num =~ /\d/) { $possible[$num -1] = undef; }
+		if ( ($num =~ /\d/) && ($num < 10) ) { $possible[$num -1] = undef; }
 	}
 
 	
 	return join "", @possible;
+	
+# 	Note:
+# 	Each cell is processing its row and column and then writing the possible values to itself.
+# 	Successive cells "see" the previously set possible values of neighbor cells, ie [1|7|8],
+# 	and try to remove those from @possible by setting $possible[178] = undef. When @possible
+# 	is converted to the return string, the undef values at those high index aren't included.
+#	I prevent this and the needless expansion of the @possible array by not undef'ing values > 9.
 
 
 }
 
+sub outputPuzzleTSV () {
+	foreach $i (0 .. 80) {
+		print $cells[$i];
+		if  ( (($i + 1) > 0) && (($i + 1) % 9 == 0) ) {
+			print "\n";
+		} else {
+			print "\t";
+		}
+	}
+}
 
+sub outputRegexBox () {
+	foreach my $i (0 .. 8) {
+		print "$regexes[$i]\n";
+		print join ";\t", @{$boxes[$i]};
+		print "\n\n";
+	}
+}
+
+sub testIndex() {
+
+#	OVERVIEW: Prints summary information for a position within the 0-based CSV
+# 	[num, index, row, col, rows, cols, box]
+# 	[28, 28*, 4, 1, [28,29,30,31,32,33,34,35,36], [1,10,19,28,37,46,55,64,73], [28,29,30,37,38,39,46,47,48]
+
+	my $index = shift;
+
+	print "[num, index, row, col, rows, cols, box]\n"; # Header
+	print "[$num, ".($index +1)."*, ". $rc[$index][0] .", ".$rc[$index][1]; # Row and Col
+	print ", [", ( join ",",  @{ $rows[ $rc[$index][0] - 1] } ),  "]" ; # Row Indicies
+	print ", [", ( join ",",  @{ $cols[ $rc[$index][1] - 1] } ),  "]" ; # Col Indicies
+	print ", [", ( join ",",  @{ $indexesInBox[ $indexToBox[$index] -1 ] } ),  "]" ; # Box (9-digit permutation)
+	print "\n\n";
+
+	return "";
+	
+}
 
 # END

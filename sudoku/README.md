@@ -9,10 +9,10 @@ cat steps/1\ -\ sudoku.csv | ./sudoku\ solver.pl  > ~/Desktop/output.txt
 
 ## Notes
 
-File **sudoku solver.pl** uses **sudoku.csv** and **permutations.txt** to solve the puzzle. File **puzzle.tsv** was generated during coding as an intermediate step to verify the getPossible function.
+File **sudoku solver.pl** uses **2 - sudoku.csv** and **1 - permutations.txt** to solve the puzzle.
 
 #### sudoku.csv
-Use *Numbers to CSV.numbers* to "Copy Puzzle" from Sudoku.com and copy/paste to sudoku.csv.
+Use *Numbers to CSV.numbers* to "Copy Puzzle" from Sudoku.com and copy/paste to **2 - sudoku.csv**.
 
 ```
 # BBEdit Replace
@@ -32,5 +32,6 @@ _,_,2,5,_,_,_,_,_
 _,3,_,7,_,_,_,_,_
 ```
 
-#### puzzle.tsv
-Output the puzzle with the possible numbers for each box
+#### 3 - output.txt
+- The puzzle in .tsv with the possible numbers for each cell.
+- The regular expressions and permutations available for each box.
