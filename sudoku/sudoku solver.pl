@@ -101,7 +101,7 @@
 # 	1. Read sudoku.csv
 # 	2. create array of 81 known/unknown values
 # 	3. each line: replace unknown (blank) values with list of possible values based on puzzle's initial known values
-$file = 'permutations/permutations.txt';
+$file = '1 - permutations.txt';
 	
 @lines = (<STDIN>);
 chomp @lines;
