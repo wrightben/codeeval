@@ -38,6 +38,17 @@ _,3,_,7,_,_,_,_,_
 
 Modify the permutations for copy-paste into the .numbers file:
 ```
+# Before
+123456789;
+
+# After
+1	2	3
+4	5	6
+7	8	9
+```
+
+
+```
 s/\t//;
 s/([\d])([\d])([\d])([\d])([\d])([\d])([\d])([\d])([\d])/\1\t\2\t\3\n\4\t\5\t\6\n\7\t\8\t\9\n\n/;
 ```
