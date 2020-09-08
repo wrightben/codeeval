@@ -15,7 +15,7 @@ File **sudoku solver.pl** uses **2 - sudoku.csv** and **1 - permutations.txt** t
 Use *Numbers to CSV.numbers* to "Copy Puzzle" from Sudoku.com and copy/paste to **2 - sudoku.csv**.
 
 ```
-9	1	.	.	.	.	.	6	.
+9	.	.	.	.	.	.	6	.
 .	.	.	.	8	.	1	9	.
 .	.	7	.	1	.	.	.	.
 .	.	.	.	.	6	.	7	3
