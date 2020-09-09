@@ -3,6 +3,8 @@
 use Data::Dumper;
 # print Dumper \@myarray
 
+$debug = 1; # 1 = true/on, etc.
+$sovlePuzzleCount = 0; # Count the number of iterations for solvePuzzle
 
 # SECTION:
 #	Overview: Constants for rows,cols,and 9-digit boxes.
@@ -113,44 +115,13 @@ $file = '1 - permutations.txt';
 @lines = (<STDIN>);
 chomp @lines;
 
-$line = join "\t",@lines;
-@cells = split /\t/g,$line;
+$puzzle = join "\t",@lines;
+@cells = split /\t/g,$puzzle;
 
 
-# Summarize rows, cols, and boxes
-@rowSummaries = @{ &getRowSummaries };
-@colSummaries = @{ &getColSummaries };
-@boxSummaries = @{ &getBoxSummaries };
-
-
-# Get the possible values for the unknown cells.
-foreach $i ( 0 .. 80 ) {
-testIndex($i);
-# 	if ( $cells[$i] =~ /\./ ) {
-# 		$cells[$i] = &getPossible($i);
-# 	}
-	
+while (  ( $sovlePuzzleCount < 50 ) && ( $puzzle =~ /./ )  ) { 
+	&solvePuzzle();
 }
-exit;
-
-# Build a regex for each box and get all compatible permutations
-foreach $i ( 0 .. 8 ) {
-
-	$regex = "";
-	foreach $item ( @{ $indexesInBox[ $i ] } ) {
-		#$regex .= $regex .= '['.$cells[$item -1].']'; # SLOW: w/o pipe
-		$regex .= '['. ( join '|',(split //,$cells[$item -1] ) ) . ']'; # FAST: w/ pipe
-	}
-	push @regexes,$regex;	
-
-	@{$boxes[$i]} = split /\n/,`cat "${file}" | grep -e "$regex"`;
-	
-}
-
-
-&outputPuzzleTSV();
-print "\n\n";
-&outputRegexBox();
 
 
 # END
@@ -169,6 +140,91 @@ print "\n\n";
 
 
 # SECTION: FUNCTIONS
+sub solvePuzzle {
+
+	$sovlePuzzleCount += 1;
+		
+	if ($debug) { print "\n\n\n=== solvePuzzle ($sovlePuzzleCount) ===\n"; }
+	
+	print "Input TSV\n";
+	&outputPuzzleTSV();
+
+
+	# Summarize rows, cols, and boxes
+	@rowSummaries = @{ &getRowSummaries };
+	@colSummaries = @{ &getColSummaries };
+	@boxSummaries = @{ &getBoxSummaries };
+
+
+	# Get the possible values for the unknown cells.
+	foreach $i ( 0 .. 80 ) {
+
+		if ( $cells[$i] =~ /\./ ) {
+			$cells[$i] = &getPossible($i);
+		}
+	
+	}
+
+	# Build a regex for each box and get all compatible permutations
+	foreach $i ( 0 .. 8 ) {
+
+		$regex = "";
+		foreach $item ( @{ $indexesInBox[ $i ] } ) {
+			#$regex .= $regex .= '['.$cells[$item -1].']'; # SLOW: w/o pipe
+			$regex .= '['. ( join '|',(split //,$cells[$item -1] ) ) . ']'; # FAST: w/ pipe
+		}
+		push @regexes,$regex;	
+
+		@{$boxes[$i]} = split /\n/,`cat "${file}" | grep -e "$regex"`;
+	
+	}
+
+
+
+	# DEBUG:
+	# OUTPUT REGEX BOXES
+	print "\n\n";
+	&outputRegexBox();
+
+	foreach $i ( 0 .. 8 ) { # Boxes ( 0 .. 8 )
+
+		my $totalPermutations = @{$boxes[$i]}; # The # of permutations (123456789) matching the regex for this box
+		my @charPercent = @{ &getCellSummary( $i ) }; # Summary of all characters for the entire box
+	
+		for my $ii ( 0 .. 8 ) { # Cell ( 0 .. 8 ) in Boxes ( 0 .. 8 )
+
+			# Cell	
+			my $cellIndex = $indexesInBox[ $i ][$ii] - 1; # The cell $ii in the box $i.
+			my @cellSummmary = @{ $charPercent[ $ii ] }; # cellSummary: how many times (1..9) in cell from all permutations (box)
+		
+	# 		print "Cell Index: $cellIndex \t Current Value: $cells[$cellIndex] \t Total Permutations: $totalPermutations\n";
+		
+	# 		print Dumper \@cellSummmary;
+	# 		print "\n";
+		
+			for my $iii ( 0 .. 8 ) {
+	# 			print "Cell Summary: $cellSummmary[$iii] \t iii: $iii \t Cell Index: $cellIndex \t Cell Value: $cells[$cellIndex]\n";
+				if ( $cellSummmary[$iii] == $totalPermutations ) {
+					$cells[$cellIndex] = $iii + 1; # Set the cell to the digit when the digit occurs in every permutation.
+				}
+			}
+		
+			# Reset the .csv
+			if ( $cells[$cellIndex] > 9 ) {
+				$cells[$cellIndex] = '.';
+			}
+		
+	# 		print "\n\n";
+		}
+	
+	}
+	
+	$puzzle = join "\t", @cells;
+	
+	print "Output TSV\n";
+	&outputPuzzleTSV();
+
+}
 
 sub getRowSummaries {
 	
@@ -307,19 +363,35 @@ sub outputPuzzleTSV {
 			print "\t";
 		}
 	}
+	
+	return "";	
 }
 
 sub outputRegexBox {
 	foreach my $i (0 .. 8) {
 		
-		print "BOX ".($i + 1)."\t".scalar @{$boxes[$i]}." Permutations\t $regexes[$i]\n\n";
+		print "BOX ".($i + 1)."\t".scalar @{$boxes[$i]}." Permutations\t $regexes[$i]\n";
+		print &outputBoxValues($i);
+		print "\n\n";		
 		&outputCellSummary( &getCellSummary($i) ); # getCellSummary returns $ref,send $ref to outputCellSummary
-		
 		print "\n";
 		print join ";\t",@{$boxes[$i]};
 		print ";\n\n";
 		
 	}
+	
+	return "";
+}
+
+sub outputBoxValues {
+	my $box = shift;
+	print join "", (
+		$cells[$indexesInBox[$box][0] -1], "\t", $cells[$indexesInBox[$box][1] -1], "\t", $cells[$indexesInBox[$box][2] -1], "\n", 
+		$cells[$indexesInBox[$box][3] -1], "\t", $cells[$indexesInBox[$box][4] -1], "\t", $cells[$indexesInBox[$box][5] -1], "\n",
+		$cells[$indexesInBox[$box][6] -1], "\t", $cells[$indexesInBox[$box][7] -1], "\t", $cells[$indexesInBox[$box][8] -1]
+	);
+	
+	return "";
 }
 
 sub outputCellSummary {
@@ -330,6 +402,8 @@ sub outputCellSummary {
 		print join ",",@{$a};
 		print "\n";
 	}
+	
+	return "";
 
 }
 
