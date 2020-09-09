@@ -144,7 +144,10 @@ sub solvePuzzle {
 
 	$sovlePuzzleCount += 1;
 		
-	if ($debug) { print "\n\n\n=== solvePuzzle ($sovlePuzzleCount) ===\n"; }
+	if ($debug) { 
+		if ($solvePuzzleCount > 1) { print ("\n" x 10); }
+		print "=== solvePuzzle ($sovlePuzzleCount) ===\n"; 
+	}
 	
 	print "Input TSV\n";
 	&outputPuzzleTSV();
