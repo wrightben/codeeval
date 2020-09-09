@@ -229,14 +229,16 @@ sub getBoxSummaries {
 }
 
 sub getPossible {
+	
+	my ($index, @row, @col, @box, @possible);
 
-	my $index = shift;
+	$index = shift;
 
 	@row = @{ $rowSummaries[ $rc[$index][0] - 1 ] };
 	@col = @{ $colSummaries[ $rc[$index][1] - 1 ] };
 	@box = @{ $boxSummaries[ $indexToBox[$index] -1 ] };
 
-	my @possible = (1,2,3,4,5,6,7,8,9);
+	@possible = (1,2,3,4,5,6,7,8,9);
 
 	# Row
 	foreach my $num (@row) { # NOT zero-based
