@@ -109,24 +109,29 @@ use Data::Dumper;
 # 	2. create array of 81 known/unknown values
 # 	3. each line: replace unknown (blank) values with list of possible values based on puzzle's initial known values
 
-$debug = 1; # 1 = true/on, etc.
-$maxPuzzleAttempts = 50;
-$solvePuzzleCount = 0; # Count the number of iterations for solvePuzzle
-$knownValues = 0;
-$fail = 0;
-$file = '1 - permutations.txt';
-	
+# Config
+	$debug 			= 1; # 1 = true/on, etc.
+	$maxPuzzleAttempts 	= 50;
+	$solvePuzzleCount	= 0; # Count the number of iterations for solvePuzzle
+	$knownValues		= 0;
+	$fail			= 0;
+	$file			= '1 - permutations.txt';
+
+# Read Puzzle	
 @lines = (<STDIN>);
 chomp @lines;
+$puzzle = join "\t",@lines; # !Performed every iteration.
+@cells = split /\t/g,$puzzle; # !Performed every iteration.
 
-$puzzle = join "\t",@lines;
-@cells = split /\t/g,$puzzle; # @cells is continually modified (.,[\d+],.), $puzzle is reset every iteration from @cells
-
-
-while (  ($fail != 1) && ( $sovlePuzzleCount < $maxPuzzleAttempts ) && ( $puzzle =~ /\./ ) ) { 
+# Solve Puzzle
+while (  
+	( $fail != 1 ) && 
+	( $sovlePuzzleCount < $maxPuzzleAttempts ) && 
+	( $puzzle =~ /\./ ) ) { 
+	
 	&solvePuzzle();
+	
 }
-
 
 # END
 
@@ -223,18 +228,24 @@ sub solvePuzzle {
 	
 	}
 	
+	# Print out the TSV with knowns + regex values
 	print "Processing TSV\n";
 	&outputPuzzleTSV();
 	print "\n\n";
 	
 	
+	# Reset puzzle TSV
 	$puzzle = join "\t", @cells;
 	$puzzle =~ s/(\d\d+)/\./g;
 	@cells = split /\t/g,$puzzle;
 	
+	
+	# Print out the TSV with knowns
 	print "Output TSV (".&getKnownCount.")\n";
 	&outputPuzzleTSV();
 	
+	
+	# Error Handling
 	if (&getKnownCount == $knownValues) { 
 		$fail = 1; 
 		print "Error (Known Values): Cannot make progress.";
