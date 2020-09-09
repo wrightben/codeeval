@@ -3,8 +3,6 @@
 use Data::Dumper;
 # print Dumper \@myarray
 
-$debug = 1; # 1 = true/on, etc.
-$solvePuzzleCount = 0; # Count the number of iterations for solvePuzzle
 
 # SECTION:
 #	Overview: Constants for rows,cols,and 9-digit boxes.
@@ -110,16 +108,22 @@ $solvePuzzleCount = 0; # Count the number of iterations for solvePuzzle
 # 	1. Read sudoku.csv
 # 	2. create array of 81 known/unknown values
 # 	3. each line: replace unknown (blank) values with list of possible values based on puzzle's initial known values
+
+$debug = 1; # 1 = true/on, etc.
+$maxPuzzleAttempts = 50;
+$solvePuzzleCount = 0; # Count the number of iterations for solvePuzzle
+$knownValues = 0;
+$fail = 0;
 $file = '1 - permutations.txt';
 	
 @lines = (<STDIN>);
 chomp @lines;
 
 $puzzle = join "\t",@lines;
-@cells = split /\t/g,$puzzle;
+@cells = split /\t/g,$puzzle; # @cells is continually modified (.,[\d+],.), $puzzle is reset every iteration from @cells
 
 
-while (  ( $sovlePuzzleCount < 50 ) && ( $puzzle =~ /./ )  ) { 
+while (  ($fail != 1) && ( $sovlePuzzleCount < $maxPuzzleAttempts ) && ( $puzzle =~ /./ ) ) { 
 	&solvePuzzle();
 }
 
@@ -146,10 +150,11 @@ sub solvePuzzle {
 		
 	if ($debug) { 
 		if ($solvePuzzleCount > 1) { print ("\n" x 10); }
-		print "=== solvePuzzle ($solvePuzzleCount) ===\n"; 
+		print "=== solvePuzzle ($solvePuzzleCount) ===\n";
 	}
 	
-	print "Input TSV\n";
+	$knownValues = &getKnownCount;
+	print "Input TSV (".$knownValues.")\n";
 	&outputPuzzleTSV();
 
 
@@ -186,8 +191,10 @@ sub solvePuzzle {
 
 	# DEBUG:
 	# OUTPUT REGEX BOXES
-	print "\n\n";
-	&outputRegexBox();
+	if ($debug) {
+		print "\n\n";
+		&outputRegexBox();
+	}
 
 	foreach $i ( 0 .. 8 ) { # Boxes ( 0 .. 8 )
 
@@ -224,8 +231,13 @@ sub solvePuzzle {
 	
 	$puzzle = join "\t", @cells;
 	
-	print "Output TSV\n";
+	print "Output TSV (".&getKnownCount.")\n";
 	&outputPuzzleTSV();
+	
+	if (&getKnownCount == $knownValues) { 
+		$fail = 1; 
+		print "Error (Known Values): Cannot make progress.";
+	}
 
 }
 
@@ -408,6 +420,11 @@ sub outputCellSummary {
 	
 	return "";
 
+}
+
+sub getKnownCount {
+	my @unknowns = $puzzle =~ /\./g;
+	return 81 - (scalar @unknowns);
 }
 
 
