@@ -212,13 +212,7 @@ sub solvePuzzle {
 			my $cellIndex = $indexesInBox[ $i ][$ii] - 1; # The cell $ii in the box $i.
 			my @cellSummmary = @{ $charPercent[ $ii ] }; # cellSummary: how many times (1..9) in cell from all permutations (box)
 		
-	# 		print "Cell Index: $cellIndex \t Current Value: $cells[$cellIndex] \t Total Permutations: $totalPermutations\n";
-		
-	# 		print Dumper \@cellSummmary;
-	# 		print "\n";
-		
 			for my $iii ( 0 .. 8 ) {
-	# 			print "Cell Summary: $cellSummmary[$iii] \t iii: $iii \t Cell Index: $cellIndex \t Cell Value: $cells[$cellIndex]\n";
 				if ( $cellSummmary[$iii] == $totalPermutations ) {
 					$cells[$cellIndex] = $iii + 1; # Set the cell to the digit when the digit occurs in every permutation.
 				}
