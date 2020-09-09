@@ -4,7 +4,7 @@ use Data::Dumper;
 # print Dumper \@myarray
 
 $debug = 1; # 1 = true/on, etc.
-$sovlePuzzleCount = 0; # Count the number of iterations for solvePuzzle
+$solvePuzzleCount = 0; # Count the number of iterations for solvePuzzle
 
 # SECTION:
 #	Overview: Constants for rows,cols,and 9-digit boxes.
@@ -142,11 +142,11 @@ while (  ( $sovlePuzzleCount < 50 ) && ( $puzzle =~ /./ )  ) {
 # SECTION: FUNCTIONS
 sub solvePuzzle {
 
-	$sovlePuzzleCount += 1;
+	$solvePuzzleCount += 1;
 		
 	if ($debug) { 
 		if ($solvePuzzleCount > 1) { print ("\n" x 10); }
-		print "=== solvePuzzle ($sovlePuzzleCount) ===\n"; 
+		print "=== solvePuzzle ($solvePuzzleCount) ===\n"; 
 	}
 	
 	print "Input TSV\n";
