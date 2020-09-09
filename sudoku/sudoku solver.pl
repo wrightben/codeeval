@@ -123,7 +123,7 @@ $puzzle = join "\t",@lines;
 @cells = split /\t/g,$puzzle; # @cells is continually modified (.,[\d+],.), $puzzle is reset every iteration from @cells
 
 
-while (  ($fail != 1) && ( $sovlePuzzleCount < $maxPuzzleAttempts ) && ( $puzzle =~ /./ ) ) { 
+while (  ($fail != 1) && ( $sovlePuzzleCount < $maxPuzzleAttempts ) && ( $puzzle =~ /\./ ) ) { 
 	&solvePuzzle();
 }
 
@@ -219,17 +219,18 @@ sub solvePuzzle {
 				}
 			}
 		
-			# Reset the .csv
-			if ( $cells[$cellIndex] > 9 ) {
-				$cells[$cellIndex] = '.';
-			}
-		
-	# 		print "\n\n";
 		}
 	
 	}
 	
+	print "Processing TSV\n";
+	&outputPuzzleTSV();
+	print "\n\n";
+	
+	
 	$puzzle = join "\t", @cells;
+	$puzzle =~ s/(\d\d+)/\./g;
+	@cells = split /\t/g,$puzzle;
 	
 	print "Output TSV (".&getKnownCount.")\n";
 	&outputPuzzleTSV();
