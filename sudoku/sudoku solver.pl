@@ -116,21 +116,22 @@ chomp @lines;
 $line = join "\t",@lines;
 @cells = split /\t/g,$line;
 
+
+# Summarize rows, cols, and boxes
 @rowSummaries = @{ &getRowSummaries };
 @colSummaries = @{ &getColSummaries };
 @boxSummaries = @{ &getBoxSummaries };
 
 
-
 # Get the possible values for the unknown cells.
 foreach $i ( 0 .. 80 ) {
-
-	if ( $cells[$i] =~ /\./ ) {
-		$cells[$i] = &getPossible($i);
-	}
+testIndex($i);
+# 	if ( $cells[$i] =~ /\./ ) {
+# 		$cells[$i] = &getPossible($i);
+# 	}
 	
 }
-
+exit;
 
 # Build a regex for each box and get all compatible permutations
 foreach $i ( 0 .. 8 ) {
@@ -342,7 +343,7 @@ sub testIndex {
 	my $index = shift;
 
 	print "[num,index,row,col,rows,cols,box]\n"; # Header
-	print "[$num,".($index +1)."*,". $rc[$index][0] .",".$rc[$index][1]; # Row and Col
+	print "[$cells[$i],".($index +1)."*,". $rc[$index][0] .",".$rc[$index][1]; # Row and Col
 	print ",[",( join ",", @{ $rows[ $rc[$index][0] - 1] } ), "]" ; # Row Indicies
 	print ",[",( join ",", @{ $cols[ $rc[$index][1] - 1] } ), "]" ; # Col Indicies
 	print ",[",( join ",", @{ $indexesInBox[ $indexToBox[$index] -1 ] } ), "]" ; # Box (9-digit permutation)
