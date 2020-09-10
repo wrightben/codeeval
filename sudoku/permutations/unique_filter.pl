@@ -1,5 +1,9 @@
 #!/usr/bin/perl
 
+
+
+# cat 1\ -\ permutations.txt | grep -e "$(./permutations/regex_builder.pl)" | ./permutations/unique_filter.pl 
+
 use List::MoreUtils qw(uniq);
 
 @perms = (<STDIN>);

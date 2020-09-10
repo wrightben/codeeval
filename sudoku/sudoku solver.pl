@@ -116,6 +116,7 @@ use Data::Dumper;
 	$knownValues		= 0;
 	$fail			= 0;
 	$file			= '1 - permutations.txt';
+	$file			= '1 - permutations_7.txt';
 
 # Read Puzzle	
 @lines = (<STDIN>);
