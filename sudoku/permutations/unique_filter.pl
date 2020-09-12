@@ -20,9 +20,12 @@ chomp @perms;
 @c9 = ();
 
 foreach $perm (@perms) {
-	print $perm . "\n";
 	@chars = ();
 	@chars = split //, $perm;
+	
+	print "$chars[0]$chars[1]$chars[2] $chars[3]$chars[4]$chars[5] $chars[6]$chars[7]$chars[8]\n";
+	
+	
 	push @c1, $chars[0];
 	push @c2, $chars[1];
 	push @c3, $chars[2];
@@ -54,12 +57,8 @@ print "\n\n";
 
 sub printFilter {
 
-	(@arr) = (@_);
+	my (@arr) = @_;
 	
-	if (scalar @arr == 1) {
-		return $arr[0];
-	} else {
-		return ".";
-	}
+	return ( (scalar @arr == 1) ? $arr[0] : "." );	
 
 }
