@@ -3,22 +3,20 @@ The 9 "small boxes" are entries from the 9!-length list of permutations for [1,2
 
 
 ```
-cat 2\ -\ sudoku.csv | ./sudoku\ solver.pl  > ~/Desktop/output.txt 
+./sudoku_solver.pl  > ~/Desktop/sudoku_solver_output.txt 
 ```
 
 
 ## Notes
 
-File **sudoku solver.pl** uses **2 - sudoku.csv** and **1 - permutations.txt** to solve the puzzle.
+File **sudoku_solver.pl** requires **permutations.txt** to solve the puzzle.
 
-#### 1 - permutations.txt
-This is the printed list of permutations for 123456789. It's 362,880-lines long (9!). The file **1 - permutations_7.txt** is a filtered list of permutations that results by iteration 7 of the solver. There are only 192 remaining options for every row, box, and column<sup>*</sup>. 
-
-<sup>*</sup> Some of the 192 permutations are excluded by intersections, for example: Row 4 excludes several from the result of Box 4 in iteration 7.
+#### permutations.txt
+This is the printed list of permutations for 123456789. It's 362,880-lines long (9!).
 
 
-#### 2 - sudoku.csv
-Use *Numbers to CSV.numbers* to "Copy Puzzle" from Sudoku.com, then copy-paste to **2 - sudoku.csv**.
+#### Numbers to CSV.numbers
+Use *Numbers to CSV.numbers* to "Copy Puzzle" from Sudoku.com, then copy-paste to solver.
 
 ```
 9	.	.	.	.	.	.	6	.
@@ -34,7 +32,7 @@ Use *Numbers to CSV.numbers* to "Copy Puzzle" from Sudoku.com, then copy-paste t
 # Glitch Warning: Missing .?
 ```
 
-#### 3 - output.txt
+#### sudoku_solver_output.txt
 - The puzzle in .tsv with the possible numbers for each cell.
 - The regular expressions and permutations available for each box.
 
@@ -60,5 +58,5 @@ s/([\d])([\d])([\d])([\d])([\d])([\d])([\d])([\d])([\d]);[\t]?/\1\t\2\t\3\n\4\t\
 The **./permutations** folder includes **regex_builder.pl** and **unique_filter.pl**, which print a list of the available permutations for any row, col, or box copied-pasted from the Numbers file. It's a manual operation.
 
 ```
-cat 1\ -\ permutations.txt | grep -e "$(./permutations/regex_builder.pl)" | ./permutations/unique_filter.pl
+cat permutations.txt | grep -e "$(./permutations/regex_builder.pl)" | ./permutations/unique_filter.pl
 ```
