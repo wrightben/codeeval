@@ -1,4 +1,4 @@
-## Sudoku
+# Sudoku
 The 9 "small boxes" are entries from the 9!-length list of permutations for [1,2,3,4,5,6,7,8,9]. 
 
 
@@ -7,7 +7,7 @@ The 9 "small boxes" are entries from the 9!-length list of permutations for [1,2
 ```
 
 
-## Notes
+## Summary
 
 The file **permutations.txt** is the 9!-long list of permutations for 123456789, and **sudoku_solver.pl** requires it to solve a puzzle.
 
