@@ -22,15 +22,15 @@ real	0m4.322s
 Use *Numbers to CSV.numbers* to "Copy Puzzle" from Sudoku.com, then copy-paste to **sudoku_solver.pl**.
 
 ```
-9	.	.	.	.	.	.	6	.
-.	.	.	.	8	.	1	9	.
-.	.	7	.	1	.	.	.	.
-.	.	.	.	.	6	.	7	3
-.	.	.	3	.	9	.	.	.
-3	4	5	.	.	.	.	.	.
-4	.	.	.	.	2	6	8	.
-.	.	2	5	.	.	.	.	.
-.	3	.	7	.	.	.	.	.
+4	.	.	9	.	.	8	6	.
+.	.	.	.	.	7	2	.	.
+.	3	.	2	5	.	.	.	.
+.	1	7	.	.	5	.	2	9
+.	9	.	.	.	6	.	.	.
+.	6	.	.	.	.	.	7	.
+.	.	.	4	.	.	5	.	.
+7	.	.	.	.	.	9	.	.
+.	.	.	.	6	2	4	.	.
 
 # Glitch Warning: Missing .?
 ```
