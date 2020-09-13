@@ -103,9 +103,10 @@ use Data::Dumper;
 # 	2. create array of 81 known/unknown values
 # 	3. each line: replace unknown (blank) values with list of possible values based on puzzle's initial known values
 
-$iteration = 0;
-$known = 0;
-$file			= 'permutations.txt';
+$iteration	= 0;
+$known		= 0;
+$file		= 'permutations.txt';
+@file_list	= split /\n/,`cat "${file}"`;
 @cells = qw(
 
 	9	.	.	.	.	.	.	6	.
@@ -148,35 +149,35 @@ sub iterate {
 
 	&getPermutations;
 
-	&setCellSummary( &getCellSummary( @{$permutations[0]} ), $rows[0], scalar @{$permutations[0]} );
-	&setCellSummary( &getCellSummary( @{$permutations[1]} ), $rows[1], scalar @{$permutations[1]} );
-	&setCellSummary( &getCellSummary( @{$permutations[2]} ), $rows[2], scalar @{$permutations[2]} );
-	&setCellSummary( &getCellSummary( @{$permutations[3]} ), $rows[3], scalar @{$permutations[3]} );
-	&setCellSummary( &getCellSummary( @{$permutations[4]} ), $rows[4], scalar @{$permutations[4]} );
-	&setCellSummary( &getCellSummary( @{$permutations[5]} ), $rows[5], scalar @{$permutations[5]} );
-	&setCellSummary( &getCellSummary( @{$permutations[6]} ), $rows[6], scalar @{$permutations[6]} );
-	&setCellSummary( &getCellSummary( @{$permutations[7]} ), $rows[7], scalar @{$permutations[7]} );
-	&setCellSummary( &getCellSummary( @{$permutations[8]} ), $rows[8], scalar @{$permutations[8]} );
+	&setColumnSummary( &getColumnSummary( @{$permutations[0]} ), $rows[0], scalar @{$permutations[0]} );
+	&setColumnSummary( &getColumnSummary( @{$permutations[1]} ), $rows[1], scalar @{$permutations[1]} );
+	&setColumnSummary( &getColumnSummary( @{$permutations[2]} ), $rows[2], scalar @{$permutations[2]} );
+	&setColumnSummary( &getColumnSummary( @{$permutations[3]} ), $rows[3], scalar @{$permutations[3]} );
+	&setColumnSummary( &getColumnSummary( @{$permutations[4]} ), $rows[4], scalar @{$permutations[4]} );
+	&setColumnSummary( &getColumnSummary( @{$permutations[5]} ), $rows[5], scalar @{$permutations[5]} );
+	&setColumnSummary( &getColumnSummary( @{$permutations[6]} ), $rows[6], scalar @{$permutations[6]} );
+	&setColumnSummary( &getColumnSummary( @{$permutations[7]} ), $rows[7], scalar @{$permutations[7]} );
+	&setColumnSummary( &getColumnSummary( @{$permutations[8]} ), $rows[8], scalar @{$permutations[8]} );
 
-	&setCellSummary( &getCellSummary( @{$permutations[9]} ), $cols[0], scalar @{$permutations[9]} );
-	&setCellSummary( &getCellSummary( @{$permutations[10]} ), $cols[1], scalar @{$permutations[10]} );
-	&setCellSummary( &getCellSummary( @{$permutations[11]} ), $cols[2], scalar @{$permutations[11]} );
-	&setCellSummary( &getCellSummary( @{$permutations[12]} ), $cols[3], scalar @{$permutations[12]} );
-	&setCellSummary( &getCellSummary( @{$permutations[13]} ), $cols[4], scalar @{$permutations[13]} );
-	&setCellSummary( &getCellSummary( @{$permutations[14]} ), $cols[5], scalar @{$permutations[14]} );
-	&setCellSummary( &getCellSummary( @{$permutations[15]} ), $cols[6], scalar @{$permutations[15]} );
-	&setCellSummary( &getCellSummary( @{$permutations[16]} ), $cols[7], scalar @{$permutations[16]} );
-	&setCellSummary( &getCellSummary( @{$permutations[17]} ), $cols[8], scalar @{$permutations[17]} );
+	&setColumnSummary( &getColumnSummary( @{$permutations[9]} ), $cols[0], scalar @{$permutations[9]} );
+	&setColumnSummary( &getColumnSummary( @{$permutations[10]} ), $cols[1], scalar @{$permutations[10]} );
+	&setColumnSummary( &getColumnSummary( @{$permutations[11]} ), $cols[2], scalar @{$permutations[11]} );
+	&setColumnSummary( &getColumnSummary( @{$permutations[12]} ), $cols[3], scalar @{$permutations[12]} );
+	&setColumnSummary( &getColumnSummary( @{$permutations[13]} ), $cols[4], scalar @{$permutations[13]} );
+	&setColumnSummary( &getColumnSummary( @{$permutations[14]} ), $cols[5], scalar @{$permutations[14]} );
+	&setColumnSummary( &getColumnSummary( @{$permutations[15]} ), $cols[6], scalar @{$permutations[15]} );
+	&setColumnSummary( &getColumnSummary( @{$permutations[16]} ), $cols[7], scalar @{$permutations[16]} );
+	&setColumnSummary( &getColumnSummary( @{$permutations[17]} ), $cols[8], scalar @{$permutations[17]} );
 
-	&setCellSummary( &getCellSummary( @{$permutations[18]} ), $indexesInBox[0], scalar @{$permutations[18]} );
-	&setCellSummary( &getCellSummary( @{$permutations[19]} ), $indexesInBox[1], scalar @{$permutations[19]} );
-	&setCellSummary( &getCellSummary( @{$permutations[20]} ), $indexesInBox[2], scalar @{$permutations[20]} );
-	&setCellSummary( &getCellSummary( @{$permutations[21]} ), $indexesInBox[3], scalar @{$permutations[21]} );
-	&setCellSummary( &getCellSummary( @{$permutations[22]} ), $indexesInBox[4], scalar @{$permutations[22]} );
-	&setCellSummary( &getCellSummary( @{$permutations[23]} ), $indexesInBox[5], scalar @{$permutations[23]} );
-	&setCellSummary( &getCellSummary( @{$permutations[24]} ), $indexesInBox[6], scalar @{$permutations[24]} );
-	&setCellSummary( &getCellSummary( @{$permutations[25]} ), $indexesInBox[7], scalar @{$permutations[25]} );
-	&setCellSummary( &getCellSummary( @{$permutations[26]} ), $indexesInBox[8], scalar @{$permutations[26]} );
+	&setColumnSummary( &getColumnSummary( @{$permutations[18]} ), $indexesInBox[0], scalar @{$permutations[18]} );
+	&setColumnSummary( &getColumnSummary( @{$permutations[19]} ), $indexesInBox[1], scalar @{$permutations[19]} );
+	&setColumnSummary( &getColumnSummary( @{$permutations[20]} ), $indexesInBox[2], scalar @{$permutations[20]} );
+	&setColumnSummary( &getColumnSummary( @{$permutations[21]} ), $indexesInBox[3], scalar @{$permutations[21]} );
+	&setColumnSummary( &getColumnSummary( @{$permutations[22]} ), $indexesInBox[4], scalar @{$permutations[22]} );
+	&setColumnSummary( &getColumnSummary( @{$permutations[23]} ), $indexesInBox[5], scalar @{$permutations[23]} );
+	&setColumnSummary( &getColumnSummary( @{$permutations[24]} ), $indexesInBox[6], scalar @{$permutations[24]} );
+	&setColumnSummary( &getColumnSummary( @{$permutations[25]} ), $indexesInBox[7], scalar @{$permutations[25]} );
+	&setColumnSummary( &getColumnSummary( @{$permutations[26]} ), $indexesInBox[8], scalar @{$permutations[26]} );
 
 	print ("\n" x 2);
 	&outputRegexes;
@@ -329,7 +330,7 @@ sub getPossible {
 
 }
 
-sub getCellSummary {
+sub getColumnSummary {
 
 	my (@list) = @_;
 
@@ -411,27 +412,33 @@ sub getRegex {
 }
 
 sub getPermutations {
-
-	# Update this to grep existing list of permutations if the list is set (iteration 2)
-
-	@permutations = (); # Reset permutations
-
+	
 	foreach $i ( 0 .. $#regexes ) {
+	
+		if ( scalar @{$permutations[$i]} == 0 ) {
+			print "Using List\n";
+			
+			@{$permutations[$i]} = grep { /$regexes[$i]/; } @file_list;
 
-		@{$permutations[$i]} = split /\n/,`cat "${file}" | grep -e "$regexes[$i]"`;
+		} else {
+			
+			print "Using Cache\n";
+			@{$permutations[$i]} = grep { /$regexes[$i]/; } @{$permutations[$i]};
+		
+		}
 
 	}
 	
 }
 
-sub setCellSummary {
+sub setColumnSummary {
 	
 	# 	UNDERSTANDING THE ARGUMENTS TO THIS FUNCTION
 	# 
-	# 	getCellSummary(@row|col|box) READS a list of permutations for any supplied row|col|box, and returns a list of column summaries called @charPercent
-	# 	setCellSummary examines @charPercent and WRITES the column summaries to their respective cells, if they're known (non-regex) values.
+	# 	getColumnSummary(@row|col|box) READS a list of permutations for any supplied row|col|box, and returns a list of column summaries called @charPercent
+	# 	setColumnSummary examines @charPercent and WRITES the column summaries to their respective cells, if they're known (non-regex) values.
 	# 
-	# 	getCellSummary receives a list of permutations for a row, col, or box. An example list is below:
+	# 	getColumnSummary receives a list of permutations for a row, col, or box. An example list is below:
 	# 
 	# 	913 524 867
 	# 	914 253 687
