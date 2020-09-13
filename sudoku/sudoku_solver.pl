@@ -416,13 +416,13 @@ sub getPermutations {
 	foreach $i ( 0 .. $#regexes ) {
 	
 		if ( scalar @{$permutations[$i]} == 0 ) {
-			print "Using List\n";
+# 			print "Using List\n";
 			
 			@{$permutations[$i]} = grep { /$regexes[$i]/; } @file_list;
 
 		} else {
 			
-			print "Using Cache\n";
+# 			print "Using Cache\n";
 			@{$permutations[$i]} = grep { /$regexes[$i]/; } @{$permutations[$i]};
 		
 		}
