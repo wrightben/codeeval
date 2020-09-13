@@ -11,6 +11,12 @@ The 9 "small boxes" are entries from the 9!-length list of permutations for [1,2
 
 The file **permutations.txt** is the 9!-long list of permutations for 123456789, and **sudoku_solver.pl** requires it to solve a puzzle.
 
+```
+$time ./sudoku_solver.pl  > ~/Desktop/sudoku_solver_output.txt 
+
+real	0m4.322s
+```
+
 
 #### Numbers to CSV.numbers
 Use *Numbers to CSV.numbers* to "Copy Puzzle" from Sudoku.com, then copy-paste to **sudoku_solver.pl**.
