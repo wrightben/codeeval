@@ -9,7 +9,7 @@ The 9 "small boxes" are entries from the 9!-length list of permutations for [1,2
 
 ## Notes
 
-File **sudoku_solver.pl** requires **permutations.txt** to solve the puzzle. The file **permutations.txt** is the list of permutations for 123456789. It's long; 362,880 (9!) lines.
+The file **permutations.txt** is the 9!-long list of permutations for 123456789, and **sudoku_solver.pl** requires it to solve a puzzle.
 
 
 #### Numbers to CSV.numbers
