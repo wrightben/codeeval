@@ -104,19 +104,19 @@ $guessing	= 1; # [y=1,n=2]; non-deterministic puzzles ( no single solution, etc 
 $maxIterations	= 25;
 $iteration	= 1;
 $known		= 0;
-$file		= 'permutations.txt';
+$file		= './permutations/permutations.txt';
 @file_list	= split /\n/,`cat "${file}"`;
 @cells = qw(
 
-4	.	.	9	.	.	8	6	.
-.	.	.	.	.	7	2	.	.
-.	3	.	2	5	.	.	.	.
-.	1	7	.	.	5	.	2	9
-.	9	.	.	.	6	.	.	.
-.	6	.	.	.	.	.	7	.
-.	.	.	4	.	.	5	.	.
-7	.	.	.	.	.	9	.	.
-.	.	.	.	6	2	4	.	.
+	.	.	.	.	.	.	.	.	.
+	.	.	.	.	.	.	.	.	.
+	.	.	.	.	.	.	.	.	.
+	.	.	.	.	.	.	.	.	.
+	.	.	.	.	.	.	.	.	.
+	.	.	.	.	.	.	.	.	.
+	.	.	.	.	.	.	.	.	.
+	.	.	.	.	.	.	.	.	.
+	.	.	.	.	.	.	.	.	.
 
 );
 
