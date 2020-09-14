@@ -6,7 +6,7 @@ use Data::Dumper;
 # print Dumper \@myarray
 
 
-# SECTION:
+# SECTION: GLOBAL VARIABLES
 #	Overview: Constants for rows,cols,and 9-digit boxes.
 # 	1. EXCEL: Use it to make these constants.
 #	2. READ: Either inline or from external csv; See puzzle ( sudoku.csv ).
@@ -128,11 +128,9 @@ use Data::Dumper;
 
 
 
-# SECTION: 
-# 	1. Read sudoku.csv
-# 	2. create array of 81 known/unknown values
-# 	3. each line: replace unknown (blank) values with list of possible values based on puzzle's initial known values
+# SECTION: CONFIG, .TSV (puzzle), and SOLVER
 
+# config
 $error		= 0; # [0=none, 1=fail, 2=inspect]
 $guessing	= 1; # [y=1,n=2]; non-deterministic puzzles ( no single solution, etc )
 $maxIterations	= 25;
@@ -154,7 +152,7 @@ $file		= './permutations/permutations.txt';
 
 );
 
-# Program
+# Solver
 
 &outputPuzzleTSV;
 &setDotCellValues;
