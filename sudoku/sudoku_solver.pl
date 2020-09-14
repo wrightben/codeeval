@@ -214,6 +214,17 @@ sub solvePuzzle {
 
 sub getPossible {
 
+# 	UNDERSTANDING THE FUNCTION
+#
+#	Accept a cell index; If the exact cell value isn't known, assume it's value is the range [1..9];
+#	Get the known values of the row, col, and box for this cell, remove them from range, and set the
+#	value of the cell.
+# 	
+# 	Cells "see" the previously set possible values of neighbor cells,ie [1|7|8],
+# 	and try: $possible[178] = undef. When @possible is converted to the return string,
+#	the undef values at those high index aren't included. I prevent this and the needless 
+#	expansion of the @possible array by not undef'ing values > 9.
+
 	my $cellIndex = shift;
 
 	my $rowIndex = $indiciesByCellIndex[ $cellIndex ][0];
@@ -233,13 +244,6 @@ sub getPossible {
 # 	print Dumper \@possible;
 
 	return join "", @possible;
-
-# 	Note:
-# 	Each cell is processing its row and column and then writing the possible values to itself.
-# 	Successive cells "see" the previously set possible values of neighbor cells,ie [1|7|8],
-# 	and try to remove those from @possible by setting $possible[178] = undef. When @possible
-# 	is converted to the return string,the undef values at those high index aren't included.
-#	I prevent this and the needless expansion of the @possible array by not undef'ing values > 9.
 
 }
 
