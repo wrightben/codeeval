@@ -359,20 +359,21 @@ sub setRequiredValues {
 		
 		@countedValues = ( 0,0,0,0,0,0,0,0,0 );
 		
-		foreach $valueIndex ( 0 .. 8) {
+		foreach $valueIndex ( 0 .. 8) { # 9-digit iterator for both cellList (indexes) and cellListValues (values)
 		
-			$value = $cellListValues[$valueIndex];
+			$value = $cellListValues[$valueIndex]; # Current cell value
 			
-			if ( length $value > 1 ) {
+			if ( length $value > 1 ) { # True? Current cell value is more than 1 digit long; False? The value is already known, skip
 				
-				foreach $digit ( split //, $value ) {
+				foreach $digit ( split //, $value ) { # Get the digits of the cell value one by one
 				
-					if ( $countedValues[$digit -1] == 0 ) {
+					if ( $countedValues[$digit -1] == 0 ) { # Cache check; Don't check the same digit if it occurs in multiple cells within a row|col|box.
 						
-						my @m = ( $values =~ /${digit}/g );
+						my @m = ( $values =~ /${digit}/g ); # Check to see how many times this digit occurs
 						my $numMatches = scalar @m;
 						
-						if ( $numMatches  == 1 ) { 
+						if ( $numMatches  == 1 ) {  	# True? Current cell value is now known; It's the only cell to provide the required digit for the row|col|box @{$indicies[$i]}.
+										# Example: Cell value 789 becomes 7.
 							
 							print "\n\n$values:\n";
 							print "Digit $digit found once; Writing $cellList[$valueIndex] to value $digit\n\n";
@@ -380,7 +381,7 @@ sub setRequiredValues {
 							
 						}
 						
-						$countedValues[$digit - 1] = $numMatches;
+						$countedValues[$digit - 1] = $numMatches; # Update cache for this digit.
 						
 					}
 					
