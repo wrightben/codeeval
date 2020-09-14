@@ -12,65 +12,98 @@ use Data::Dumper;
 #	2. READ: Either inline or from external csv; See puzzle ( sudoku.csv ).
 
 @rc = (
-	[ 1,1 ],[ 1,2 ],[ 1,3 ],[ 1,4 ],[ 1,5 ],[ 1,6 ],[ 1,7 ],[ 1,8 ],[ 1,9 ],
-	[ 2,1 ],[ 2,2 ],[ 2,3 ],[ 2,4 ],[ 2,5 ],[ 2,6 ],[ 2,7 ],[ 2,8 ],[ 2,9 ],
-	[ 3,1 ],[ 3,2 ],[ 3,3 ],[ 3,4 ],[ 3,5 ],[ 3,6 ],[ 3,7 ],[ 3,8 ],[ 3,9 ],
-	[ 4,1 ],[ 4,2 ],[ 4,3 ],[ 4,4 ],[ 4,5 ],[ 4,6 ],[ 4,7 ],[ 4,8 ],[ 4,9 ],
-	[ 5,1 ],[ 5,2 ],[ 5,3 ],[ 5,4 ],[ 5,5 ],[ 5,6 ],[ 5,7 ],[ 5,8 ],[ 5,9 ],
-	[ 6,1 ],[ 6,2 ],[ 6,3 ],[ 6,4 ],[ 6,5 ],[ 6,6 ],[ 6,7 ],[ 6,8 ],[ 6,9 ],
-	[ 7,1 ],[ 7,2 ],[ 7,3 ],[ 7,4 ],[ 7,5 ],[ 7,6 ],[ 7,7 ],[ 7,8 ],[ 7,9 ],
-	[ 8,1 ],[ 8,2 ],[ 8,3 ],[ 8,4 ],[ 8,5 ],[ 8,6 ],[ 8,7 ],[ 8,8 ],[ 8,9 ],
-	[ 9,1 ],[ 9,2 ],[ 9,3 ],[ 9,4 ],[ 9,5 ],[ 9,6 ],[ 9,7 ],[ 9,8 ],[ 9,9 ]
+	[ 1,1 ],[ 1,2 ],[ 1,3 ],	[ 1,4 ],[ 1,5 ],[ 1,6 ],	[ 1,7 ],[ 1,8 ],[ 1,9 ],
+	[ 2,1 ],[ 2,2 ],[ 2,3 ],	[ 2,4 ],[ 2,5 ],[ 2,6 ],	[ 2,7 ],[ 2,8 ],[ 2,9 ],
+	[ 3,1 ],[ 3,2 ],[ 3,3 ],	[ 3,4 ],[ 3,5 ],[ 3,6 ],	[ 3,7 ],[ 3,8 ],[ 3,9 ],
+
+	[ 4,1 ],[ 4,2 ],[ 4,3 ],	[ 4,4 ],[ 4,5 ],[ 4,6 ],	[ 4,7 ],[ 4,8 ],[ 4,9 ],
+	[ 5,1 ],[ 5,2 ],[ 5,3 ],	[ 5,4 ],[ 5,5 ],[ 5,6 ],	[ 5,7 ],[ 5,8 ],[ 5,9 ],
+	[ 6,1 ],[ 6,2 ],[ 6,3 ],	[ 6,4 ],[ 6,5 ],[ 6,6 ],	[ 6,7 ],[ 6,8 ],[ 6,9 ],
+
+	[ 7,1 ],[ 7,2 ],[ 7,3 ],	[ 7,4 ],[ 7,5 ],[ 7,6 ],	[ 7,7 ],[ 7,8 ],[ 7,9 ],
+	[ 8,1 ],[ 8,2 ],[ 8,3 ],	[ 8,4 ],[ 8,5 ],[ 8,6 ],	[ 8,7 ],[ 8,8 ],[ 8,9 ],
+	[ 9,1 ],[ 9,2 ],[ 9,3 ],	[ 9,4 ],[ 9,5 ],[ 9,6 ],	[ 9,7 ],[ 9,8 ],[ 9,9 ]
 );
 
 @indexToBox = (	
-	1,1,1,2,2,2,3,3,3,
-	1,1,1,2,2,2,3,3,3,
-	1,1,1,2,2,2,3,3,3,
+	1,1,1, 2,2,2, 3,3,3,
+	1,1,1, 2,2,2, 3,3,3,
+	1,1,1, 2,2,2, 3,3,3,
 
-	4,4,4,5,5,5,6,6,6,
-	4,4,4,5,5,5,6,6,6,
-	4,4,4,5,5,5,6,6,6,
+	4,4,4, 5,5,5, 6,6,6,
+	4,4,4, 5,5,5, 6,6,6,
+	4,4,4, 5,5,5, 6,6,6,
 
-	7,7,7,8,8,8,9,9,9,
-	7,7,7,8,8,8,9,9,9,
-	7,7,7,8,8,8,9,9,9
+	7,7,7, 8,8,8, 9,9,9,
+	7,7,7, 8,8,8, 9,9,9,
+	7,7,7, 8,8,8, 9,9,9
+);
+
+#	CELL INDICIES
+# 		 0	 1	 2			 3	 4	 5			 6	 7	 8
+# 		 9	10	11			12	13	14			15	16	17
+# 		18	19	20			21	22	23			24	25	26
+# 
+# 		27	28	29			30	31	32			33	34	35
+# 		36	37	38			39	40	41			42	43	44
+# 		45	46	47			48	49	50			51	52	53
+# 
+# 		54	55	56			57	58	59			60	61	62
+# 		63	64	65			66	67	68			69	70	71
+# 		72	73	74			75	76	77			78	79	80
+
+@indiciesByCellIndex = (
+	[ 0,9,18 ], [ 0,10,18 ], [ 0,11,18 ],	[ 0,12,19 ], [ 0,13,19 ], [ 0,14,19 ],	[ 0,15,20 ], [ 0,16,20 ], [ 0,17,20 ],
+	[ 1,9,18 ], [ 1,10,18 ], [ 1,11,18 ],	[ 1,12,19 ], [ 1,13,19 ], [ 1,14,19 ],	[ 1,15,20 ], [ 1,16,20 ], [ 1,17,20 ],
+	[ 2,9,18 ], [ 2,10,18 ], [ 2,11,18 ],	[ 2,12,19 ], [ 2,13,19 ], [ 2,14,19 ],	[ 2,15,20 ], [ 2,16,20 ], [ 2,17,20 ],
+	
+	[ 3,9,21 ], [ 3,10,21 ], [ 3,11,21 ],	[ 3,12,22 ], [ 3,13,22 ], [ 3,14,22 ],	[ 3,15,23 ], [ 3,16,23 ], [ 3,17,23 ],
+	[ 4,9,21 ], [ 4,10,21 ], [ 4,11,21 ],	[ 4,12,22 ], [ 4,13,22 ], [ 4,14,22 ],	[ 4,15,23 ], [ 4,16,23 ], [ 4,17,23 ],
+	[ 5,9,21 ], [ 5,10,21 ], [ 5,11,21 ],	[ 5,12,22 ], [ 5,13,22 ], [ 5,14,22 ],	[ 5,15,23 ], [ 5,16,23 ], [ 5,17,23 ],
+	
+	[ 6,9,24 ], [ 6,10,24 ], [ 6,11,24 ],	[ 6,12,25 ], [ 6,13,25 ], [ 6,14,25 ],	[ 6,15,26 ], [ 6,16,26 ], [ 6,17,26 ],
+	[ 7,9,24 ], [ 7,10,24 ], [ 7,11,24 ],	[ 7,12,25 ], [ 7,13,25 ], [ 7,14,25 ],	[ 7,15,26 ], [ 7,16,26 ], [ 7,17,26 ],
+	[ 8,9,24 ], [ 8,10,24 ], [ 8,11,24 ],	[ 8,12,25 ], [ 8,13,25 ], [ 8,14,25 ],	[ 8,15,26 ], [ 8,16,26 ], [ 8,17,26 ]
 );
 
 @indicies = (
 	
-	# Box
-	[ 1, 2, 3, 4, 5, 6, 7, 8, 9],
-	[10,11,12,13,14,15,16,17,18],
-	[19,20,21,22,23,24,25,26,27],
-	[28,29,30,31,32,33,34,35,36],
-	[37,38,39,40,41,42,43,44,45],
-	[46,47,48,49,50,51,52,53,54],
-	[55,56,57,58,59,60,61,62,63],
-	[64,65,66,67,68,69,70,71,72],
-	[73,74,75,76,77,78,79,80,81],
+	# Row
+					
+	[ 1, 2, 3, 4, 5, 6, 7, 8, 9],#	0
+	[10,11,12,13,14,15,16,17,18],#	1
+	[19,20,21,22,23,24,25,26,27],#	2
+	[28,29,30,31,32,33,34,35,36],#	3
+	[37,38,39,40,41,42,43,44,45],#	4
+	[46,47,48,49,50,51,52,53,54],#	5
+	[55,56,57,58,59,60,61,62,63],#	6
+	[64,65,66,67,68,69,70,71,72],#	7
+	[73,74,75,76,77,78,79,80,81],#	8
 
 	# Col
-	[1,10,19,28,37,46,55,64,73],
-	[2,11,20,29,38,47,56,65,74],
-	[3,12,21,30,39,48,57,66,75],
-	[4,13,22,31,40,49,58,67,76],
-	[5,14,23,32,41,50,59,68,77],
-	[6,15,24,33,42,51,60,69,78],
-	[7,16,25,34,43,52,61,70,79],
-	[8,17,26,35,44,53,62,71,80],
-	[9,18,27,36,45,54,63,72,81],
+					
+	[1,10,19,28,37,46,55,64,73],#	1 09
+	[2,11,20,29,38,47,56,65,74],#	2 10
+	[3,12,21,30,39,48,57,66,75],#	3 11 
+	[4,13,22,31,40,49,58,67,76],#	4 12
+	[5,14,23,32,41,50,59,68,77],#	5 13
+	[6,15,24,33,42,51,60,69,78],#	6 14
+	[7,16,25,34,43,52,61,70,79],#	7 15
+	[8,17,26,35,44,53,62,71,80],#	8 16
+	[9,18,27,36,45,54,63,72,81],#	9 17
 	
 	# Box
-	[1,2,3,10,11,12,19,20,21],
-	[4,5,6,13,14,15,22,23,24],
-	[7,8,9,16,17,18,25,26,27],
-	[28,29,30,37,38,39,46,47,48],
-	[31,32,33,40,41,42,49,50,51],
-	[34,35,36,43,44,45,52,53,54],
-	[55,56,57,64,65,66,73,74,75],
-	[58,59,60,67,68,69,76,77,78],
-	[61,62,63,70,71,72,79,80,81]
+					
+	[ 1, 2, 3,10,11,12,19,20,21],#	1 18
+	[ 4, 5, 6,13,14,15,22,23,24],#	2 19
+	[ 7, 8, 9,16,17,18,25,26,27],#	3 20
+	[28,29,30,37,38,39,46,47,48],#	4 21
+	[31,32,33,40,41,42,49,50,51],#	5 22
+	[34,35,36,43,44,45,52,53,54],#	6 23
+	[55,56,57,64,65,66,73,74,75],#	7 24
+	[58,59,60,67,68,69,76,77,78],#	8 25
+	[61,62,63,70,71,72,79,80,81],#	9 26
+	
 );
 
 @regexes = (
@@ -100,6 +133,7 @@ use Data::Dumper;
 # 	2. create array of 81 known/unknown values
 # 	3. each line: replace unknown (blank) values with list of possible values based on puzzle's initial known values
 
+$error		= 0; # [0=none, 1=fail, 2=inspect]
 $guessing	= 1; # [y=1,n=2]; non-deterministic puzzles ( no single solution, etc )
 $maxIterations	= 25;
 $iteration	= 1;
@@ -108,15 +142,15 @@ $file		= './permutations/permutations.txt';
 @file_list	= split /\n/,`cat "${file}"`;
 @cells = qw(
 
-	.	.	.	.	.	.	.	.	.
-	.	.	.	.	.	.	.	.	.
-	.	.	.	.	.	.	.	.	.
-	.	.	.	.	.	.	.	.	.
-	.	.	.	.	.	.	.	.	.
-	.	.	.	.	.	.	.	.	.
-	.	.	.	.	.	.	.	.	.
-	.	.	.	.	.	.	.	.	.
-	.	.	.	.	.	.	.	.	.
+89	38	4	5	28	6	7	239	1
+1568	2	13568	9	148	7	468	346	34
+1689	168	7	148	1248	3	4689	2469	5
+2	4	158	18	189	1589	3	7	6
+568	9	568	7	3	458	1	45	2
+3	7	15	14	6	2	459	459	8
+4	168	2	3	5	189	69	169	7
+1569	1356	13569	2	7	149	4569	8	349
+7	1358	13589	6	1489	1489	2	13459	349
 
 );
 
@@ -124,18 +158,23 @@ $file		= './permutations/permutations.txt';
 
 &outputPuzzleTSV;
 &setDotCellValues;
-
-
-while (
-	( &getKnownCount > $known ) && 
-	( &getKnownCount != 81 ) && 
-	( $iteration < $maxIterations ) ) {
-	
-	&iterate;
-	$iteration += 1;
-}
+&iterate;
 
 sub iterate {
+
+	while (	( &getKnownCount > $known ) && 
+		( &getKnownCount != 81 ) && 
+		( $iteration < $maxIterations ) &&
+		( $error != 1 )	)	{
+	
+		&solvePuzzle;
+		$iteration += 1;
+	
+	}
+
+}
+
+sub solvePuzzle {
 
 	$known = &getKnownCount;
 	
@@ -144,6 +183,7 @@ sub iterate {
 	print ("\n" x 2);
 	&outputPuzzleTSV;
 
+	&setRequiredValues;
 	&setRegexes;
 	&getPermutations;
 	
@@ -161,6 +201,7 @@ sub iterate {
 	&outputPuzzleTSV;
 	
 	&saveState;
+
 }
 
 
@@ -173,103 +214,34 @@ sub iterate {
 
 # SECTION: FUNCTIONS
 
-sub getRowSummaries {
-	
-	my @rowSummaries = (
-		[  $cells[0], $cells[1], $cells[2], $cells[3], $cells[4], $cells[5], $cells[6], $cells[7], $cells[8] ],
-		[  $cells[9],$cells[10],$cells[11],$cells[12],$cells[13],$cells[14],$cells[15],$cells[16],$cells[17] ],
-		[ $cells[18],$cells[19],$cells[20],$cells[21],$cells[22],$cells[23],$cells[24],$cells[25],$cells[26] ],
-		
-		[ $cells[27],$cells[28],$cells[29],$cells[30],$cells[31],$cells[32],$cells[33],$cells[34],$cells[35] ],
-		[ $cells[36],$cells[37],$cells[38],$cells[39],$cells[40],$cells[41],$cells[42],$cells[43],$cells[44] ],
-		[ $cells[45],$cells[46],$cells[47],$cells[48],$cells[49],$cells[50],$cells[51],$cells[52],$cells[53] ],
-
-		[ $cells[54],$cells[55],$cells[56],$cells[57],$cells[58],$cells[59],$cells[60],$cells[61],$cells[62] ],
-		[ $cells[63],$cells[64],$cells[65],$cells[66],$cells[67],$cells[68],$cells[69],$cells[70],$cells[71] ],
-		[ $cells[72],$cells[73],$cells[74],$cells[75],$cells[76],$cells[77],$cells[78],$cells[79],$cells[80] ]
-	);
-	
-# 	print Dumper \@rowSummaries;
-	return \@rowSummaries;
-	
-}	
-
-sub getColSummaries {
-	
-	my @colSummaries = (
-		[ $cells[0], $cells[9],$cells[18],$cells[27],$cells[36],$cells[45],$cells[54],$cells[63],$cells[72] ],
-		[ $cells[1],$cells[10],$cells[19],$cells[28],$cells[37],$cells[46],$cells[55],$cells[64],$cells[73] ],
-		[ $cells[2],$cells[11],$cells[20],$cells[29],$cells[38],$cells[47],$cells[56],$cells[65],$cells[74] ],
-		[ $cells[3],$cells[12],$cells[21],$cells[30],$cells[39],$cells[48],$cells[57],$cells[66],$cells[75] ],
-		[ $cells[4],$cells[13],$cells[22],$cells[31],$cells[40],$cells[49],$cells[58],$cells[67],$cells[76] ],
-		[ $cells[5],$cells[14],$cells[23],$cells[32],$cells[41],$cells[50],$cells[59],$cells[68],$cells[77] ],
-		[ $cells[6],$cells[15],$cells[24],$cells[33],$cells[42],$cells[51],$cells[60],$cells[69],$cells[78] ],
-		[ $cells[7],$cells[16],$cells[25],$cells[34],$cells[43],$cells[52],$cells[61],$cells[70],$cells[79] ],
-		[ $cells[8],$cells[17],$cells[26],$cells[35],$cells[44],$cells[53],$cells[62],$cells[71],$cells[80] ]
-	);
-	
-# 	print Dumper \@colSummaries;	
-	return \@colSummaries;
-	
-}
-
-sub getBoxSummaries {
-	
-	my @boxSummaries = (	
-		[  $cells[0], $cells[1], $cells[2], $cells[9],$cells[10],$cells[11],$cells[18],$cells[19],$cells[20] ],
-		[  $cells[3], $cells[4], $cells[5],$cells[12],$cells[13],$cells[14],$cells[21],$cells[22],$cells[23] ],
-		[  $cells[6], $cells[7], $cells[8],$cells[15],$cells[16],$cells[17],$cells[24],$cells[25],$cells[26] ],
-		[ $cells[27],$cells[28],$cells[29],$cells[36],$cells[37],$cells[38],$cells[45],$cells[46],$cells[47] ],
-		[ $cells[30],$cells[31],$cells[32],$cells[39],$cells[40],$cells[41],$cells[48],$cells[49],$cells[50] ],
-		[ $cells[33],$cells[34],$cells[35],$cells[42],$cells[43],$cells[44],$cells[51],$cells[52],$cells[53] ],
-		[ $cells[54],$cells[55],$cells[56],$cells[63],$cells[64],$cells[65],$cells[72],$cells[73],$cells[74] ],
-		[ $cells[57],$cells[58],$cells[59],$cells[66],$cells[67],$cells[68],$cells[75],$cells[76],$cells[77] ],
-		[ $cells[60],$cells[61],$cells[62],$cells[69],$cells[70],$cells[71],$cells[78],$cells[79],$cells[80] ]
-	);
-	
-# 	print Dumper \@boxSummaries;	
-	return \@boxSummaries;
-	
-}
-
 sub getPossible {
+
+	my $cellIndex = shift;
+
+	my $rowIndex = $indiciesByCellIndex[ $cellIndex ][0];
+	my $colIndex = $indiciesByCellIndex[ $cellIndex ][1];
+	my $boxIndex = $indiciesByCellIndex[ $cellIndex ][2];
+
+	my @possible = (1,2,3,4,5,6,7,8,9);
+
+	# Iterate over the row, col, and box for this cellIndex
+	foreach my $num ( ( @{$indicies[$rowIndex]}, @{$indicies[$colIndex]}, @{$indicies[$boxIndex]}  ) ) {  # $num is a cellIndex from the list, not zero-based
 	
-	my ($index, @row, @col, @box, @possible);
-
-	$index = shift;
-
-	@row = @{ $rowSummaries[ $rc[$index][0] - 1 ] };
-	@col = @{ $colSummaries[ $rc[$index][1] - 1 ] };
-	@box = @{ $boxSummaries[ $indexToBox[$index] -1 ] };
-
-	@possible = (1,2,3,4,5,6,7,8,9);
-
-	# Row
-	foreach my $num (@row) { # NOT zero-based
-		if ( ($num =~ /\d/) && ($num < 10) ) { $possible[$num -1] = undef; }
-	}
-	
-	# Col
-	foreach my $num (@col) { # NOT zero-based
-		if ( ($num =~ /\d/) && ($num < 10) ) { $possible[$num -1] = undef; }
-	}
+		$value = $cells[$num -1];
+		if ( ($value =~ /\d/) && ($value < 10) ) { $possible[$value - 1] = undef; }
 		
-	# Box
-	foreach my $num (@box) { # NOT zero-based
-		if ( ($num =~ /\d/) && ($num < 10) ) { $possible[$num -1] = undef; }
 	}
 
 # 	print Dumper \@possible;
-	
+
 	return join "", @possible;
-	
+
 # 	Note:
 # 	Each cell is processing its row and column and then writing the possible values to itself.
 # 	Successive cells "see" the previously set possible values of neighbor cells,ie [1|7|8],
 # 	and try to remove those from @possible by setting $possible[178] = undef. When @possible
 # 	is converted to the return string,the undef values at those high index aren't included.
 #	I prevent this and the needless expansion of the @possible array by not undef'ing values > 9.
-
 
 }
 
@@ -329,7 +301,16 @@ sub getPermutations {
 			@{$permutations[$i]} = grep { /$regexes[$i]/; } @{$permutations[$i]};
 		
 		}
+		
+		my $permutationsCount = scalar @{ $permutations[$i] };
 
+		if ( $permutationsCount == 0 ) {
+			# Move this into an errors hash that can be dealt with before each iteration.
+			print "\nError (No Permutations): No permutations for regex $i (0-based)\n$regexes[$i]\n\n";
+			&outputPuzzleTSV;
+			exit;
+		}
+		
 	}
 	
 }
@@ -345,28 +326,68 @@ sub getKnownCount {
 
 sub setDotCellValues {
 
-# 	Note:
-# 
-# 	This method summaries Step 1: Take the TSV from Numbers and update it with
-# 	81 actual values, and summarizing the use of the methods this function depends
-# 	on.
-# 
-# 	Optimization: Saving the values of the rows/cols/boxes is probably not
-# 	a worthwhile step yet. This method is already super fast, and doing so will
-# 	obstruct the iterative process that happens next. However, it will likely be
-# 	possible to retrofit an optimization once I see how the intersect iteration
-# 	works.
-
-	# Summarize rows, cols, and boxes
-	@rowSummaries = @{ &getRowSummaries };
-	@colSummaries = @{ &getColSummaries };
-	@boxSummaries = @{ &getBoxSummaries };
-
 	# Get the possible values for the unknown cells.
 	foreach $i ( 0 .. 80 ) {
 
-		if ( $cells[$i] =~ /\./ ) {
-			$cells[$i] = &getPossible($i);
+		$cells[$i] = &getPossible($i) if ( $cells[$i] =~ /\./ );
+
+	}
+
+}
+
+sub setRequiredValues {
+
+	# Loop every row,col,box
+	foreach my $i ( 0 .. 26 ) {
+	
+		my @cellList = @{$indicies[$i]};
+		
+		my @cellListValues = ( 
+			$cells[ $cellList[0] -1 ], 
+			$cells[ $cellList[1] -1 ], 
+			$cells[ $cellList[2] -1 ], 
+			$cells[ $cellList[3] -1 ],
+			$cells[ $cellList[4] -1 ], 
+			$cells[ $cellList[5] -1 ], 
+			$cells[ $cellList[6] -1 ], 
+			$cells[ $cellList[7] -1 ],			 
+			$cells[ $cellList[8] -1 ] 
+		);
+		
+		$values = join "|", @cellListValues;
+	
+		
+		@countedValues = ( 0,0,0,0,0,0,0,0,0 );
+		
+		foreach $valueIndex ( 0 .. 8) {
+		
+			$value = $cellListValues[$valueIndex];
+			
+			if ( length $value > 1 ) {
+				
+				foreach $digit ( split //, $value ) {
+				
+					if ( $countedValues[$digit -1] == 0 ) {
+						
+						my @m = ( $values =~ /${digit}/g );
+						my $numMatches = scalar @m;
+						
+						if ( $numMatches  == 1 ) { 
+							
+							print "\n\n$values:\n";
+							print "Digit $digit found once; Writing $cellList[$valueIndex] to value $digit\n\n";
+							$cells[ $cellList[$valueIndex] -1 ] = ${digit}; 
+							
+						}
+						
+						$countedValues[$digit - 1] = $numMatches;
+						
+					}
+					
+				}
+						
+			}
+			
 		}
 
 	}
